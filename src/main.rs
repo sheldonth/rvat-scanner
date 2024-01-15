@@ -2,8 +2,6 @@ use std::io;
 use std::fs::{self, DirEntry, ReadDir};
 use std::path::{Path, PathBuf};
 use std::collections::HashMap;
-use chrono::FixedOffset;
-use chrono::DateTime;
 use crossterm::{
     event::{self, DisableMouseCapture, EnableMouseCapture, Event, KeyCode},
     execute,
@@ -14,7 +12,7 @@ use std::{
     time::{Duration, Instant},
 };
 use std::thread;
-use std::sync::{Arc, Mutex};
+//use std::sync::{Arc, Mutex};
 use tui::{
     backend::{Backend, CrosstermBackend},
     layout::{Constraint, Direction, Layout},
@@ -28,6 +26,11 @@ use rvat_scanner::alpaca::Bar;
 
 type DayBars = HashMap<String, Vec<Bar>>;
 type SymbolDays = HashMap<String, Vec<DayBars>>;
+
+use lazy_static::lazy_static;
+lazy_static! {
+    pub static ref SYMBOL_DAYS:SymbolDays = read_cache_folders(Path::new("cache")).unwrap();
+}
 
 fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolDays> {
     let mut symbols:SymbolDays = HashMap::new();
@@ -57,21 +60,11 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolDays> {
             bars_for_date.insert(file_name, bars);
             v.push(bars_for_date);
         }
+        assert!(v.len() > 0, "no files found in folder: {}", folder_name);
         symbols.insert(folder_name, v);
     }
+    assert!(symbols.len() > 0, "no symbols found in cache");
     Ok(symbols)
-}
-
-fn load_data_from_cache() -> Result<SymbolDays, Box<dyn Error + Send + Sync>> {
-    let cache_path = Path::new("cache");
-    match read_cache_folders(cache_path) {
-        Ok(symbols) => {
-            Ok(symbols)
-        },
-        Err(e) => {
-            Err(Box::new(e))
-        }
-    }
 }
 
 struct StatefulList<T> {
@@ -119,18 +112,15 @@ impl<T> StatefulList<T> {
 
 struct App<'a> {
     items: StatefulList<(&'a str, usize)>,
-    data_cache: SymbolDays
 }
 
 impl<'a> App<'a> {
     fn new() -> App<'a> {
-        let data_cache = load_data_from_cache();
         App {
             items: StatefulList::with_items(vec![
                 ("Item0", 1),
                 ("Item1", 4)
             ]),
-            data_cache: data_cache.unwrap()
         }
     }
 
@@ -152,10 +142,6 @@ fn main() -> Result<(), Box<dyn Error>> {
     let app = App::new();
     let res = run_app(&mut terminal, app, tick_rate);
 
-    let worker_handle = thread::spawn(move || {
-        // iterate each symbol in app.data_cache and calculate the average volume by this time of
-        // day
-    });
     // restore terminal
     disable_raw_mode()?;
     execute!(
@@ -177,6 +163,26 @@ fn run_app<B: Backend>(
     mut app: App,
     tick_rate: Duration,
 ) -> io::Result<()> {
+    thread::spawn(move || {
+        let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
+        let mut symbol_index:usize = 0;
+        while symbol_index < symbols.len() {
+            let symbol:&str = symbols[symbol_index];
+            let days:&Vec<DayBars> = SYMBOL_DAYS.get(symbol).unwrap();
+            let mut day_index:usize = 0;
+            //loop {
+                //let day:DayBars = days[day_index];
+                //let mut date_index:usize = 0;
+                //for (date, bars) in day {
+                    //println!("{} {} {}", symbol, date, bars.len());
+                    //date_index += 1;
+                //}
+                //day_index += 1;
+            //}
+            symbol_index += 1;
+        }
+    });
+
     let mut last_tick = Instant::now();
     loop {
         terminal.draw(|f| ui(f, &mut app))?;
