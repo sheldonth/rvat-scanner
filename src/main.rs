@@ -26,11 +26,11 @@ use tui::{
 
 use rvat_scanner::alpaca::Bar;
 
-type BarsForDate = HashMap<String, Vec<Bar>>;
-type SymbolBars = HashMap<String, Vec<BarsForDate>>;
+type DayBars = HashMap<String, Vec<Bar>>;
+type SymbolDays = HashMap<String, Vec<DayBars>>;
 
-fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolBars> {
-    let mut symbols:SymbolBars = HashMap::new();
+fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolDays> {
+    let mut symbols:SymbolDays = HashMap::new();
     // read the folders in the '../cache' directory
     let entries:ReadDir = fs::read_dir(folder_path)?;
     for entry in entries {
@@ -39,7 +39,7 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolBars> {
         let folder_name:String = entry.file_name().into_string().unwrap();
         // read all the files in in the entry folder
         let files:ReadDir = fs::read_dir(entry.path())?;
-        let mut v:Vec<BarsForDate> = Vec::new();
+        let mut v:Vec<DayBars> = Vec::new();
         // iterate files
         for file in files {
             let file:DirEntry = file?;
@@ -53,7 +53,7 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolBars> {
             // deserialize file contents
             let bars:Vec<Bar> = serde_json::from_str(&file_contents).unwrap();
             // print file contents
-            let mut bars_for_date:BarsForDate = HashMap::new();
+            let mut bars_for_date:DayBars = HashMap::new();
             bars_for_date.insert(file_name, bars);
             v.push(bars_for_date);
         }
@@ -62,7 +62,7 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolBars> {
     Ok(symbols)
 }
 
-fn load_data_from_cache() -> Result<SymbolBars, Box<dyn Error + Send + Sync>> {
+fn load_data_from_cache() -> Result<SymbolDays, Box<dyn Error + Send + Sync>> {
     let cache_path = Path::new("cache");
     match read_cache_folders(cache_path) {
         Ok(symbols) => {
@@ -119,7 +119,7 @@ impl<T> StatefulList<T> {
 
 struct App<'a> {
     items: StatefulList<(&'a str, usize)>,
-    data_cache: SymbolBars
+    data_cache: SymbolDays
 }
 
 impl<'a> App<'a> {

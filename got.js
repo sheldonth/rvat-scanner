@@ -1,29 +1,12 @@
-/*
- * This is a minimal rewrite of a promise-based http request
- * The essence of the api is
- * require('./ate-got.js')
- * await got(url, {opts}) returns a response object
- * response.body is response body.
- * response.statusCode is the status code
- * 
- * some opts:
- * cookieJar: a tough-cookie object to be used for the request
- * method:http method
- * form: object which is urlform encoded body
- * timeout: http timeout in milliseconds
- * headers: key-value http raw headers
- */
-
 const https = require('https')
 const http = require('http')
 const assert = require('assert')
 const querystring = require('querystring')
+const zlib = require('zlib')
 
 const httpsKAAgent = new https.Agent({
     keepAlive:true,
     keepAliveMsecs:60000,
-    //maxSockets:2,
-    //maxTotalSockets:50000,
     scheduling:'fifo',
     timeout:120000 // defines global timeout
 })
@@ -31,13 +14,11 @@ const httpsKAAgent = new https.Agent({
 const httpKAAgent = new http.Agent({
     keepAlive:true,
     keepAliveMsecs:60000,
-    //maxSockets:2,
-    //maxTotalSockets:50000,
     scheduling:'fifo',
     timeout:120000 // defines global timeout
 })
 
-const global_user_agent = ''
+const global_user_agent = 'User-Agent'
 const global_default_timeout = 120000
 
 const wait = async function(num_seconds) {
@@ -67,7 +48,6 @@ module.exports = async function(url, opts = {headers: {}}, retryCount = 0) {
     }
 }
 
-const zlib = require('zlib')
 
 const inner = async function(url, opts) {
     return new Promise(function(accept, reject) {
@@ -82,12 +62,6 @@ const inner = async function(url, opts) {
             agent:url.startsWith('https') ? httpsKAAgent : httpKAAgent,
             timeout:opts.hasOwnProperty('timeout') ? opts.timeout : global_default_timeout,
             method:opts.hasOwnProperty('method') ? opts.method : "GET",
-        }
-        if (opts.hasOwnProperty('cookieJar')) {
-            opts.cookieJar.getCookies(url, (err, cookies) => {
-                assert(err === null, `CookieJar Error ${err}`)
-                node_opts.headers['cookie'] = cookies.join('; ')
-            })
         }
         if (['POST', 'PATCH'].includes(node_opts['method'])) {
             if (opts.hasOwnProperty('form')) {
@@ -139,23 +113,6 @@ const inner = async function(url, opts) {
                 }
             })
             output.on('end', () => {
-                if (resp.headers.hasOwnProperty('set-cookie')) {
-                    let cookies = []
-                    if (resp.headers['set-cookie'] instanceof Array) {
-                        cookies = resp.headers['set-cookie'].map(Cookie.parse)
-                    }
-                    else {
-                        cookies = [Cookie.parse(resp.headers['set-cookie'])]
-                    }
-                    for (const c of cookies) {
-                        if (opts.hasOwnProperty('cookieJar')) {
-                            opts.cookieJar.setCookieSync(c, url)
-                        }
-                        else {
-                            //console.log(`WARN: Skipped a cookie, missing cookiejar`)
-                        }
-                    }
-                }
                 accept({
                     headers:resp.headers,
                     statusCode:resp.statusCode,
@@ -174,7 +131,7 @@ const inner = async function(url, opts) {
             })
         })
         req.on('close', () => {
-             
+
         })
         req.on('timeout', () => {
             req.destroy(['ETIMEDOUT'])
@@ -186,7 +143,7 @@ const inner = async function(url, opts) {
                 url:url
             }) 
         })
-        
+
         if (['POST', 'PATCH'].includes(node_opts['method'])) {
             if (opts.hasOwnProperty('form')) {
                 req.write(querystring.stringify(opts.form))
