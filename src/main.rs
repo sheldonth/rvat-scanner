@@ -2,7 +2,6 @@ use std::io;
 use std::fs::{self, DirEntry, ReadDir};
 use std::path::{Path, PathBuf};
 use std::collections::HashMap;
-use serde::Deserialize;
 use chrono::FixedOffset;
 use chrono::DateTime;
 use crossterm::{
@@ -24,15 +23,8 @@ use tui::{
     widgets::{Block, Borders, List, ListItem, ListState},
     Frame, Terminal,
 };
-#[derive(Deserialize, Debug, Clone)]
-pub struct Bar {
-    pub t:DateTime<FixedOffset>,
-    pub o:serde_json::Value,
-    pub h:serde_json::Value,
-    pub l:serde_json::Value,
-    pub c:serde_json::Value,
-    pub v:serde_json::Value
-}
+
+use rvat_scanner::alpaca::Bar;
 
 type BarsForDate = HashMap<String, Vec<Bar>>;
 type SymbolBars = HashMap<String, Vec<BarsForDate>>;
