@@ -117,19 +117,59 @@ impl<T> StatefulList<T> {
     }
 }
 
-struct App {
-    items: StatefulList<(String, usize)>,
+struct App { // Ticker, Average, TodayAnalysis, TodayScore
+    items: StatefulList<(String, i64, i64, f64)>,
     title: String
 }
+
+static LIST_ITEM_HEIGHT:u16 = 2;
 
 impl App {
     fn new() -> App {
         App {
             items: StatefulList::with_items(vec![
-                (String::from("Item0"), 1),
-                (String::from("Item1"), 4)
+                //(String::from("Item0"), 1),
+                //(String::from("Item1"), 4)
             ]),
             title: String::from("RVAT Scanner")
+        }
+    }
+
+    fn add_item(&mut self, item:(String, i64, i64, f64)) {
+        // find the entry in items for the ticker
+        let mut index:usize = 0;
+        let mut found:bool = false;
+        for i in &self.items.items {
+            if i.0 == item.0 {
+                found = true;
+                break;
+            }
+            index += 1;
+        }
+        if found {
+            // update the entry
+            self.items.items[index] = item;
+        } else {
+            // check if item is bigger than at least 1 item in the list
+            let mut index:usize = 0;
+            let mut found:bool = false;
+            for i in &self.items.items {
+                if item.3 > i.3 {
+                    found = true;
+                    break;
+                }
+                index += 1;
+            }
+            if found {
+                self.items.items.insert(index, item);
+            } else {
+                self.items.items.push(item);
+            }
+            // trim to LIST_ITEM_HEIGHT and sort by score
+            if self.items.items.len() > LIST_ITEM_HEIGHT as usize {
+                self.items.items.truncate(LIST_ITEM_HEIGHT as usize);
+            }
+            self.items.items.sort_by(|a, b| b.3.partial_cmp(&a.3).unwrap());
         }
     }
 
@@ -176,11 +216,12 @@ fn main() -> Result<(), Box<dyn Error>> {
 // reurn DateTime<FixedOffset> in New York
 fn time_in_new_york (hour_minute:&str) -> DateTime<FixedOffset> {
     let naive_time = NaiveTime::parse_from_str(hour_minute, "%H:%M").unwrap();
-    let local_date = Local::today().naive_local();
+    //let local_date = Local::today().naive_local();
+    let local_date = Local::now().naive_local().date();
     let local_datetime = local_date.and_time(naive_time);
-
-    // TODO: You might need a more robust solution for handling DST.
-    let ny_offset = FixedOffset::west(5 * 3600); // UTC-5 hours for Eastern Standard Time
+    // TODO: need a more robust solution for handling DST.
+    //let ny_offset = FixedOffset::west(5 * 3600); // UTC-5 hours for Eastern Standard Time
+    let ny_offset = FixedOffset::west_opt(5 * 3600).unwrap(); // UTC-5 hours for Eastern Daylight Time
     let ny_datetime = ny_offset.from_local_datetime(&local_datetime).unwrap();
     ny_datetime
 }
@@ -199,7 +240,6 @@ fn run_app<B: Backend>(
             start, now);
         let analysis_day = trading_days[0].clone();
         app_clone.lock().unwrap().set_title(format!("RVAT Scanner {}", &analysis_day.date).as_str());
-        std::mem::drop(app_clone); // don't hold on to the unwrapped app_clone
         let reference_days = trading_days[1..2].to_vec();
         let mut symbol_index:usize = 0;
         while symbol_index < symbols.len() {
@@ -216,7 +256,17 @@ fn run_app<B: Backend>(
                         for bar in bars {
                             let bar_hour = bar.t.hour();
                             let bar_minute = bar.t.minute();
-                            if bar_hour <= utc_hour && bar_minute <= utc_minute {
+                            if bar_hour < utc_hour {
+                                match bar.v.as_u64() {
+                                    Some(v) => {
+                                        volume += v as u64;
+                                    },
+                                    None => {
+                                        println!("volume is not an u64");
+                                    }
+                                }
+                            }
+                            if bar_hour == utc_hour && bar_minute <= utc_minute {
                                 match bar.v.as_u64() {
                                     Some(v) => {
                                         volume += v as u64;
@@ -256,7 +306,11 @@ fn run_app<B: Backend>(
                     }
                 }
             }
-            println!("{}: average_dvat: {}, analysis_dvat: {}", symbol, average_dvat, analysis_dvat);
+            //println!("{}: average_dvat: {}, analysis_dvat: {}", symbol, average_dvat, analysis_dvat);
+            app_clone.lock().unwrap().add_item((String::from(symbol), 
+                                                average_dvat as i64, 
+                                                analysis_dvat as i64, 
+                                                analysis_dvat as f64 / average_dvat as f64));
             symbol_index += 1;
         }
     });
@@ -304,13 +358,14 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .items
         .iter()
         .map(|i| {
-            let mut lines = vec![Spans::from(i.0.as_str())];
-            for _ in 0..i.1 {
-                lines.push(Spans::from(Span::styled(
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    Style::default().add_modifier(Modifier::ITALIC),
-                )));
-            }
+            let line_text = format!("{}: {} / {} = {:.2}", i.0, i.2, i.1, i.3);
+            let lines = vec![Spans::from(Span::raw(line_text))];
+            //for _ in 0..i.1 {
+                //lines.push(Spans::from(Span::styled(
+                    //"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                    //Style::default().add_modifier(Modifier::ITALIC),
+                //)));
+            //}
             ListItem::new(lines).style(Style::default().fg(Color::Black).bg(Color::Black))
         })
         .collect();

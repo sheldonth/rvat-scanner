@@ -36,7 +36,7 @@ const test_stocks = [
 
 const main = async () => {
     let assets = await get_equity_assets()
-    assets = assets.filter(a => {return test_stocks.includes(a.symbol)})
+    //assets = assets.filter(a => {return test_stocks.includes(a.symbol)})
     const days = await trading_days()
     for (const asset of assets) {
         await check_for_folder(asset.symbol)
