@@ -75,17 +75,31 @@ impl AlpacaClient {
 }
 
 pub fn get_calendar(start:DateTime<FixedOffset>, end:DateTime<FixedOffset>) -> Vec<Calendar>{
+    assert!(start < end, "Start date must be before end date");
     let mut headers = header::HeaderMap::new();
-    headers.insert("APCA-API-KEY-ID", header::HeaderValue::from_str(&load_env_var("APCA_API_KEY_ID")).unwrap());
-    headers.insert("APCA-API-SECRET-KEY", header::HeaderValue::from_str(&load_env_var("APCA_API_SECRET_KEY")).unwrap());
-    reqwest::blocking::Client::new()
+    headers.insert("APCA-API-KEY-ID", 
+                   header::HeaderValue::from_str(&load_env_var("APCA_API_KEY_ID")).unwrap());
+    headers.insert("APCA-API-SECRET-KEY", 
+                   header::HeaderValue::from_str(&load_env_var("APCA_API_SECRET_KEY")).unwrap());
+    let response = reqwest::blocking::Client::new()
         .get("https://api.alpaca.markets/v2/calendar")
         .query(&[("start", start.to_rfc3339()), ("end", end.to_rfc3339())])
         .headers(headers)
-        .send()
-        .unwrap()
-        .json::<Vec<Calendar>>()
-        .unwrap()
+        .send();
+    match response {
+        Ok(resp) => {
+            match resp.json::<Vec<Calendar>>() {
+                Ok(mut calendar) => {
+                    calendar.reverse();
+                    calendar
+                },
+                Err(e) => {
+                    panic!("Error parsing calendar response: {}", e)
+                }
+            }
+        },
+        Err(e) => panic!("Error getting calendar: {}", e)
+    }
 }
 
 pub fn get_bars(ticker:&str, timeframe:&str, start:DateTime<FixedOffset>, end:DateTime<FixedOffset>, limit:&str) -> BarResponse{

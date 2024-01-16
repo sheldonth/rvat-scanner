@@ -24,6 +24,8 @@ use tui::{
 
 use rvat_scanner::alpaca::Bar;
 
+use rvat_scanner::alpaca;
+
 type DayBars = HashMap<String, Vec<Bar>>;
 type SymbolDays = HashMap<String, Vec<DayBars>>;
 
@@ -41,6 +43,10 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolDays> {
         // each folder name is a symbol
         let folder_name:String = entry.file_name().into_string().unwrap();
         // read all the files in in the entry folder
+        // ignore .DS_Store files
+        if folder_name == ".DS_Store" {
+            continue;
+        }
         let files:ReadDir = fs::read_dir(entry.path())?;
         let mut v:Vec<DayBars> = Vec::new();
         // iterate files
@@ -165,6 +171,13 @@ fn run_app<B: Backend>(
 ) -> io::Result<()> {
     thread::spawn(move || {
         let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
+        let now = chrono::DateTime::from(chrono::Utc::now());
+        let one_month_ago = now - chrono::Duration::days(30);
+        let trading_days = alpaca::get_calendar(
+            one_month_ago, now);
+        println!("{:#?}", trading_days[0]);
+        let analysis_day = trading_days[0].clone();
+        let reference_days = trading_days[1..].to_vec();
         let mut symbol_index:usize = 0;
         while symbol_index < symbols.len() {
             let symbol:&str = symbols[symbol_index];
