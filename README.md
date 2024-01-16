@@ -13,6 +13,7 @@ API.
 
 Iterate those to load from the cache.
 
+Calculate the cumulative volume at the current time for each    
 
 
 

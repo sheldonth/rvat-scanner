@@ -12,7 +12,7 @@ use std::{
     time::{Duration, Instant},
 };
 use std::thread;
-//use std::sync::{Arc, Mutex};
+use std::sync::{Arc, Mutex};
 use tui::{
     backend::{Backend, CrosstermBackend},
     layout::{Constraint, Direction, Layout},
@@ -21,7 +21,8 @@ use tui::{
     widgets::{Block, Borders, List, ListItem, ListState},
     Frame, Terminal,
 };
-
+use chrono::{DateTime, Timelike, FixedOffset};
+use chrono::{NaiveTime, Local, TimeZone};
 use rvat_scanner::alpaca::Bar;
 
 use rvat_scanner::alpaca;
@@ -50,6 +51,7 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolDays> {
         let files:ReadDir = fs::read_dir(entry.path())?;
         let mut v:Vec<DayBars> = Vec::new();
         // iterate files
+        let mut bars_for_date:DayBars = HashMap::new();
         for file in files {
             let file:DirEntry = file?;
             // get file name
@@ -62,10 +64,9 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolDays> {
             // deserialize file contents
             let bars:Vec<Bar> = serde_json::from_str(&file_contents).unwrap();
             // print file contents
-            let mut bars_for_date:DayBars = HashMap::new();
             bars_for_date.insert(file_name, bars);
-            v.push(bars_for_date);
         }
+        v.push(bars_for_date);
         assert!(v.len() > 0, "no files found in folder: {}", folder_name);
         symbols.insert(folder_name, v);
     }
@@ -116,18 +117,24 @@ impl<T> StatefulList<T> {
     }
 }
 
-struct App<'a> {
-    items: StatefulList<(&'a str, usize)>,
+struct App {
+    items: StatefulList<(String, usize)>,
+    title: String
 }
 
-impl<'a> App<'a> {
-    fn new() -> App<'a> {
+impl App {
+    fn new() -> App {
         App {
             items: StatefulList::with_items(vec![
-                ("Item0", 1),
-                ("Item1", 4)
+                (String::from("Item0"), 1),
+                (String::from("Item1"), 4)
             ]),
+            title: String::from("RVAT Scanner")
         }
+    }
+
+    fn set_title(&mut self, title:&str) {
+        self.title = String::from(title);
     }
 
     fn on_tick(&mut self) {
@@ -145,8 +152,9 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     // create app and run it
     let tick_rate = Duration::from_millis(250);
-    let app = App::new();
-    let res = run_app(&mut terminal, app, tick_rate);
+    //let app = App::new();
+    let app = Arc::new(Mutex::new(App::new()));
+    let res = run_app(&mut terminal, app.clone(), tick_rate);
 
     // restore terminal
     disable_raw_mode()?;
@@ -164,41 +172,103 @@ fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
+// hour_minute is like "04:00"
+// reurn DateTime<FixedOffset> in New York
+fn time_in_new_york (hour_minute:&str) -> DateTime<FixedOffset> {
+    let naive_time = NaiveTime::parse_from_str(hour_minute, "%H:%M").unwrap();
+    let local_date = Local::today().naive_local();
+    let local_datetime = local_date.and_time(naive_time);
+
+    // TODO: You might need a more robust solution for handling DST.
+    let ny_offset = FixedOffset::west(5 * 3600); // UTC-5 hours for Eastern Standard Time
+    let ny_datetime = ny_offset.from_local_datetime(&local_datetime).unwrap();
+    ny_datetime
+}
+
 fn run_app<B: Backend>(
     terminal: &mut Terminal<B>,
-    mut app: App,
+    /*mut */app: Arc<Mutex<App>>,
     tick_rate: Duration,
 ) -> io::Result<()> {
+    let app_clone = app.clone();
     thread::spawn(move || {
         let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
         let now = chrono::DateTime::from(chrono::Utc::now());
-        let one_month_ago = now - chrono::Duration::days(30);
+        let start = now - chrono::Duration::days(60);
         let trading_days = alpaca::get_calendar(
-            one_month_ago, now);
-        println!("{:#?}", trading_days[0]);
+            start, now);
         let analysis_day = trading_days[0].clone();
-        let reference_days = trading_days[1..].to_vec();
+        app_clone.lock().unwrap().set_title(format!("RVAT Scanner {}", &analysis_day.date).as_str());
+        std::mem::drop(app_clone); // don't hold on to the unwrapped app_clone
+        let reference_days = trading_days[1..2].to_vec();
         let mut symbol_index:usize = 0;
         while symbol_index < symbols.len() {
             let symbol:&str = symbols[symbol_index];
             let days:&Vec<DayBars> = SYMBOL_DAYS.get(symbol).unwrap();
-            let mut day_index:usize = 0;
-            //loop {
-                //let day:DayBars = days[day_index];
-                //let mut date_index:usize = 0;
-                //for (date, bars) in day {
-                    //println!("{} {} {}", symbol, date, bars.len());
-                    //date_index += 1;
-                //}
-                //day_index += 1;
-            //}
+            let mut volumes:Vec<u64> = Vec::new();
+            for reference_day in &reference_days {
+                let key = format!("{}.json", reference_day.date);
+                match days[0].get(&key) {
+                    Some(bars) => {
+                        let utc_hour = chrono::Utc::now().hour();
+                        let utc_minute = chrono::Utc::now().minute();
+                        let mut volume:u64 = 0;
+                        for bar in bars {
+                            let bar_hour = bar.t.hour();
+                            let bar_minute = bar.t.minute();
+                            if bar_hour <= utc_hour && bar_minute <= utc_minute {
+                                match bar.v.as_u64() {
+                                    Some(v) => {
+                                        volume += v as u64;
+                                    },
+                                    None => {
+                                        println!("volume is not an u64");
+                                    }
+                                }
+                            }
+                        }
+                        volumes.push(volume);
+                    },
+                    None => {
+                        println!("missing bars for {} on {}", symbol, reference_day.date);
+                    }
+                }
+            }
+            let average_dvat:f64 = volumes.iter().sum::<u64>() as f64 / volumes.len() as f64;
+            let mut session_open_new_york_time:String = analysis_day.session_open.clone();
+            session_open_new_york_time.insert(2, ':');
+            let mut session_close_new_york_time = analysis_day.session_close.clone();
+            session_close_new_york_time.insert(2, ':');
+            let analysis_day_bars = alpaca::get_bars(   symbol,
+                                                        "1Min",
+                                                        time_in_new_york(session_open_new_york_time.as_str()),
+                                                        time_in_new_york(session_close_new_york_time.as_str()),
+                                                        "1000");
+
+            let mut analysis_dvat:u64 = 0;
+            for bar in analysis_day_bars.get_bars() {
+                match bar.v.as_u64() {
+                    Some(v) => {
+                        analysis_dvat += v as u64;
+                    },
+                    None => {
+                        println!("volume is not an u64");
+                    }
+                }
+            }
+            println!("{}: average_dvat: {}, analysis_dvat: {}", symbol, average_dvat, analysis_dvat);
             symbol_index += 1;
         }
     });
 
     let mut last_tick = Instant::now();
     loop {
-        terminal.draw(|f| ui(f, &mut app))?;
+
+        //terminal.draw(|f| ui(f, &mut app))?;
+        terminal.draw(|f| {
+            let mut app = app.lock().unwrap();
+            ui(f, &mut app)
+        })?;
 
         let timeout = tick_rate
             .checked_sub(last_tick.elapsed())
@@ -207,15 +277,15 @@ fn run_app<B: Backend>(
             if let Event::Key(key) = event::read()? {
                 match key.code {
                     KeyCode::Char('q') => return Ok(()),
-                    KeyCode::Left => app.items.unselect(),
-                    KeyCode::Down => app.items.next(),
-                    KeyCode::Up => app.items.previous(),
+                    KeyCode::Left => app.lock().unwrap().items.unselect(),
+                    KeyCode::Down => app.lock().unwrap().items.next(),
+                    KeyCode::Up => app.lock().unwrap().items.previous(),
                     _ => {}
                 }
             }
         }
         if last_tick.elapsed() >= tick_rate {
-            app.on_tick();
+            app.lock().unwrap().on_tick();
             last_tick = Instant::now();
         }
     }
@@ -234,7 +304,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .items
         .iter()
         .map(|i| {
-            let mut lines = vec![Spans::from(i.0)];
+            let mut lines = vec![Spans::from(i.0.as_str())];
             for _ in 0..i.1 {
                 lines.push(Spans::from(Span::styled(
                     "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -247,7 +317,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
 
     // Create a List from all list items and highlight the currently selected one
     let items = List::new(items)
-        .block(Block::default().borders(Borders::ALL).title("List"))
+        .block(Block::default().borders(Borders::ALL).title(app.title.as_str()))
         .highlight_style(
             Style::default()
                 .bg(Color::LightGreen)
