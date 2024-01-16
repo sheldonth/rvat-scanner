@@ -31,7 +31,17 @@ const test_stocks = [
     'MSFT',
     'AMZN',
     'GOOG',
-    'TSLA'
+    'TSLA',
+    'MOR',
+    'RUM',
+    'LAB',
+    'PGY',
+    'TLRY',
+    'ALAR',
+    'REKR',
+    'DAVE',
+    'PROF',
+    'EZFL'
 ]
 
 const main = async () => {
@@ -56,8 +66,9 @@ const main = async () => {
                 end_datetime.setUTCMinutes(day.session_close.slice(2, 4))
                 end_datetime.setUTCSeconds(0)
 
-                const bars = await get_bars(asset.symbol, 
+                let bars = await get_bars(asset.symbol, 
                     start_datetime, end_datetime, '1Min')
+                bars = bars ? bars : []
                 await fs.writeFile(filename, JSON.stringify(bars))
                 console.log("Wrote ", filename)
             }

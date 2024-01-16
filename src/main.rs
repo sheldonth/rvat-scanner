@@ -30,6 +30,8 @@ use rvat_scanner::alpaca;
 type DayBars = HashMap<String, Vec<Bar>>;
 type SymbolDays = HashMap<String, Vec<DayBars>>;
 
+static LIST_ITEM_HEIGHT:u16 = 20;
+
 use lazy_static::lazy_static;
 lazy_static! {
     pub static ref SYMBOL_DAYS:SymbolDays = read_cache_folders(Path::new("cache")).unwrap();
@@ -62,7 +64,13 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolDays> {
             // read file
             let file_contents:String = fs::read_to_string(file_path).unwrap();
             // deserialize file contents
-            let bars:Vec<Bar> = serde_json::from_str(&file_contents).unwrap();
+            let bars:Vec<Bar> = match serde_json::from_str(&file_contents) {
+                Ok(bars) => bars,
+                Err(e) => {
+                    println!("error deserializing file: {} {} {}", e, file_name, file_path.display());
+                    continue;
+                }
+            };
             // print file contents
             bars_for_date.insert(file_name, bars);
         }
@@ -122,15 +130,11 @@ struct App { // Ticker, Average, TodayAnalysis, TodayScore
     title: String
 }
 
-static LIST_ITEM_HEIGHT:u16 = 2;
 
 impl App {
     fn new() -> App {
         App {
-            items: StatefulList::with_items(vec![
-                //(String::from("Item0"), 1),
-                //(String::from("Item1"), 4)
-            ]),
+            items: StatefulList::with_items(vec![ ]),
             title: String::from("RVAT Scanner")
         }
     }
@@ -240,7 +244,7 @@ fn run_app<B: Backend>(
             start, now);
         let analysis_day = trading_days[0].clone();
         app_clone.lock().unwrap().set_title(format!("RVAT Scanner {}", &analysis_day.date).as_str());
-        let reference_days = trading_days[1..2].to_vec();
+        let reference_days = trading_days[1..21].to_vec();
         let mut symbol_index:usize = 0;
         while symbol_index < symbols.len() {
             let symbol:&str = symbols[symbol_index];
@@ -307,6 +311,10 @@ fn run_app<B: Backend>(
                 }
             }
             //println!("{}: average_dvat: {}, analysis_dvat: {}", symbol, average_dvat, analysis_dvat);
+            if average_dvat == 0 as f64 {
+                symbol_index += 1;
+                continue;
+            }
             app_clone.lock().unwrap().add_item((String::from(symbol), 
                                                 average_dvat as i64, 
                                                 analysis_dvat as i64, 

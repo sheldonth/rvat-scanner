@@ -112,7 +112,7 @@ pub fn get_bars(ticker:&str, timeframe:&str, start:DateTime<FixedOffset>, end:Da
     let mut headers = header::HeaderMap::new();
     headers.insert("APCA-API-KEY-ID", header::HeaderValue::from_str(&load_env_var("APCA_API_KEY_ID")).unwrap());
     headers.insert("APCA-API-SECRET-KEY", header::HeaderValue::from_str(&load_env_var("APCA_API_SECRET_KEY")).unwrap());
-    let mut resp = reqwest::blocking::Client::new()
+    let mut resp = match reqwest::blocking::Client::new()
         .get(format!("https://data.alpaca.markets/v2/stocks/{ticker}/bars"))
         .query(&[   ("limit", limit), 
                     ("timeframe", timeframe), 
@@ -121,10 +121,27 @@ pub fn get_bars(ticker:&str, timeframe:&str, start:DateTime<FixedOffset>, end:Da
                     ("end", end.to_rfc3339().as_str())
                 ])
         .headers(headers)
-        .send()
-        .unwrap()
-        .json::<BarResponse>()
-        .unwrap();
+        .send() {
+            Ok(response) => {
+                match response.json::<BarResponse>() {
+                    Ok(resp) => resp,
+                    Err(_) => {
+                        //println!("Error parsing bar response: {} {}", e, response.text().unwrap());
+                        BarResponse {
+                            symbol: String::from(ticker),
+                            bars: Vec::new()
+                        }
+                    }
+                }
+            },
+            Err(e) => {
+                println!("Error getting bars: {}", e);
+                BarResponse {
+                    symbol: String::from(ticker),
+                    bars: Vec::new()
+                }
+            }
+        };
     resp.bars.reverse(); // reverse the bars so they start with most recent
     resp
 }
