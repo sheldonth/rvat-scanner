@@ -48,7 +48,7 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<Vec<String>> {
         }
         symbols.push(folder_name);
     }
-    assert!(symbols.len() > 0, "no symbols found in cache");
+    assert!(symbols.len() > 0, "no symbols found in cache, run node build_cache.js first");
     Ok(symbols)
 }
 
