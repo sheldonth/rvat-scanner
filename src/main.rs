@@ -97,7 +97,8 @@ struct Analysis {
     symbol:String,
     average_dvat:u64,
     analysis_dvat:u64,
-    score:f64
+    score:f64,
+    pnl_change_percent:f64
 }
 
 struct App { 
@@ -220,11 +221,12 @@ fn run_app<B: Backend>(
         let analysis_day = trading_days[0].clone();
         let reference_days = trading_days[1..18].to_vec();
         let mut symbol_index:usize = 0;
+        let mut loops = 0;
         while symbol_index < SYMBOLS.len() {
             let progress = (symbol_index as f64 / SYMBOLS.len() as f64) * 100.0;
             let progress = (progress * 10.0).round() / 10.0;
             let progress_string = format!("{}%", progress);
-            let title = format!("RVAT Scanner {} {}", &analysis_day.date.as_str(), progress_string);
+            let title = format!("RVAT Scanner {} {} ({})", &analysis_day.date.as_str(), progress_string, loops);
             app_clone.lock().unwrap().set_title(title.as_str());
             let symbol:&str = SYMBOLS[symbol_index].as_str();
             let mut volumes:Vec<u64> = Vec::new();
@@ -297,6 +299,25 @@ fn run_app<B: Backend>(
                     }
                 }
             }
+            // find the % change from the 0th bar to the last bar
+            let mut pnl_change_percent:f64 = 0.0;
+            if analysis_day_bars.get_bars().len() == 0 {
+                symbol_index += 1;
+                continue;
+            }
+            let first_bar = &analysis_day_bars.get_bars()[0].c;
+            let last_bar =  &analysis_day_bars.get_bars()[analysis_day_bars.get_bars().len() - 1].c;
+            match first_bar.as_f64() {
+                Some(first_bar) => {
+                    match last_bar.as_f64() {
+                        Some(last_bar) => {
+                            pnl_change_percent = (first_bar - last_bar) / first_bar;
+                        },
+                        None => { }
+                    }
+                },
+                None => { }
+            }
             /*
              * where do you cut off average_dvat?
              * this value is the average of the last 17 days
@@ -309,8 +330,9 @@ fn run_app<B: Backend>(
              * divisor is so low
              *
              * let's start with 350
+             * now trying 1000
              */
-            if average_dvat < 350 as f64 {
+            if average_dvat < 1000 as f64 {
                 symbol_index += 1;
                 continue;
             }
@@ -322,11 +344,13 @@ fn run_app<B: Backend>(
                 symbol:String::from(symbol),
                 average_dvat:average_dvat as u64,
                 analysis_dvat:analysis_dvat as u64,
-                score:analysis_dvat as f64 / average_dvat as f64
+                score:analysis_dvat as f64 / average_dvat as f64,
+                pnl_change_percent
             });
             symbol_index += 1;
             if symbol_index == SYMBOLS.len() {
                 symbol_index = 0;
+                loops += 1;
             }
         }
     });
@@ -374,7 +398,8 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .items
         .iter()
         .map(|i| {
-            let line_text = format!("{}: {} / {} = {:.2}", i.symbol, i.analysis_dvat, i.average_dvat, i.score);
+            let line_text = format!("{}: {} / {} = {:.2} ({:.2}%)",
+                i.symbol, i.analysis_dvat, i.average_dvat, i.score, i.pnl_change_percent * 100.0);
             let lines = vec![Spans::from(Span::raw(line_text))];
             ListItem::new(lines).style(Style::default().fg(Color::Black).bg(Color::Black))
         })

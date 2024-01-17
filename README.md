@@ -24,7 +24,6 @@ export APCA_API_SECRET_KEY='YOURSECRET'
 ```
 
 Immediate Work Items:
-1. Need the daily change % for each issue in the list
 3. Possibly another thread that updates those who are on the LIST more
 frequently than the primary worker thread.
 4. Make build_cache.js delete cache entries older than 25 days.
