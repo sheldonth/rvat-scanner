@@ -401,7 +401,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
             let line_text = format!("{}: {} / {} = {:.2} ({:.2}%)",
                 i.symbol, i.analysis_dvat, i.average_dvat, i.score, i.pnl_change_percent * 100.0);
             let lines = vec![Spans::from(Span::raw(line_text))];
-            ListItem::new(lines).style(Style::default().fg(Color::Black).bg(Color::Black))
+            ListItem::new(lines).style(Style::default().fg(Color::White).bg(Color::Black))
         })
         .collect();
 
