@@ -27,18 +27,21 @@ use rvat_scanner::alpaca::Bar;
 
 use rvat_scanner::alpaca;
 
-type DayBars = HashMap<String, Vec<Bar>>;
-type SymbolDays = HashMap<String, Vec<DayBars>>;
+//type DayBars = HashMap<String, Vec<Bar>>;
+//type SymbolDays = HashMap<String, Vec<DayBars>>;
+//type SymbolDays = HashMap<String, Vec<ReadDir>>;
 
 static LIST_ITEM_HEIGHT:u16 = 20;
 
 use lazy_static::lazy_static;
 lazy_static! {
-    pub static ref SYMBOL_DAYS:SymbolDays = read_cache_folders(Path::new("cache")).unwrap();
+    //pub static ref SYMBOL_DAYS:SymbolDays = read_cache_folders(Path::new("cache")).unwrap();
+    pub static ref SYMBOLS:Vec<String> = read_cache_folders(Path::new("cache")).unwrap();
 }
 
-fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolDays> {
-    let mut symbols:SymbolDays = HashMap::new();
+fn read_cache_folders(folder_path:&Path) -> io::Result<Vec<String>> {
+    //let mut symbols:SymbolDays = HashMap::new();
+    let mut symbols:Vec<String> = Vec::new();
     // read the folders in the '../cache' directory
     let entries:ReadDir = fs::read_dir(folder_path)?;
     for entry in entries {
@@ -50,33 +53,7 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<SymbolDays> {
         if folder_name == ".DS_Store" {
             continue;
         }
-        let files:ReadDir = fs::read_dir(entry.path())?;
-        let mut v:Vec<DayBars> = Vec::new();
-        // iterate files
-        let mut bars_for_date:DayBars = HashMap::new();
-        for file in files {
-            let file:DirEntry = file?;
-            // get file name
-            let file_name:String = file.file_name().into_string().unwrap();
-            // get file path
-            let file_path_buf:PathBuf = file.path();
-            let file_path:&Path = file_path_buf.as_path();
-            // read file
-            let file_contents:String = fs::read_to_string(file_path).unwrap();
-            // deserialize file contents
-            let bars:Vec<Bar> = match serde_json::from_str(&file_contents) {
-                Ok(bars) => bars,
-                Err(e) => {
-                    println!("error deserializing file: {} {} {}", e, file_name, file_path.display());
-                    continue;
-                }
-            };
-            // print file contents
-            bars_for_date.insert(file_name, bars);
-        }
-        v.push(bars_for_date);
-        assert!(v.len() > 0, "no files found in folder: {}", folder_name);
-        symbols.insert(folder_name, v);
+        symbols.push(folder_name);
     }
     assert!(symbols.len() > 0, "no symbols found in cache");
     Ok(symbols)
@@ -125,8 +102,15 @@ impl<T> StatefulList<T> {
     }
 }
 
-struct App { // Ticker, Average, TodayAnalysis, TodayScore
-    items: StatefulList<(String, i64, i64, f64)>,
+struct Analysis {
+    symbol:String,
+    average_dvat:u64,
+    analysis_dvat:u64,
+    score:f64
+}
+
+struct App { 
+    items: StatefulList<Analysis>,
     title: String
 }
 
@@ -139,12 +123,12 @@ impl App {
         }
     }
 
-    fn add_item(&mut self, item:(String, i64, i64, f64)) {
+    fn add_analysis(&mut self, item:Analysis) {
         // find the entry in items for the ticker
         let mut index:usize = 0;
         let mut found:bool = false;
         for i in &self.items.items {
-            if i.0 == item.0 {
+            if i.symbol == item.symbol {
                 found = true;
                 break;
             }
@@ -158,7 +142,7 @@ impl App {
             let mut index:usize = 0;
             let mut found:bool = false;
             for i in &self.items.items {
-                if item.3 > i.3 {
+                if item.score > i.score {
                     found = true;
                     break;
                 }
@@ -173,7 +157,7 @@ impl App {
             if self.items.items.len() > LIST_ITEM_HEIGHT as usize {
                 self.items.items.truncate(LIST_ITEM_HEIGHT as usize);
             }
-            self.items.items.sort_by(|a, b| b.3.partial_cmp(&a.3).unwrap());
+            self.items.items.sort_by(|a, b| b.score.partial_cmp(&a.score).unwrap());
         }
     }
 
@@ -237,56 +221,63 @@ fn run_app<B: Backend>(
 ) -> io::Result<()> {
     let app_clone = app.clone();
     thread::spawn(move || {
-        let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
+        //let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
         let now = chrono::DateTime::from(chrono::Utc::now());
         let start = now - chrono::Duration::days(60);
         let trading_days = alpaca::get_calendar(
             start, now);
         let analysis_day = trading_days[0].clone();
         app_clone.lock().unwrap().set_title(format!("RVAT Scanner {}", &analysis_day.date).as_str());
-        let reference_days = trading_days[1..21].to_vec();
+        let reference_days = trading_days[1..18].to_vec();
         let mut symbol_index:usize = 0;
-        while symbol_index < symbols.len() {
-            let symbol:&str = symbols[symbol_index];
-            let days:&Vec<DayBars> = SYMBOL_DAYS.get(symbol).unwrap();
+        while symbol_index < SYMBOLS.len() {
+            let symbol:&str = SYMBOLS[symbol_index].as_str();
             let mut volumes:Vec<u64> = Vec::new();
             for reference_day in &reference_days {
                 let key = format!("{}.json", reference_day.date);
-                match days[0].get(&key) {
-                    Some(bars) => {
-                        let utc_hour = chrono::Utc::now().hour();
-                        let utc_minute = chrono::Utc::now().minute();
-                        let mut volume:u64 = 0;
-                        for bar in bars {
-                            let bar_hour = bar.t.hour();
-                            let bar_minute = bar.t.minute();
-                            if bar_hour < utc_hour {
-                                match bar.v.as_u64() {
-                                    Some(v) => {
-                                        volume += v as u64;
-                                    },
-                                    None => {
-                                        println!("volume is not an u64");
-                                    }
-                                }
-                            }
-                            if bar_hour == utc_hour && bar_minute <= utc_minute {
-                                match bar.v.as_u64() {
-                                    Some(v) => {
-                                        volume += v as u64;
-                                    },
-                                    None => {
-                                        println!("volume is not an u64");
-                                    }
-                                }
+                let bar_data_path = format!("cache/{}/{}", symbol, key);
+                let bar_data = match fs::read_to_string(bar_data_path.clone()) {
+                    Ok(bar_data) => bar_data,
+                    Err(e) => {
+                        println!("error reading file: {} {} {}", e, key, bar_data_path);
+                        continue;
+                    }
+                };
+                let bars:Vec<Bar> = match serde_json::from_str(&bar_data) {
+                    Ok(bars) => bars,
+                    Err(e) => {
+                        println!("error deserializing file: {} {} {}", e, key, bar_data_path);
+                        continue;
+                    }
+                };
+                let utc_hour = chrono::Utc::now().hour();
+                let utc_minute = chrono::Utc::now().minute();
+                let mut volume:u64 = 0;
+                for bar in bars {
+                    let bar_hour = bar.t.hour();
+                    let bar_minute = bar.t.minute();
+                    if bar_hour < utc_hour {
+                        match bar.v.as_u64() {
+                            Some(v) => {
+                                volume += v as u64;
+                            },
+                            None => {
+                                println!("volume is not an u64");
                             }
                         }
-                        volumes.push(volume);
-                    },
-                    None => {
-                        println!("missing bars for {} on {}", symbol, reference_day.date);
+                    }
+                    if bar_hour == utc_hour && bar_minute <= utc_minute {
+                        match bar.v.as_u64() {
+                            Some(v) => {
+                                volume += v as u64;
+                            },
+                            None => {
+                                println!("volume is not an u64");
+                            }
+                        }
                     }
                 }
+                volumes.push(volume);
             }
             let average_dvat:f64 = volumes.iter().sum::<u64>() as f64 / volumes.len() as f64;
             let mut session_open_new_york_time:String = analysis_day.session_open.clone();
@@ -310,16 +301,24 @@ fn run_app<B: Backend>(
                     }
                 }
             }
-            //println!("{}: average_dvat: {}, analysis_dvat: {}", symbol, average_dvat, analysis_dvat);
-            if average_dvat == 0 as f64 {
+            if average_dvat as u64 == 0 {
                 symbol_index += 1;
                 continue;
             }
-            app_clone.lock().unwrap().add_item((String::from(symbol), 
-                                                average_dvat as i64, 
-                                                analysis_dvat as i64, 
-                                                analysis_dvat as f64 / average_dvat as f64));
+            if analysis_dvat == 0 as u64 {
+                symbol_index += 1;
+                continue;
+            }
+            app_clone.lock().unwrap().add_analysis(Analysis {
+                symbol:String::from(symbol),
+                average_dvat:average_dvat as u64,
+                analysis_dvat:analysis_dvat as u64,
+                score:analysis_dvat as f64 / average_dvat as f64
+            });
             symbol_index += 1;
+            if symbol_index == SYMBOLS.len() {
+                symbol_index = 0;
+            }
         }
     });
 
@@ -366,14 +365,8 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .items
         .iter()
         .map(|i| {
-            let line_text = format!("{}: {} / {} = {:.2}", i.0, i.2, i.1, i.3);
+            let line_text = format!("{}: {} / {} = {:.2}", i.symbol, i.analysis_dvat, i.average_dvat, i.score);
             let lines = vec![Spans::from(Span::raw(line_text))];
-            //for _ in 0..i.1 {
-                //lines.push(Spans::from(Span::styled(
-                    //"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                    //Style::default().add_modifier(Modifier::ITALIC),
-                //)));
-            //}
             ListItem::new(lines).style(Style::default().fg(Color::Black).bg(Color::Black))
         })
         .collect();
