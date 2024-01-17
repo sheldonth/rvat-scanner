@@ -20,12 +20,14 @@ use tui::{
     widgets::{Block, Borders, List, ListItem, ListState},
     Frame, Terminal,
 };
-use chrono::{DateTime, Timelike, FixedOffset};
-use chrono::{NaiveTime, Local, TimeZone};
+use chrono::{Timelike};
+use chrono::{DateTime, Local, NaiveTime, TimeZone, FixedOffset};
+//use chrono_tz::America::New_York;
+//use chrono::{Utc, Offset};
 use rvat_scanner::alpaca::Bar;
 use rvat_scanner::alpaca;
 
-static LIST_ITEM_HEIGHT:u16 = 30;
+static LIST_ITEM_HEIGHT:u16 = 40;
 
 use lazy_static::lazy_static;
 lazy_static! {
@@ -205,6 +207,24 @@ fn time_in_new_york (hour_minute:&str) -> DateTime<FixedOffset> {
     let ny_datetime = ny_offset.from_local_datetime(&local_datetime).unwrap();
     ny_datetime
 }
+
+//fn time_in_new_york(hour_minute: &str) -> DateTime<FixedOffset> {
+    //let naive_time = NaiveTime::parse_from_str(hour_minute, "%H:%M").unwrap();
+    //let local_date = Local::now().naive_local().date();
+    //let local_datetime = local_date.and_time(naive_time);
+
+    //// Find the equivalent UTC datetime
+    //let utc_datetime = Utc.from_local_datetime(&local_datetime).unwrap();
+    //let naive_utc_datetime = utc_datetime.naive_utc();
+    //// Convert the UTC datetime to New York time, considering DST
+    //let ny_datetime_with_tz = New_York.from_utc_datetime(&naive_utc_datetime);
+
+    //// Extract the fixed offset
+    //let fixed_offset = ny_datetime_with_tz.offset().fix();
+
+    //// Apply the fixed offset to the original naive datetime
+    //fixed_offset.from_local_datetime(&local_datetime).unwrap()
+//}
 
 fn run_app<B: Backend>(
     terminal: &mut Terminal<B>,
