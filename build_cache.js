@@ -29,25 +29,17 @@ const check_for_folder = async (folder) => {
 const test_stocks = [
     'AAPL',
     'MSFT',
-    'AMZN',
-    'GOOG',
-    'TSLA',
-    'MOR',
-    'RUM',
-    'LAB',
-    'PGY',
-    'TLRY',
-    'ALAR',
-    'REKR',
-    'DAVE',
-    'PROF',
-    'EZFL'
 ]
 
 const main = async () => {
     let assets = await get_equity_assets()
     //assets = assets.filter(a => {return test_stocks.includes(a.symbol)})
     const days = await trading_days()
+    try {
+        await fs.access('cache')
+    } catch (e) {
+        await fs.mkdir('cache')
+    }
     for (const asset of assets) {
         await check_for_folder(asset.symbol)
         const cache_folder = path.join(__dirname, 'cache', asset.symbol)
