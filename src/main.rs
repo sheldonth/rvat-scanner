@@ -104,7 +104,9 @@ struct Analysis {
 }
 
 struct App { 
-    items: StatefulList<Analysis>,
+    //items: StatefulList<Analysis>,
+    items:Vec<Analysis>,
+    table_state: TableState,
     title: String
 }
 
@@ -112,8 +114,10 @@ struct App {
 impl App {
     fn new() -> App {
         App {
-            items: StatefulList::with_items(vec![ ]),
-            title: String::from("RVAT Scanner")
+            //items: StatefulList::with_items(vec![ ]),
+            items: Vec::new(),
+            title: String::from("RVAT Scanner"),
+            table_state: TableState::default()
         }
     }
 
@@ -121,7 +125,7 @@ impl App {
         // find the entry in items for the ticker
         let mut index:usize = 0;
         let mut found:bool = false;
-        for i in &self.items.items {
+        for i in &self.items {
             if i.symbol == item.symbol {
                 found = true;
                 break;
@@ -130,12 +134,12 @@ impl App {
         }
         if found {
             // update the entry
-            self.items.items[index] = item;
+            self.items[index] = item;
         } else {
             // check if item is bigger than at least 1 item in the list
             let mut index:usize = 0;
             let mut found:bool = false;
-            for i in &self.items.items {
+            for i in &self.items {
                 if item.score > i.score {
                     found = true;
                     break;
@@ -143,15 +147,15 @@ impl App {
                 index += 1;
             }
             if found {
-                self.items.items.insert(index, item);
+                self.items.insert(index, item);
             } else {
-                self.items.items.push(item);
+                self.items.push(item);
             }
             // trim to LIST_ITEM_HEIGHT and sort by score
-            if self.items.items.len() > LIST_ITEM_HEIGHT as usize {
-                self.items.items.truncate(LIST_ITEM_HEIGHT as usize);
+            if self.items.len() > LIST_ITEM_HEIGHT as usize {
+                self.items.truncate(LIST_ITEM_HEIGHT as usize);
             }
-            self.items.items.sort_by(|a, b| b.score.partial_cmp(&a.score).unwrap());
+            self.items.sort_by(|a, b| b.score.partial_cmp(&a.score).unwrap());
         }
     }
 
@@ -233,7 +237,6 @@ fn run_app<B: Backend>(
 ) -> io::Result<()> {
     let app_clone = app.clone();
     thread::spawn(move || {
-        //let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
         let now = chrono::DateTime::from(chrono::Utc::now());
         let start = now - chrono::Duration::days(60);
         let trading_days = alpaca::get_calendar(
@@ -346,8 +349,8 @@ fn run_app<B: Backend>(
              * a score of 35513855 / 16164 = 2195.5 is absurdly high and 
              * what we are looking for.
              *
-             * 61000 / 20 = 3005 is a better score but it's because the 
-             * divisor is so low
+             * 61000 / 20 = 3005 is a better score (because 3005 > 2195) but 
+             * it's because the divisor is so low
              *
              * let's start with 350
              * now trying 1000
@@ -391,9 +394,12 @@ fn run_app<B: Backend>(
             if let Event::Key(key) = event::read()? {
                 match key.code {
                     KeyCode::Char('q') => return Ok(()),
-                    KeyCode::Left => app.lock().unwrap().items.unselect(),
-                    KeyCode::Down => app.lock().unwrap().items.next(),
-                    KeyCode::Up => app.lock().unwrap().items.previous(),
+                    //KeyCode::Left => app.lock().unwrap().items.unselect(),
+                    KeyCode::Left => app.lock().unwrap().table_state.select(None),
+                    //KeyCode::Down => app.lock().unwrap().items.next(),
+                    KeyCode::Down => app.lock().unwrap().table_state.select(Some(1)),
+                    //KeyCode::Up => app.lock().unwrap().items.previous(),
+                    KeyCode::Up => app.lock().unwrap().table_state.select(Some(0)),
                     _ => {}
                 }
             }
@@ -405,38 +411,86 @@ fn run_app<B: Backend>(
     }
 }
 
+use tui::widgets::{Row, Table, Cell, TableState};
+
 fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
-    // Create two chunks with equal horizontal screen space
-    let chunks = Layout::default()
-        .direction(Direction::Horizontal)
+    let rects = Layout::default()
         .constraints([Constraint::Percentage(100)].as_ref())
+        .margin(5)
         .split(f.size());
 
-    // Iterate through all elements in the `items` app and append some debug text to it.
-    let items: Vec<ListItem> = app
-        .items
-        .items
+    let selected_style = Style::default().add_modifier(Modifier::REVERSED);
+    let normal_style = Style::default().bg(Color::Blue);
+    let header_cells = ["Header1", "Header2", "Header3"]
         .iter()
-        .map(|i| {
-            let line_text = format!("{}: {} / {} = {:.2} ({:.2}%)",
-                i.symbol, i.analysis_dvat, i.average_dvat, i.score, i.pnl_change_percent * 100.0);
-            let lines = vec![Spans::from(Span::raw(line_text))];
-            ListItem::new(lines).style(Style::default().fg(Color::White).bg(Color::Black))
-        })
-        .collect();
+        .map(|h| Cell::from(*h).style(Style::default().fg(Color::Red)));
+    let header = Row::new(header_cells)
+        .style(normal_style)
+        .height(1)
+        .bottom_margin(1);
+    let rows = app.items.iter().map(|item| {
+        let height = 1;
 
-    // Create a List from all list items and highlight the currently selected one
-    let items = List::new(items)
-        .block(Block::default().borders(Borders::ALL).title(app.title.as_str()))
-        .highlight_style(
-            Style::default()
-                .bg(Color::LightGreen)
-                .add_modifier(Modifier::BOLD),
-        )
-        .highlight_symbol("> ");
+        let cell_contents = [
+            item.symbol.clone(),
+            item.analysis_dvat.to_string().clone(),
+            item.average_dvat.to_string().clone(),
+            format!("{:.2}", item.score).clone(),
+            format!("{:.2}", item.pnl_change_percent * 100.0).clone()
+        ];
+        //let cell_contents = [
+            //item.symbol.as_str(),
+            //item.analysis_dvat.to_string().as_str(),
+            //item.average_dvat.to_string().as_str(),
+            //format!("{:.2}", item.score).as_str(),
+            //format!("{:.2}", item.pnl_change_percent * 100.0).as_str()
+        //];
+        //let cells = cell_contents.iter().map(|c| Cell::from(*c));
+        let cells = cell_contents.into_iter().map(|c| Cell::from(c.clone()));
+        Row::new(cells).height(height as u16).bottom_margin(1)
+    });
+    let t = Table::new(rows)
+        .header(header)
+        .block(Block::default().borders(Borders::ALL).title("Table"))
+        .highlight_style(selected_style)
+        .highlight_symbol(">> ")
+        .widths(&[
+            Constraint::Percentage(50),
+            Constraint::Length(30),
+            Constraint::Min(10),
+        ]);
+    f.render_stateful_widget(t, rects[0], &mut app.table_state);
+    // Create two chunks with equal horizontal screen space
+    //let chunks = Layout::default()
+        //.direction(Direction::Horizontal)
+        //.constraints([Constraint::Percentage(100)].as_ref())
+        //.split(f.size());
 
-    // We can now render the item list
-    f.render_stateful_widget(items, chunks[0], &mut app.items.state);
+    //// Iterate through all elements in the `items` app and append some debug text to it.
+    //let items: Vec<ListItem> = app
+        //.items
+        //.items
+        //.iter()
+        //.map(|i| {
+            //let line_text = format!("{}: {} / {} = {:.2} ({:.2}%)",
+                //i.symbol, i.analysis_dvat, i.average_dvat, i.score, i.pnl_change_percent * 100.0);
+            //let lines = vec![Spans::from(Span::raw(line_text))];
+            //ListItem::new(lines).style(Style::default().fg(Color::White).bg(Color::Black))
+        //})
+        //.collect();
+
+    //// Create a List from all list items and highlight the currently selected one
+    //let items = List::new(items)
+        //.block(Block::default().borders(Borders::ALL).title(app.title.as_str()))
+        //.highlight_style(
+            //Style::default()
+                //.bg(Color::LightGreen)
+                //.add_modifier(Modifier::BOLD),
+        //)
+        //.highlight_symbol("> ");
+
+    //// We can now render the item list
+    //f.render_stateful_widget(items, chunks[0], &mut app.items.state);
 }
 
 
