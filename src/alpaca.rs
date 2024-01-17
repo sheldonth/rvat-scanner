@@ -1,4 +1,4 @@
-use reqwest::{ClientBuilder, header, Response};
+use reqwest::{ClientBuilder, header};
 use chrono::{DateTime, FixedOffset};
 use std::env;
 use serde::Deserialize;
@@ -41,7 +41,7 @@ pub struct Bar {
 
 #[derive(Deserialize, Debug, Clone)]
 pub struct BarResponse {
-    symbol: String,
+    //symbol: String,
     bars: Vec<Bar>,
 }
 
@@ -128,7 +128,7 @@ pub fn get_bars(ticker:&str, timeframe:&str, start:DateTime<FixedOffset>, end:Da
                     Err(_) => {
                         //println!("Error parsing bar response: {} {}", e, response.text().unwrap());
                         BarResponse {
-                            symbol: String::from(ticker),
+                            //symbol: String::from(ticker),
                             bars: Vec::new()
                         }
                     }
@@ -137,7 +137,7 @@ pub fn get_bars(ticker:&str, timeframe:&str, start:DateTime<FixedOffset>, end:Da
             Err(e) => {
                 println!("Error getting bars: {}", e);
                 BarResponse {
-                    symbol: String::from(ticker),
+                    //symbol: String::from(ticker),
                     bars: Vec::new()
                 }
             }
@@ -156,13 +156,6 @@ mod tests {
         let start = chrono::DateTime::parse_from_rfc3339("2021-01-10T00:00:00-05:00").unwrap();
         let calendar = super::get_calendar(start, end);
         assert!(calendar.len() > 0, "Calendar is empty");
-    }
-
-    #[test]
-    fn test_get_bars() {
-
-        //let bars = super::get_bars("AAPL", "1Min", "1000");
-        //println!("{:#?}", bars.bars);
     }
 }
 

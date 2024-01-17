@@ -1,7 +1,6 @@
 use std::io;
 use std::fs::{self, DirEntry, ReadDir};
-use std::path::{Path, PathBuf};
-use std::collections::HashMap;
+use std::path::{Path};
 use crossterm::{
     event::{self, DisableMouseCapture, EnableMouseCapture, Event, KeyCode},
     execute,
@@ -24,23 +23,16 @@ use tui::{
 use chrono::{DateTime, Timelike, FixedOffset};
 use chrono::{NaiveTime, Local, TimeZone};
 use rvat_scanner::alpaca::Bar;
-
 use rvat_scanner::alpaca;
 
-//type DayBars = HashMap<String, Vec<Bar>>;
-//type SymbolDays = HashMap<String, Vec<DayBars>>;
-//type SymbolDays = HashMap<String, Vec<ReadDir>>;
-
-static LIST_ITEM_HEIGHT:u16 = 20;
+static LIST_ITEM_HEIGHT:u16 = 30;
 
 use lazy_static::lazy_static;
 lazy_static! {
-    //pub static ref SYMBOL_DAYS:SymbolDays = read_cache_folders(Path::new("cache")).unwrap();
     pub static ref SYMBOLS:Vec<String> = read_cache_folders(Path::new("cache")).unwrap();
 }
 
 fn read_cache_folders(folder_path:&Path) -> io::Result<Vec<String>> {
-    //let mut symbols:SymbolDays = HashMap::new();
     let mut symbols:Vec<String> = Vec::new();
     // read the folders in the '../cache' directory
     let entries:ReadDir = fs::read_dir(folder_path)?;
@@ -48,7 +40,6 @@ fn read_cache_folders(folder_path:&Path) -> io::Result<Vec<String>> {
         let entry:DirEntry = entry?;
         // each folder name is a symbol
         let folder_name:String = entry.file_name().into_string().unwrap();
-        // read all the files in in the entry folder
         // ignore .DS_Store files
         if folder_name == ".DS_Store" {
             continue;
@@ -227,10 +218,14 @@ fn run_app<B: Backend>(
         let trading_days = alpaca::get_calendar(
             start, now);
         let analysis_day = trading_days[0].clone();
-        app_clone.lock().unwrap().set_title(format!("RVAT Scanner {}", &analysis_day.date).as_str());
         let reference_days = trading_days[1..18].to_vec();
         let mut symbol_index:usize = 0;
         while symbol_index < SYMBOLS.len() {
+            let progress = (symbol_index as f64 / SYMBOLS.len() as f64) * 100.0;
+            let progress = (progress * 10.0).round() / 10.0;
+            let progress_string = format!("{}%", progress);
+            let title = format!("RVAT Scanner {} {}", &analysis_day.date.as_str(), progress_string);
+            app_clone.lock().unwrap().set_title(title.as_str());
             let symbol:&str = SYMBOLS[symbol_index].as_str();
             let mut volumes:Vec<u64> = Vec::new();
             for reference_day in &reference_days {
@@ -279,16 +274,17 @@ fn run_app<B: Backend>(
                 }
                 volumes.push(volume);
             }
+
             let average_dvat:f64 = volumes.iter().sum::<u64>() as f64 / volumes.len() as f64;
             let mut session_open_new_york_time:String = analysis_day.session_open.clone();
             session_open_new_york_time.insert(2, ':');
             let mut session_close_new_york_time = analysis_day.session_close.clone();
             session_close_new_york_time.insert(2, ':');
-            let analysis_day_bars = alpaca::get_bars(   symbol,
-                                                        "1Min",
-                                                        time_in_new_york(session_open_new_york_time.as_str()),
-                                                        time_in_new_york(session_close_new_york_time.as_str()),
-                                                        "1000");
+            let analysis_day_bars = alpaca::get_bars( symbol,
+                                                      "1Min",
+                                                      time_in_new_york(session_open_new_york_time.as_str()),
+                                                      time_in_new_york(session_close_new_york_time.as_str()),
+                                                      "1000");
 
             let mut analysis_dvat:u64 = 0;
             for bar in analysis_day_bars.get_bars() {
@@ -301,7 +297,20 @@ fn run_app<B: Backend>(
                     }
                 }
             }
-            if average_dvat as u64 == 0 {
+            /*
+             * where do you cut off average_dvat?
+             * this value is the average of the last 17 days
+             * if it's absurdly low and the stock is highly illiquid,
+             * we get a false positive high score.
+             * a score of 35513855 / 16164 = 2195.5 is absurdly high and 
+             * what we are looking for.
+             *
+             * 61000 / 20 = 3005 is a better score but it's because the 
+             * divisor is so low
+             *
+             * let's start with 350
+             */
+            if average_dvat < 350 as f64 {
                 symbol_index += 1;
                 continue;
             }
@@ -379,7 +388,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
                 .bg(Color::LightGreen)
                 .add_modifier(Modifier::BOLD),
         )
-        .highlight_symbol(">> ");
+        .highlight_symbol("> ");
 
     // We can now render the item list
     f.render_stateful_widget(items, chunks[0], &mut app.items.state);
