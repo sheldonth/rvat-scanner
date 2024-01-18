@@ -27,7 +27,7 @@ use chrono::{DateTime, Local, NaiveTime, TimeZone, FixedOffset};
 use rvat_scanner::alpaca::Bar;
 use rvat_scanner::alpaca;
 
-static LIST_ITEM_HEIGHT:u16 = 40;
+static LIST_ITEM_HEIGHT:u16 = 50;
 
 use lazy_static::lazy_static;
 lazy_static! {
@@ -226,7 +226,7 @@ fn time_in_new_york (hour_minute:&str) -> DateTime<FixedOffset> {
     //fixed_offset.from_local_datetime(&local_datetime).unwrap()
 //}
 
-static THREADS:usize = 4;
+static THREADS:usize = 5;
 
 fn run_app<B: Backend>(
     terminal: &mut Terminal<B>,
@@ -277,13 +277,13 @@ fn run_app<B: Backend>(
                     let bar_data_path = format!("cache/{}/{}", symbol, key);
                     let bar_data = match fs::read_to_string(bar_data_path.clone()) {
                         Ok(bar_data) => bar_data,
-                        Err(e) => {
+                        Err(_) => {
                             continue;
                         }
                     };
                     let bars:Vec<Bar> = match serde_json::from_str(&bar_data) {
                         Ok(bars) => bars,
-                        Err(e) => {
+                        Err(_) => {
                             continue;
                         }
                     };
@@ -373,11 +373,9 @@ fn run_app<B: Backend>(
                  * now trying 1000
                  */
                 if average_dvat < 1000 as f64 {
-                    //symbol_index += 1;
                     continue;
                 }
                 if analysis_dvat == 0 as u64 {
-                    //symbol_index += 1;
                     continue;
                 }
                 app_clone.lock().unwrap().add_analysis(Analysis {
@@ -387,11 +385,6 @@ fn run_app<B: Backend>(
                     score:analysis_dvat as f64 / average_dvat as f64,
                     pnl_change_percent
                 });
-                //symbol_index += 1;
-                //if symbol_index == SYMBOLS.len() {
-                    //symbol_index = 0;
-                    //loops += 1;
-                //}
             }
         });
     }
@@ -399,7 +392,6 @@ fn run_app<B: Backend>(
     let mut last_tick = Instant::now();
     loop {
 
-        //terminal.draw(|f| ui(f, &mut app))?;
         terminal.draw(|f| {
             let mut app = app.lock().unwrap();
             ui(f, &mut app)

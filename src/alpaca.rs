@@ -136,17 +136,15 @@ pub fn get_bars(ticker:&str, timeframe:&str, start:DateTime<FixedOffset>, end:Da
                 assert!(response.status().is_success(), "Error getting bars: {}", response.status());
                 match response.json::<BarResponse>() {
                     Ok(resp) => resp,
-                    Err(e) => {
+                    Err(_) => {
                         BarResponse {
-                            //symbol: String::from(ticker),
                             bars: Vec::new()
                         }
                     }
                 }
             },
-            Err(e) => {
+            Err(_) => {
                 BarResponse {
-                    //symbol: String::from(ticker),
                     bars: Vec::new()
                 }
             }
