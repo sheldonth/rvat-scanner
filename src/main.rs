@@ -226,154 +226,176 @@ fn time_in_new_york (hour_minute:&str) -> DateTime<FixedOffset> {
     //fixed_offset.from_local_datetime(&local_datetime).unwrap()
 //}
 
+static THREADS:usize = 1;
+
 fn run_app<B: Backend>(
     terminal: &mut Terminal<B>,
     /*mut */app: Arc<Mutex<App>>,
     tick_rate: Duration,
 ) -> io::Result<()> {
-    let app_clone = app.clone();
-    thread::spawn(move || {
-        //let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
-        let now = chrono::DateTime::from(chrono::Utc::now());
-        let start = now - chrono::Duration::days(60);
-        let trading_days = alpaca::get_calendar(
-            start, now);
-        let analysis_day = trading_days[0].clone();
-        let reference_days = trading_days[1..18].to_vec();
-        let mut symbol_index:usize = 0;
-        let mut loops = 0;
-        while symbol_index < SYMBOLS.len() {
-            let progress = (symbol_index as f64 / SYMBOLS.len() as f64) * 100.0;
-            let progress = (progress * 10.0).round() / 10.0;
-            let progress_string = format!("{}%", progress);
-            let title = format!("RVAT Scanner {} {} ({})", &analysis_day.date.as_str(), progress_string, loops);
-            app_clone.lock().unwrap().set_title(title.as_str());
-            let symbol:&str = SYMBOLS[symbol_index].as_str();
-            let mut volumes:Vec<u64> = Vec::new();
-            for reference_day in &reference_days {
-                let key = format!("{}.json", reference_day.date);
-                let bar_data_path = format!("cache/{}/{}", symbol, key);
-                let bar_data = match fs::read_to_string(bar_data_path.clone()) {
-                    Ok(bar_data) => bar_data,
-                    Err(e) => {
-                        println!("error reading file: {} {} {}", e, key, bar_data_path);
-                        continue;
-                    }
-                };
-                let bars:Vec<Bar> = match serde_json::from_str(&bar_data) {
-                    Ok(bars) => bars,
-                    Err(e) => {
-                        println!("error deserializing file: {} {} {}", e, key, bar_data_path);
-                        continue;
-                    }
-                };
-                let utc_hour = chrono::Utc::now().hour();
-                let utc_minute = chrono::Utc::now().minute();
-                let mut volume:u64 = 0;
-                for bar in bars {
-                    let bar_hour = bar.t.hour();
-                    let bar_minute = bar.t.minute();
-                    if bar_hour < utc_hour {
-                        match bar.v.as_u64() {
-                            Some(v) => {
-                                volume += v as u64;
-                            },
-                            None => {
-                                println!("volume is not an u64");
-                            }
-                        }
-                    }
-                    if bar_hour == utc_hour && bar_minute <= utc_minute {
-                        match bar.v.as_u64() {
-                            Some(v) => {
-                                volume += v as u64;
-                            },
-                            None => {
-                                println!("volume is not an u64");
-                            }
-                        }
-                    }
-                }
-                volumes.push(volume);
-            }
-
-            let average_dvat:f64 = volumes.iter().sum::<u64>() as f64 / volumes.len() as f64;
-            let mut session_open_new_york_time:String = analysis_day.session_open.clone();
-            session_open_new_york_time.insert(2, ':');
-            let mut session_close_new_york_time = analysis_day.session_close.clone();
-            session_close_new_york_time.insert(2, ':');
-            let analysis_day_bars = alpaca::get_bars( symbol,
-                                                      "1Min",
-                                                      time_in_new_york(session_open_new_york_time.as_str()),
-                                                      time_in_new_york(session_close_new_york_time.as_str()),
-                                                      "1000");
-
-            let mut analysis_dvat:u64 = 0;
-            for bar in analysis_day_bars.get_bars() {
-                match bar.v.as_u64() {
-                    Some(v) => {
-                        analysis_dvat += v as u64;
-                    },
-                    None => {
-                        println!("volume is not an u64");
-                    }
-                }
-            }
-            // find the % change from the 0th bar to the last bar
-            let mut pnl_change_percent:f64 = 0.0;
-            if analysis_day_bars.get_bars().len() == 0 {
-                symbol_index += 1;
-                continue;
-            }
-            let first_bar = &analysis_day_bars.get_bars()[0].c;
-            let last_bar =  &analysis_day_bars.get_bars()[analysis_day_bars.get_bars().len() - 1].c;
-            match first_bar.as_f64() {
-                Some(first_bar) => {
-                    match last_bar.as_f64() {
-                        Some(last_bar) => {
-                            pnl_change_percent = (first_bar - last_bar) / first_bar;
-                        },
-                        None => { }
-                    }
-                },
-                None => { }
-            }
-            /*
-             * where do you cut off average_dvat?
-             * this value is the average of the last 17 days
-             * if it's absurdly low and the stock is highly illiquid,
-             * we get a false positive high score.
-             * a score of 35513855 / 16164 = 2195.5 is absurdly high and 
-             * what we are looking for.
-             *
-             * 61000 / 20 = 3005 is a better score but it's because the 
-             * divisor is so low
-             *
-             * let's start with 350
-             * now trying 1000
-             */
-            if average_dvat < 1000 as f64 {
-                symbol_index += 1;
-                continue;
-            }
-            if analysis_dvat == 0 as u64 {
-                symbol_index += 1;
-                continue;
-            }
-            app_clone.lock().unwrap().add_analysis(Analysis {
-                symbol:String::from(symbol),
-                average_dvat:average_dvat as u64,
-                analysis_dvat:analysis_dvat as u64,
-                score:analysis_dvat as f64 / average_dvat as f64,
-                pnl_change_percent
-            });
-            symbol_index += 1;
-            if symbol_index == SYMBOLS.len() {
-                symbol_index = 0;
-                loops += 1;
-            }
+    let symbol_index:usize = 0;
+    let symbol_index_ptr = Arc::new(Mutex::new(symbol_index));
+    let loops:usize = 0;
+    let loops_ptr = Arc::new(Mutex::new(loops));
+    fn next_symbol(symbol_index_ptr:Arc<Mutex<usize>>, loops_ptr: Arc<Mutex<usize>>) -> (usize, String) {
+        let mut symbol_index = symbol_index_ptr.lock().unwrap();
+        *symbol_index += 1;
+        if *symbol_index >= SYMBOLS.len() {
+            *symbol_index = 0;
+            let mut loops = loops_ptr.lock().unwrap();
+            *loops += 1;
         }
-    });
+        (*symbol_index, SYMBOLS[*symbol_index].clone())
+    }
+    for _ in 0..THREADS {
+        let app_clone = app.clone();
+        let symbol_index_ptr = symbol_index_ptr.clone();
+        let loops_ptr = loops_ptr.clone();
+        thread::spawn(move || {
+            //let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
+            let now = chrono::DateTime::from(chrono::Utc::now());
+            let start = now - chrono::Duration::days(60);
+            let trading_days = alpaca::get_calendar(
+                start, now);
+            let analysis_day = trading_days[0].clone();
+            let reference_days = trading_days[1..18].to_vec();
+            //let mut symbol_index:usize = 0;
+            //let mut loops = 0;
+            //while symbol_index < SYMBOLS.len() {
+            loop {
+                let (symbol_index, symbol) = next_symbol(symbol_index_ptr.clone(), loops_ptr.clone());
+                let progress = (symbol_index as f64 / SYMBOLS.len() as f64) * 100.0;
+                let progress = (progress * 10.0).round() / 10.0;
+                let progress_string = format!("{}%", progress);
+                let title = format!("RVAT Scanner {} {} ({})", &analysis_day.date.as_str(), progress_string, loops);
+                app_clone.lock().unwrap().set_title(title.as_str());
+                //let symbol:&str = SYMBOLS[symbol_index].as_str();
+                let mut volumes:Vec<u64> = Vec::new();
+                for reference_day in &reference_days {
+                    let key = format!("{}.json", reference_day.date);
+                    let bar_data_path = format!("cache/{}/{}", symbol, key);
+                    let bar_data = match fs::read_to_string(bar_data_path.clone()) {
+                        Ok(bar_data) => bar_data,
+                        Err(e) => {
+                            println!("error reading file: {} {} {}", e, key, bar_data_path);
+                            continue;
+                        }
+                    };
+                    let bars:Vec<Bar> = match serde_json::from_str(&bar_data) {
+                        Ok(bars) => bars,
+                        Err(e) => {
+                            println!("error deserializing file: {} {} {}", e, key, bar_data_path);
+                            continue;
+                        }
+                    };
+                    let utc_hour = chrono::Utc::now().hour();
+                    let utc_minute = chrono::Utc::now().minute();
+                    let mut volume:u64 = 0;
+                    for bar in bars {
+                        let bar_hour = bar.t.hour();
+                        let bar_minute = bar.t.minute();
+                        if bar_hour < utc_hour {
+                            match bar.v.as_u64() {
+                                Some(v) => {
+                                    volume += v as u64;
+                                },
+                                None => {
+                                    println!("volume is not an u64");
+                                }
+                            }
+                        }
+                        if bar_hour == utc_hour && bar_minute <= utc_minute {
+                            match bar.v.as_u64() {
+                                Some(v) => {
+                                    volume += v as u64;
+                                },
+                                None => {
+                                    println!("volume is not an u64");
+                                }
+                            }
+                        }
+                    }
+                    volumes.push(volume);
+                }
+
+                let average_dvat:f64 = volumes.iter().sum::<u64>() as f64 / volumes.len() as f64;
+                let mut session_open_new_york_time:String = analysis_day.session_open.clone();
+                session_open_new_york_time.insert(2, ':');
+                let mut session_close_new_york_time = analysis_day.session_close.clone();
+                session_close_new_york_time.insert(2, ':');
+                let analysis_day_bars = alpaca::get_bars( symbol.as_str(),
+                                                          "1Min",
+                                                          time_in_new_york(session_open_new_york_time.as_str()),
+                                                          time_in_new_york(session_close_new_york_time.as_str()),
+                                                          "1000");
+
+                let mut analysis_dvat:u64 = 0;
+                for bar in analysis_day_bars.get_bars() {
+                    match bar.v.as_u64() {
+                        Some(v) => {
+                            analysis_dvat += v as u64;
+                        },
+                        None => {
+                            println!("volume is not an u64");
+                        }
+                    }
+                }
+                // find the % change from the 0th bar to the last bar
+                let mut pnl_change_percent:f64 = 0.0;
+                if analysis_day_bars.get_bars().len() == 0 {
+                    //symbol_index += 1;
+                    continue;
+                }
+                let first_bar = &analysis_day_bars.get_bars()[0].c;
+                let last_bar =  &analysis_day_bars.get_bars()[analysis_day_bars.get_bars().len() - 1].c;
+                match first_bar.as_f64() {
+                    Some(first_bar) => {
+                        match last_bar.as_f64() {
+                            Some(last_bar) => {
+                                pnl_change_percent = (first_bar - last_bar) / first_bar;
+                            },
+                            None => { }
+                        }
+                    },
+                    None => { }
+                }
+                /*
+                 * where do you cut off average_dvat?
+                 * this value is the average of the last 17 days
+                 * if it's absurdly low and the stock is highly illiquid,
+                 * we get a false positive high score.
+                 * a score of 35513855 / 16164 = 2195.5 is absurdly high and 
+                 * what we are looking for.
+                 *
+                 * 61000 / 20 = 3005 is a better score but it's because the 
+                 * divisor is so low
+                 *
+                 * let's start with 350
+                 * now trying 1000
+                 */
+                if average_dvat < 1000 as f64 {
+                    //symbol_index += 1;
+                    continue;
+                }
+                if analysis_dvat == 0 as u64 {
+                    //symbol_index += 1;
+                    continue;
+                }
+                app_clone.lock().unwrap().add_analysis(Analysis {
+                    symbol:String::from(symbol),
+                    average_dvat:average_dvat as u64,
+                    analysis_dvat:analysis_dvat as u64,
+                    score:analysis_dvat as f64 / average_dvat as f64,
+                    pnl_change_percent
+                });
+                //symbol_index += 1;
+                //if symbol_index == SYMBOLS.len() {
+                    //symbol_index = 0;
+                    //loops += 1;
+                //}
+            }
+        });
+    }
 
     let mut last_tick = Instant::now();
     loop {

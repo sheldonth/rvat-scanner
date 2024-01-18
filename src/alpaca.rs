@@ -40,6 +40,11 @@ pub struct Bar {
 }
 
 #[derive(Deserialize, Debug, Clone)]
+pub struct ErrorResponse {
+    pub message: String
+}
+
+#[derive(Deserialize, Debug, Clone)]
 pub struct BarResponse {
     //symbol: String,
     bars: Vec<Bar>,
@@ -109,6 +114,11 @@ pub fn get_calendar(start:DateTime<FixedOffset>, end:DateTime<FixedOffset>) -> V
 }
 
 pub fn get_bars(ticker:&str, timeframe:&str, start:DateTime<FixedOffset>, end:DateTime<FixedOffset>, limit:&str) -> BarResponse {
+    assert!(start < end, "Start date must be before end date");
+    assert!(limit.parse::<i32>().unwrap() <= 10000, "Limit must be less than 10000");
+    assert!(limit.parse::<i32>().unwrap() > 0, "Limit must be greater than 0");
+    assert!(ticker.len() > 0, "Ticker must be provided");
+    assert!(timeframe.len() > 0, "Timeframe must be provided");
     let mut headers = header::HeaderMap::new();
     headers.insert("APCA-API-KEY-ID", header::HeaderValue::from_str(&load_env_var("APCA_API_KEY_ID")).unwrap());
     headers.insert("APCA-API-SECRET-KEY", header::HeaderValue::from_str(&load_env_var("APCA_API_SECRET_KEY")).unwrap());
@@ -125,8 +135,7 @@ pub fn get_bars(ticker:&str, timeframe:&str, start:DateTime<FixedOffset>, end:Da
             Ok(response) => {
                 match response.json::<BarResponse>() {
                     Ok(resp) => resp,
-                    Err(_) => {
-                        //println!("Error parsing bar response: {} {}", e, response.text().unwrap());
+                    Err(e) => {
                         BarResponse {
                             //symbol: String::from(ticker),
                             bars: Vec::new()
