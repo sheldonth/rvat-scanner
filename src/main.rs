@@ -226,7 +226,7 @@ fn time_in_new_york (hour_minute:&str) -> DateTime<FixedOffset> {
     //fixed_offset.from_local_datetime(&local_datetime).unwrap()
 //}
 
-static THREADS:usize = 1;
+static THREADS:usize = 4;
 
 fn run_app<B: Backend>(
     terminal: &mut Terminal<B>,
@@ -267,7 +267,8 @@ fn run_app<B: Backend>(
                 let progress = (symbol_index as f64 / SYMBOLS.len() as f64) * 100.0;
                 let progress = (progress * 10.0).round() / 10.0;
                 let progress_string = format!("{}%", progress);
-                let title = format!("RVAT Scanner {} {} ({})", &analysis_day.date.as_str(), progress_string, loops);
+                let title = format!("RVAT Scanner {} {} ({})", &analysis_day.date.as_str(), 
+                                    progress_string, loops_ptr.lock().unwrap());
                 app_clone.lock().unwrap().set_title(title.as_str());
                 //let symbol:&str = SYMBOLS[symbol_index].as_str();
                 let mut volumes:Vec<u64> = Vec::new();
