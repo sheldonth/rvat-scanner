@@ -28,7 +28,7 @@ use rvat_scanner::alpaca::Bar;
 use rvat_scanner::alpaca;
 use std::collections::HashSet;
 
-static LIST_ITEM_HEIGHT:u16 = 50;
+static LIST_ITEM_HEIGHT:u16 = 55;
 static THREADS:usize = 5;
 
 use serde::Deserialize;

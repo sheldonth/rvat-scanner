@@ -26,6 +26,8 @@ The rust client loads alpaca.markets API keys from the runtime environment.
 
 
 Immediate Work Items:
+1. Make it work correctly when the UTC day has changed but it has not yet
+   changed in America/New_York.
 2. Make build_cache.js delete cache entries older than X days.
 3. Commafy big numbers
 
