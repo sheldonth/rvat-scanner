@@ -1,7 +1,6 @@
 const fs = require('fs').promises;
 
-
-const main = async () => {
+const clean = async function() {
     // load all folders in the cache directory
     const folders = await fs.readdir('./cache');
     // iterate over each folder
@@ -26,5 +25,12 @@ const main = async () => {
             }
         }
     }
+}
+
+const build_etf_list = async function() {
+
+}
+
+const main = async () => {
 }
 main();

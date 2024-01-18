@@ -20,7 +20,7 @@ use tui::{
     widgets::{Block, Borders, List, ListItem, ListState},
     Frame, Terminal,
 };
-use chrono::{Timelike};
+use chrono::Timelike;
 use chrono::{DateTime, Local, NaiveTime, TimeZone, FixedOffset};
 //use chrono_tz::America::New_York;
 //use chrono::{Utc, Offset};
@@ -29,9 +29,19 @@ use rvat_scanner::alpaca;
 
 static LIST_ITEM_HEIGHT:u16 = 50;
 
+use serde::Deserialize;
+#[derive(Deserialize, Debug, Clone)]
+pub struct Ticker {
+    ticker:String
+}
+
 use lazy_static::lazy_static;
 lazy_static! {
     pub static ref SYMBOLS:Vec<String> = read_cache_folders(Path::new("cache")).unwrap();
+    pub static ref EXCLUDED_SYMBOLS:Vec<Ticker> = serde_json::from_str(
+        fs::read_to_string("excluded_tickers.json").unwrap().as_str()
+    ).unwrap();
+        
 }
 
 fn read_cache_folders(folder_path:&Path) -> io::Result<Vec<String>> {
@@ -227,6 +237,7 @@ fn time_in_new_york (hour_minute:&str) -> DateTime<FixedOffset> {
 //}
 
 static THREADS:usize = 5;
+use std::collections::HashSet;
 
 fn run_app<B: Backend>(
     terminal: &mut Terminal<B>,
@@ -237,6 +248,8 @@ fn run_app<B: Backend>(
     let symbol_index_ptr = Arc::new(Mutex::new(symbol_index));
     let loops:usize = 0;
     let loops_ptr = Arc::new(Mutex::new(loops));
+    let excluded_symbols:HashSet<&str> = HashSet::<&str>::from_iter(EXCLUDED_SYMBOLS.iter().map(|t| t.ticker.as_str()));
+    let excluded_symbols_ptr = Arc::new(Mutex::new(excluded_symbols));
     fn next_symbol(symbol_index_ptr:Arc<Mutex<usize>>, loops_ptr: Arc<Mutex<usize>>) -> (usize, String) {
         let mut symbol_index = symbol_index_ptr.lock().unwrap();
         *symbol_index += 1;
@@ -251,6 +264,7 @@ fn run_app<B: Backend>(
         let app_clone = app.clone();
         let symbol_index_ptr = symbol_index_ptr.clone();
         let loops_ptr = loops_ptr.clone();
+        let excluded_symbols_ptr = excluded_symbols_ptr.clone();
         thread::spawn(move || {
             //let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
             let now = chrono::DateTime::from(chrono::Utc::now());
@@ -259,9 +273,6 @@ fn run_app<B: Backend>(
                 start, now);
             let analysis_day = trading_days[0].clone();
             let reference_days = trading_days[1..18].to_vec();
-            //let mut symbol_index:usize = 0;
-            //let mut loops = 0;
-            //while symbol_index < SYMBOLS.len() {
             loop {
                 let (symbol_index, symbol) = next_symbol(symbol_index_ptr.clone(), loops_ptr.clone());
                 let progress = (symbol_index as f64 / SYMBOLS.len() as f64) * 100.0;
@@ -270,6 +281,9 @@ fn run_app<B: Backend>(
                 let title = format!("RVAT Scanner {} {} ({})", &analysis_day.date.as_str(), 
                                     progress_string, loops_ptr.lock().unwrap());
                 app_clone.lock().unwrap().set_title(title.as_str());
+                if excluded_symbols_ptr.lock().unwrap().contains(symbol.as_str()) {
+                    continue;
+                }
                 //let symbol:&str = SYMBOLS[symbol_index].as_str();
                 let mut volumes:Vec<u64> = Vec::new();
                 for reference_day in &reference_days {

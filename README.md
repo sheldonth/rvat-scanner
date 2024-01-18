@@ -24,7 +24,6 @@ export APCA_API_SECRET_KEY='YOURSECRET'
 ```
 
 Immediate Work Items:
-1. Make the system faster with more threads of network activity.
 2. Make build_cache.js delete cache entries older than X days.
 3. Commafy big numbers
 

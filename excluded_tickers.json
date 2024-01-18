@@ -1,0 +1,7085 @@
+[{
+    "ticker": "FSMD"
+}, {
+    "ticker": "RGI"
+}, {
+    "ticker": "IDHD"
+}, {
+    "ticker": "PBSM"
+}, {
+    "ticker": "PTNQ"
+}, {
+    "ticker": "PAVE"
+}, {
+    "ticker": "MAYZ"
+}, {
+    "ticker": "PBUS"
+}, {
+    "ticker": "MSMR"
+}, {
+    "ticker": "FSMO"
+}, {
+    "ticker": "LFEQ"
+}, {
+    "ticker": "AFLG"
+}, {
+    "ticker": "REMX"
+}, {
+    "ticker": "RHS"
+}, {
+    "ticker": "UDN"
+}, {
+    "ticker": "QTUM"
+}, {
+    "ticker": "AFMC"
+}, {
+    "ticker": "RHRX"
+}, {
+    "ticker": "FTA"
+}, {
+    "ticker": "TYO"
+}, {
+    "ticker": "TYA"
+}, {
+    "ticker": "PWC"
+}, {
+    "ticker": "SGOV"
+}, {
+    "ticker": "UCO"
+}, {
+    "ticker": "UCON"
+}, {
+    "ticker": "TYNE"
+}, {
+    "ticker": "UCC"
+}, {
+    "ticker": "TZA"
+}, {
+    "ticker": "UJB"
+}, {
+    "ticker": "UMAR"
+}, {
+    "ticker": "UJAN"
+}, {
+    "ticker": "UGE"
+}, {
+    "ticker": "FTSL"
+}, {
+    "ticker": "UGL"
+}, {
+    "ticker": "RAFE"
+}, {
+    "ticker": "ULVM"
+}, {
+    "ticker": "FTRI"
+}, {
+    "ticker": "UFO"
+}, {
+    "ticker": "UJUL"
+}, {
+    "ticker": "GGRW"
+}, {
+    "ticker": "VXF"
+}, {
+    "ticker": "SPLV"
+}, {
+    "ticker": "VWOB"
+}, {
+    "ticker": "IFV"
+}, {
+    "ticker": "QVML"
+}, {
+    "ticker": "URNM"
+}, {
+    "ticker": "QVMM"
+}, {
+    "ticker": "USMF"
+}, {
+    "ticker": "USD"
+}, {
+    "ticker": "IG"
+}, {
+    "ticker": "USTB"
+}, {
+    "ticker": "USO"
+}, {
+    "ticker": "USLB"
+}, {
+    "ticker": "EIDO"
+}, {
+    "ticker": "USMC"
+}, {
+    "ticker": "USVM"
+}, {
+    "ticker": "USVT"
+}, {
+    "ticker": "ROSC"
+}, {
+    "ticker": "VCR"
+}, {
+    "ticker": "UTSL"
+}, {
+    "ticker": "VAMO"
+}, {
+    "ticker": "HIBS"
+}, {
+    "ticker": "VALT"
+}, {
+    "ticker": "OEUR"
+}, {
+    "ticker": "VEGN"
+}, {
+    "ticker": "VB"
+}, {
+    "ticker": "PEJ"
+}, {
+    "ticker": "VFMO"
+}, {
+    "ticker": "RSP"
+}, {
+    "ticker": "VFVA"
+}, {
+    "ticker": "RSPE"
+}, {
+    "ticker": "VFMF"
+}, {
+    "ticker": "AEMB"
+}, {
+    "ticker": "VTI"
+}, {
+    "ticker": "FVC"
+}, {
+    "ticker": "RSPY"
+}, {
+    "ticker": "FUNL"
+}, {
+    "ticker": "VFLQ"
+}, {
+    "ticker": "FV"
+}, {
+    "ticker": "VGT"
+}, {
+    "ticker": "RWGV"
+}, {
+    "ticker": "LOPX"
+}, {
+    "ticker": "REET"
+}, {
+    "ticker": "RDVY"
+}, {
+    "ticker": "HJEN"
+}, {
+    "ticker": "PEXL"
+}, {
+    "ticker": "PEX"
+}, {
+    "ticker": "WBND"
+}, {
+    "ticker": "PFI"
+}, {
+    "ticker": "SCC"
+}, {
+    "ticker": "AOR"
+}, {
+    "ticker": "HLAL"
+}, {
+    "ticker": "VIOV"
+}, {
+    "ticker": "VIRS"
+}, {
+    "ticker": "VIDI"
+}, {
+    "ticker": "SCHY"
+}, {
+    "ticker": "VICE"
+}, {
+    "ticker": "SCHV"
+}, {
+    "ticker": "VIG"
+}, {
+    "ticker": "AOM"
+}, {
+    "ticker": "SEF"
+}, {
+    "ticker": "AGOX"
+}, {
+    "ticker": "VIS"
+}, {
+    "ticker": "DON"
+}, {
+    "ticker": "MAGA"
+}, {
+    "ticker": "VLU"
+}, {
+    "ticker": "VMOT"
+}, {
+    "ticker": "MARZ"
+}, {
+    "ticker": "BIDS"
+}, {
+    "ticker": "RODM"
+}, {
+    "ticker": "AHYB"
+}, {
+    "ticker": "PTLC"
+}, {
+    "ticker": "AGQ"
+}, {
+    "ticker": "SHYG"
+}, {
+    "ticker": "VNMC"
+}, {
+    "ticker": "JHCB"
+}, {
+    "ticker": "VPC"
+}, {
+    "ticker": "MCRO"
+}, {
+    "ticker": "GDXJ"
+}, {
+    "ticker": "VNM"
+}, {
+    "ticker": "SHYL"
+}, {
+    "ticker": "VONE"
+}, {
+    "ticker": "VTIP"
+}, {
+    "ticker": "SPLG"
+}, {
+    "ticker": "MDEV"
+}, {
+    "ticker": "MJUS"
+}, {
+    "ticker": "MDCP"
+}, {
+    "ticker": "VRIG"
+}, {
+    "ticker": "VT"
+}, {
+    "ticker": "CWB"
+}, {
+    "ticker": "VTEB"
+}, {
+    "ticker": "VTHR"
+}, {
+    "ticker": "VSMV"
+}, {
+    "ticker": "MJIN"
+}, {
+    "ticker": "DBE"
+}, {
+    "ticker": "WANT"
+}, {
+    "ticker": "VXUS"
+}, {
+    "ticker": "FLOT"
+}, {
+    "ticker": "VYMI"
+}, {
+    "ticker": "SARK"
+}, {
+    "ticker": "GDX"
+}, {
+    "ticker": "VYM"
+}, {
+    "ticker": "VWID"
+}, {
+    "ticker": "VUSB"
+}, {
+    "ticker": "GINN"
+}, {
+    "ticker": "SLVO"
+}, {
+    "ticker": "SDY"
+}, {
+    "ticker": "SMDV"
+}, {
+    "ticker": "SMH"
+}, {
+    "ticker": "SMDD"
+}, {
+    "ticker": "JJC"
+}, {
+    "ticker": "SLVP"
+}, {
+    "ticker": "SMCP"
+}, {
+    "ticker": "SLV"
+}, {
+    "ticker": "JJM"
+}, {
+    "ticker": "GLTR"
+}, {
+    "ticker": "MGMT"
+}, {
+    "ticker": "JJN"
+}, {
+    "ticker": "SMMD"
+}, {
+    "ticker": "MIDU"
+}, {
+    "ticker": "SMI"
+}, {
+    "ticker": "MINC"
+}, {
+    "ticker": "SMIN"
+}, {
+    "ticker": "AUGZ"
+}, {
+    "ticker": "MMTM"
+}, {
+    "ticker": "GNOM"
+}, {
+    "ticker": "WGRO"
+}, {
+    "ticker": "PSCJ"
+}, {
+    "ticker": "TPAY"
+}, {
+    "ticker": "PSMM"
+}, {
+    "ticker": "WIZ"
+}, {
+    "ticker": "DFAS"
+}, {
+    "ticker": "SILX"
+}, {
+    "ticker": "MMLG"
+}, {
+    "ticker": "ARMR"
+}, {
+    "ticker": "MVV"
+}, {
+    "ticker": "SNPE"
+}, {
+    "ticker": "SCHK"
+}, {
+    "ticker": "WKLY"
+}, {
+    "ticker": "GQRE"
+}, {
+    "ticker": "SNSR"
+}, {
+    "ticker": "DBOC"
+}, {
+    "ticker": "ACVF"
+}, {
+    "ticker": "DRN"
+}, {
+    "ticker": "SOGU"
+}, {
+    "ticker": "AIVL"
+}, {
+    "ticker": "SNUG"
+}, {
+    "ticker": "ERM"
+}, {
+    "ticker": "SPBC"
+}, {
+    "ticker": "QAI"
+}, {
+    "ticker": "SPGP"
+}, {
+    "ticker": "MBOX"
+}, {
+    "ticker": "QAT"
+}, {
+    "ticker": "WOMN"
+}, {
+    "ticker": "SPD"
+}, {
+    "ticker": "SPEU"
+}, {
+    "ticker": "SPDW"
+}, {
+    "ticker": "PULS"
+}, {
+    "ticker": "QARP"
+}, {
+    "ticker": "DIA"
+}, {
+    "ticker": "QDIV"
+}, {
+    "ticker": "GSEW"
+}, {
+    "ticker": "SPIP"
+}, {
+    "ticker": "QDPL"
+}, {
+    "ticker": "SPHQ"
+}, {
+    "ticker": "SPHB"
+}, {
+    "ticker": "LEXI"
+}, {
+    "ticker": "BKIE"
+}, {
+    "ticker": "DNL"
+}, {
+    "ticker": "SPUC"
+}, {
+    "ticker": "SPRE"
+}, {
+    "ticker": "HDRO"
+}, {
+    "ticker": "PFEB"
+}, {
+    "ticker": "SPTS"
+}, {
+    "ticker": "MTVR"
+}, {
+    "ticker": "PFF"
+}, {
+    "ticker": "MJ"
+}, {
+    "ticker": "ARGD"
+}, {
+    "ticker": "SPXE"
+}, {
+    "ticker": "SPXS"
+}, {
+    "ticker": "USRT"
+}, {
+    "ticker": "SPVM"
+}, {
+    "ticker": "SPVU"
+}, {
+    "ticker": "SPXL"
+}, {
+    "ticker": "CGW"
+}, {
+    "ticker": "SPUU"
+}, {
+    "ticker": "MZZ"
+}, {
+    "ticker": "SPXN"
+}, {
+    "ticker": "MUST"
+}, {
+    "ticker": "SPYX"
+}, {
+    "ticker": "SQEW"
+}, {
+    "ticker": "MSOS"
+}, {
+    "ticker": "MUNI"
+}, {
+    "ticker": "XBTF"
+}, {
+    "ticker": "XDAP"
+}, {
+    "ticker": "XCEM"
+}, {
+    "ticker": "SQLV"
+}, {
+    "ticker": "HOM"
+}, {
+    "ticker": "XBOC"
+}, {
+    "ticker": "TMFS"
+}, {
+    "ticker": "REC"
+}, {
+    "ticker": "DJUN"
+}, {
+    "ticker": "SPYV"
+}, {
+    "ticker": "ARKF"
+}, {
+    "ticker": "BDRY"
+}, {
+    "ticker": "SPAK"
+}, {
+    "ticker": "IBBQ"
+}, {
+    "ticker": "XDNA"
+}, {
+    "ticker": "DRSK"
+}, {
+    "ticker": "TTAC"
+}, {
+    "ticker": "SGDM"
+}, {
+    "ticker": "XDOC"
+}, {
+    "ticker": "LCTD"
+}, {
+    "ticker": "PKB"
+}, {
+    "ticker": "BKUI"
+}, {
+    "ticker": "TTAI"
+}, {
+    "ticker": "RESE"
+}, {
+    "ticker": "LCTU"
+}, {
+    "ticker": "SRS"
+}, {
+    "ticker": "XLC"
+}, {
+    "ticker": "BLCN"
+}, {
+    "ticker": "EMP"
+}, {
+    "ticker": "UAPR"
+}, {
+    "ticker": "XMVM"
+}, {
+    "ticker": "EMXC"
+}, {
+    "ticker": "XJH"
+}, {
+    "ticker": "XLK"
+}, {
+    "ticker": "PJUN"
+}, {
+    "ticker": "EMCB"
+}, {
+    "ticker": "SRTY"
+}, {
+    "ticker": "SSLY"
+}, {
+    "ticker": "CFA"
+}, {
+    "ticker": "IETC"
+}, {
+    "ticker": "IEF"
+}, {
+    "ticker": "XJR"
+}, {
+    "ticker": "FAB"
+}, {
+    "ticker": "UAUG"
+}, {
+    "ticker": "SSG"
+}, {
+    "ticker": "STBL"
+}, {
+    "ticker": "UBOT"
+}, {
+    "ticker": "IMOM"
+}, {
+    "ticker": "PJP"
+}, {
+    "ticker": "IWB"
+}, {
+    "ticker": "IPAY"
+}, {
+    "ticker": "XTOC"
+}, {
+    "ticker": "NUMV"
+}, {
+    "ticker": "STLG"
+}, {
+    "ticker": "ULTR"
+}, {
+    "ticker": "STOT"
+}, {
+    "ticker": "MILN"
+}, {
+    "ticker": "UPV"
+}, {
+    "ticker": "STIP"
+}, {
+    "ticker": "UNOV"
+}, {
+    "ticker": "UPRO"
+}, {
+    "ticker": "URE"
+}, {
+    "ticker": "URA"
+}, {
+    "ticker": "USOI"
+}, {
+    "ticker": "URTH"
+}, {
+    "ticker": "STZ.B"
+}, {
+    "ticker": "UYG"
+}, {
+    "ticker": "EPOL"
+}, {
+    "ticker": "USFR"
+}, {
+    "ticker": "EPHE"
+}, {
+    "ticker": "USSG"
+}, {
+    "ticker": "AZAO"
+}, {
+    "ticker": "URTY"
+}, {
+    "ticker": "VABS"
+}, {
+    "ticker": "VBR"
+}, {
+    "ticker": "BNKU"
+}, {
+    "ticker": "PAK"
+}, {
+    "ticker": "SFYF"
+}, {
+    "ticker": "VGK"
+}, {
+    "ticker": "ANGL"
+}, {
+    "ticker": "VFH"
+}, {
+    "ticker": "SFYX"
+}, {
+    "ticker": "YXI"
+}, {
+    "ticker": "VEGA"
+}, {
+    "ticker": "RNSC"
+}, {
+    "ticker": "IVAL"
+}, {
+    "ticker": "IYY"
+}, {
+    "ticker": "VLUE"
+}, {
+    "ticker": "PST"
+}, {
+    "ticker": "NACP"
+}, {
+    "ticker": "IWY"
+}, {
+    "ticker": "IWS"
+}, {
+    "ticker": "VIOO"
+}, {
+    "ticker": "SVAL"
+}, {
+    "ticker": "SIXS"
+}, {
+    "ticker": "SNLN"
+}, {
+    "ticker": "SUSL"
+}, {
+    "ticker": "SUSA"
+}, {
+    "ticker": "SENT"
+}, {
+    "ticker": "IWM"
+}, {
+    "ticker": "BITO"
+}, {
+    "ticker": "VOX"
+}, {
+    "ticker": "VPL"
+}, {
+    "ticker": "VONV"
+}, {
+    "ticker": "LGF.B"
+}, {
+    "ticker": "VOTE"
+}, {
+    "ticker": "PSR"
+}, {
+    "ticker": "VOT"
+}, {
+    "ticker": "VNQI"
+}, {
+    "ticker": "VOO"
+}, {
+    "ticker": "NUHY"
+}, {
+    "ticker": "ESGV"
+}, {
+    "ticker": "IYZ"
+}, {
+    "ticker": "JANZ"
+}, {
+    "ticker": "JAAA"
+}, {
+    "ticker": "VOOV"
+}, {
+    "ticker": "VNQ"
+}, {
+    "ticker": "VRP"
+}, {
+    "ticker": "DALT"
+}, {
+    "ticker": "JJE"
+}, {
+    "ticker": "VSDA"
+}, {
+    "ticker": "SEIX"
+}, {
+    "ticker": "VSPY"
+}, {
+    "ticker": "ESGN"
+}, {
+    "ticker": "NULV"
+}, {
+    "ticker": "DIAL"
+}, {
+    "ticker": "NURE"
+}, {
+    "ticker": "VSGX"
+}, {
+    "ticker": "NULG"
+}, {
+    "ticker": "ESUS"
+}, {
+    "ticker": "VSS"
+}, {
+    "ticker": "SXUS"
+}, {
+    "ticker": "DFUS"
+}, {
+    "ticker": "JNK"
+}, {
+    "ticker": "SXQG"
+}, {
+    "ticker": "JOJO"
+}, {
+    "ticker": "ASET"
+}, {
+    "ticker": "SOLR"
+}, {
+    "ticker": "VTWO"
+}, {
+    "ticker": "WEBL"
+}, {
+    "ticker": "JQUA"
+}, {
+    "ticker": "JPME"
+}, {
+    "ticker": "DFNL"
+}, {
+    "ticker": "VUSE"
+}, {
+    "ticker": "ICLN"
+}, {
+    "ticker": "JMOM"
+}, {
+    "ticker": "WBIT"
+}, {
+    "ticker": "WFH"
+}, {
+    "ticker": "ONEY"
+}, {
+    "ticker": "EWZ"
+}, {
+    "ticker": "KBWB"
+}, {
+    "ticker": "WBII"
+}, {
+    "ticker": "WBIL"
+}, {
+    "ticker": "EURL"
+}, {
+    "ticker": "SYLD"
+}, {
+    "ticker": "QYLD"
+}, {
+    "ticker": "DSPC"
+}, {
+    "ticker": "PSFD"
+}, {
+    "ticker": "SOJC"
+}, {
+    "ticker": "KBWR"
+}, {
+    "ticker": "EUSA"
+}, {
+    "ticker": "WDIV"
+}, {
+    "ticker": "WBIY"
+}, {
+    "ticker": "IEME"
+}, {
+    "ticker": "WINC"
+}, {
+    "ticker": "SDS"
+}, {
+    "ticker": "IEUS"
+}, {
+    "ticker": "LMBS"
+}, {
+    "ticker": "EWY"
+}, {
+    "ticker": "IEMG"
+}, {
+    "ticker": "KSCD"
+}, {
+    "ticker": "AIEQ"
+}, {
+    "ticker": "WLTH"
+}, {
+    "ticker": "IEUR"
+}, {
+    "ticker": "OMFS"
+}, {
+    "ticker": "OMFL"
+}, {
+    "ticker": "WPS"
+}, {
+    "ticker": "DIM"
+}, {
+    "ticker": "WTRE"
+}, {
+    "ticker": "SDOW"
+}, {
+    "ticker": "GSP"
+}, {
+    "ticker": "RFDI"
+}, {
+    "ticker": "GSPY"
+}, {
+    "ticker": "WUGI"
+}, {
+    "ticker": "VTWV"
+}, {
+    "ticker": "EWMC"
+}, {
+    "ticker": "DYNF"
+}, {
+    "ticker": "OSCV"
+}, {
+    "ticker": "IGEB"
+}, {
+    "ticker": "XAR"
+}, {
+    "ticker": "SDIV"
+}, {
+    "ticker": "ITM"
+}, {
+    "ticker": "OILK"
+}, {
+    "ticker": "AVRE"
+}, {
+    "ticker": "EAOR"
+}, {
+    "ticker": "XDQQ"
+}, {
+    "ticker": "XBAP"
+}, {
+    "ticker": "WWJD"
+}, {
+    "ticker": "ISCF"
+}, {
+    "ticker": "TCTL"
+}, {
+    "ticker": "EWO"
+}, {
+    "ticker": "XRT"
+}, {
+    "ticker": "SECT"
+}, {
+    "ticker": "RFDA"
+}, {
+    "ticker": "YYY"
+}, {
+    "ticker": "SDGA"
+}, {
+    "ticker": "EWX"
+}, {
+    "ticker": "XLF"
+}, {
+    "ticker": "EWV"
+}, {
+    "ticker": "LEMB"
+}, {
+    "ticker": "YCL"
+}, {
+    "ticker": "SOCL"
+}, {
+    "ticker": "LGLV"
+}, {
+    "ticker": "QWLD"
+}, {
+    "ticker": "YANG"
+}, {
+    "ticker": "EPI"
+}, {
+    "ticker": "YCS"
+}, {
+    "ticker": "MOTI"
+}, {
+    "ticker": "MOTG"
+}, {
+    "ticker": "LGH"
+}, {
+    "ticker": "LEGR"
+}, {
+    "ticker": "EPRE"
+}, {
+    "ticker": "AZAJ"
+}, {
+    "ticker": "TDSD"
+}, {
+    "ticker": "TDVG"
+}, {
+    "ticker": "DUDE"
+}, {
+    "ticker": "TDV"
+}, {
+    "ticker": "TDSA"
+}, {
+    "ticker": "TDSC"
+}, {
+    "ticker": "TDSE"
+}, {
+    "ticker": "TDTT"
+}, {
+    "ticker": "TDSB"
+}, {
+    "ticker": "TENG"
+}, {
+    "ticker": "IHDG"
+}, {
+    "ticker": "EWUS"
+}, {
+    "ticker": "IJAN"
+}, {
+    "ticker": "CSB"
+}, {
+    "ticker": "TEQI"
+}, {
+    "ticker": "EXI"
+}, {
+    "ticker": "EWL"
+}, {
+    "ticker": "NZAC"
+}, {
+    "ticker": "SPMO"
+}, {
+    "ticker": "SCZ"
+}, {
+    "ticker": "MOHR"
+}, {
+    "ticker": "SPMV"
+}, {
+    "ticker": "QVAL"
+}, {
+    "ticker": "ALFA"
+}, {
+    "ticker": "PREF"
+}, {
+    "ticker": "EZU"
+}, {
+    "ticker": "PBP"
+}, {
+    "ticker": "JFWD"
+}, {
+    "ticker": "OUSM"
+}, {
+    "ticker": "EWK"
+}, {
+    "ticker": "LOUP"
+}, {
+    "ticker": "AVIV"
+}, {
+    "ticker": "EWT"
+}, {
+    "ticker": "QUS"
+}, {
+    "ticker": "SPTM"
+}, {
+    "ticker": "CHGX"
+}, {
+    "ticker": "EEMV"
+}, {
+    "ticker": "SCRD"
+}, {
+    "ticker": "FBT"
+}, {
+    "ticker": "SPSM"
+}, {
+    "ticker": "CFO"
+}, {
+    "ticker": "ISWN"
+}, {
+    "ticker": "AIVI"
+}, {
+    "ticker": "LTPZ"
+}, {
+    "ticker": "PIN"
+}, {
+    "ticker": "BBAX"
+}, {
+    "ticker": "CIZ"
+}, {
+    "ticker": "JETS"
+}, {
+    "ticker": "SOXX"
+}, {
+    "ticker": "DFJ"
+}, {
+    "ticker": "EQOP"
+}, {
+    "ticker": "RHTX"
+}, {
+    "ticker": "TIPX"
+}, {
+    "ticker": "EERN"
+}, {
+    "ticker": "POTX"
+}, {
+    "ticker": "BMAR"
+}, {
+    "ticker": "ESGA"
+}, {
+    "ticker": "TLTE"
+}, {
+    "ticker": "EEV"
+}, {
+    "ticker": "BBC"
+}, {
+    "ticker": "PBS"
+}, {
+    "ticker": "EES"
+}, {
+    "ticker": "MBSD"
+}, {
+    "ticker": "PDBC"
+}, {
+    "ticker": "AVDG"
+}, {
+    "ticker": "MFDX"
+}, {
+    "ticker": "EIS"
+}, {
+    "ticker": "NXTG"
+}, {
+    "ticker": "PDEC"
+}, {
+    "ticker": "AVUS"
+}, {
+    "ticker": "TNA"
+}, {
+    "ticker": "AZAA"
+}, {
+    "ticker": "AZBO"
+}, {
+    "ticker": "MFLX"
+}, {
+    "ticker": "PEY"
+}, {
+    "ticker": "SAVN"
+}, {
+    "ticker": "PEZ"
+}, {
+    "ticker": "SATO"
+}, {
+    "ticker": "MIDF"
+}, {
+    "ticker": "MINT"
+}, {
+    "ticker": "ERSX"
+}, {
+    "ticker": "MIDE"
+}, {
+    "ticker": "CEW"
+}, {
+    "ticker": "TQQQ"
+}, {
+    "ticker": "TPOR"
+}, {
+    "ticker": "BFEB"
+}, {
+    "ticker": "MGV"
+}, {
+    "ticker": "PHDG"
+}, {
+    "ticker": "NUGO"
+}, {
+    "ticker": "BETZ"
+}, {
+    "ticker": "NULC"
+}, {
+    "ticker": "HFXI"
+}, {
+    "ticker": "GNR"
+}, {
+    "ticker": "NUGT"
+}, {
+    "ticker": "LUXE"
+}, {
+    "ticker": "BIBL"
+}, {
+    "ticker": "TPLC"
+}, {
+    "ticker": "SMLF"
+}, {
+    "ticker": "DTEC"
+}, {
+    "ticker": "BBH"
+}, {
+    "ticker": "DDEC"
+}, {
+    "ticker": "FGRO"
+}, {
+    "ticker": "PIZ"
+}, {
+    "ticker": "BYLD"
+}, {
+    "ticker": "PICK"
+}, {
+    "ticker": "NUSC"
+}, {
+    "ticker": "TPIF"
+}, {
+    "ticker": "PJAN"
+}, {
+    "ticker": "IBHC"
+}, {
+    "ticker": "MOTE"
+}, {
+    "ticker": "OCIO"
+}, {
+    "ticker": "MOTO"
+}, {
+    "ticker": "ARKX"
+}, {
+    "ticker": "MDYV"
+}, {
+    "ticker": "FCVT"
+}, {
+    "ticker": "OBOR"
+}, {
+    "ticker": "BBIN"
+}, {
+    "ticker": "OEF"
+}, {
+    "ticker": "FFTY"
+}, {
+    "ticker": "PGRO"
+}, {
+    "ticker": "UDOW"
+}, {
+    "ticker": "AVLV"
+}, {
+    "ticker": "BSJS"
+}, {
+    "ticker": "IBHE"
+}, {
+    "ticker": "DES"
+}, {
+    "ticker": "AVMU"
+}, {
+    "ticker": "IDMO"
+}, {
+    "ticker": "BGLD"
+}, {
+    "ticker": "IBHD"
+}, {
+    "ticker": "FEX"
+}, {
+    "ticker": "FDEM"
+}, {
+    "ticker": "IDNA"
+}, {
+    "ticker": "BITQ"
+}, {
+    "ticker": "PKW"
+}, {
+    "ticker": "BITS"
+}, {
+    "ticker": "DMCY"
+}, {
+    "ticker": "CSD"
+}, {
+    "ticker": "MUB"
+}, {
+    "ticker": "IDRV"
+}, {
+    "ticker": "DSOC"
+}, {
+    "ticker": "UIVM"
+}, {
+    "ticker": "UGA"
+}, {
+    "ticker": "IDOG"
+}, {
+    "ticker": "GSLC"
+}, {
+    "ticker": "MYY"
+}, {
+    "ticker": "IFGL"
+}, {
+    "ticker": "IQDG"
+}, {
+    "ticker": "BDEC"
+}, {
+    "ticker": "RYJ"
+}, {
+    "ticker": "IQM"
+}, {
+    "ticker": "NOVZ"
+}, {
+    "ticker": "INDS"
+}, {
+    "ticker": "STNC"
+}, {
+    "ticker": "NFTY"
+}, {
+    "ticker": "NOBL"
+}, {
+    "ticker": "USXF"
+}, {
+    "ticker": "PFM"
+}, {
+    "ticker": "FMQQ"
+}, {
+    "ticker": "PMAY"
+}, {
+    "ticker": "PFIX"
+}, {
+    "ticker": "IQLT"
+}, {
+    "ticker": "QUAL"
+}, {
+    "ticker": "JVAL"
+}, {
+    "ticker": "VAW"
+}, {
+    "ticker": "FID"
+}, {
+    "ticker": "NVQ"
+}, {
+    "ticker": "FDWM"
+}, {
+    "ticker": "BJUN"
+}, {
+    "ticker": "PFXF"
+}, {
+    "ticker": "EFO"
+}, {
+    "ticker": "AMOM"
+}, {
+    "ticker": "UUP"
+}, {
+    "ticker": "NUDV"
+}, {
+    "ticker": "BRF"
+}, {
+    "ticker": "FNK"
+}, {
+    "ticker": "FNDF"
+}, {
+    "ticker": "OWNS"
+}, {
+    "ticker": "WIL"
+}, {
+    "ticker": "FNDX"
+}, {
+    "ticker": "PSMG"
+}, {
+    "ticker": "FEBZ"
+}, {
+    "ticker": "ENJ"
+}, {
+    "ticker": "PSMD"
+}, {
+    "ticker": "FMF"
+}, {
+    "ticker": "BIS"
+}, {
+    "ticker": "IVLC"
+}, {
+    "ticker": "EGIS"
+}, {
+    "ticker": "IVOO"
+}, {
+    "ticker": "VSLU"
+}, {
+    "ticker": "BECO"
+}, {
+    "ticker": "PBD"
+}, {
+    "ticker": "BNO"
+}, {
+    "ticker": "EELV"
+}, {
+    "ticker": "PBTP"
+}, {
+    "ticker": "BSEA"
+}, {
+    "ticker": "VRAI"
+}, {
+    "ticker": "PBE"
+}, {
+    "ticker": "IVDG"
+}, {
+    "ticker": "JGLD"
+}, {
+    "ticker": "ENTR"
+}, {
+    "ticker": "PFFA"
+}, {
+    "ticker": "JHMA"
+}, {
+    "ticker": "CHIM"
+}, {
+    "ticker": "PILL"
+}, {
+    "ticker": "PGF"
+}, {
+    "ticker": "EMHY"
+}, {
+    "ticker": "SLYV"
+}, {
+    "ticker": "PICB"
+}, {
+    "ticker": "AWYX"
+}, {
+    "ticker": "FPFD"
+}, {
+    "ticker": "PIE"
+}, {
+    "ticker": "WIP"
+}, {
+    "ticker": "FTCS"
+}, {
+    "ticker": "JHML"
+}, {
+    "ticker": "DGT"
+}, {
+    "ticker": "CSF"
+}, {
+    "ticker": "PMAR"
+}, {
+    "ticker": "BSBE"
+}, {
+    "ticker": "PLDR"
+}, {
+    "ticker": "FDHY"
+}, {
+    "ticker": "AUSF"
+}, {
+    "ticker": "JHMB"
+}, {
+    "ticker": "JHMM"
+}, {
+    "ticker": "CVY"
+}, {
+    "ticker": "NFRA"
+}, {
+    "ticker": "KEUA"
+}, {
+    "ticker": "FDM"
+}, {
+    "ticker": "EYLD"
+}, {
+    "ticker": "EWSC"
+}, {
+    "ticker": "FIBR"
+}, {
+    "ticker": "QTEC"
+}, {
+    "ticker": "PSCW"
+}, {
+    "ticker": "FDIS"
+}, {
+    "ticker": "PHYL"
+}, {
+    "ticker": "QVMS"
+}, {
+    "ticker": "PSCX"
+}, {
+    "ticker": "PSDN"
+}, {
+    "ticker": "QRFT"
+}, {
+    "ticker": "QLS"
+}, {
+    "ticker": "QPT"
+}, {
+    "ticker": "DAX"
+}, {
+    "ticker": "ROUS"
+}, {
+    "ticker": "QLVE"
+}, {
+    "ticker": "KSA"
+}, {
+    "ticker": "QPFF"
+}, {
+    "ticker": "QQJG"
+}, {
+    "ticker": "FLIN"
+}, {
+    "ticker": "QPX"
+}, {
+    "ticker": "TECL"
+}, {
+    "ticker": "ACWI"
+}, {
+    "ticker": "RIGZ"
+}, {
+    "ticker": "PSMO"
+}, {
+    "ticker": "RIGS"
+}, {
+    "ticker": "RFEM"
+}, {
+    "ticker": "DEEF"
+}, {
+    "ticker": "ANEW"
+}, {
+    "ticker": "TECS"
+}, {
+    "ticker": "EDZ"
+}, {
+    "ticker": "ONOF"
+}, {
+    "ticker": "DFAU"
+}, {
+    "ticker": "DUSA"
+}, {
+    "ticker": "YMAR"
+}, {
+    "ticker": "YJUN"
+}, {
+    "ticker": "AVES"
+}, {
+    "ticker": "RNEM"
+}, {
+    "ticker": "PHB"
+}, {
+    "ticker": "RNDV"
+}, {
+    "ticker": "QID"
+}, {
+    "ticker": "SLYG"
+}, {
+    "ticker": "ROBT"
+}, {
+    "ticker": "RNDM"
+}, {
+    "ticker": "FGM"
+}, {
+    "ticker": "YOLO"
+}, {
+    "ticker": "YSEP"
+}, {
+    "ticker": "DMAY"
+}, {
+    "ticker": "AOA"
+}, {
+    "ticker": "RPG"
+}, {
+    "ticker": "BBSC"
+}, {
+    "ticker": "BWX"
+}, {
+    "ticker": "BSCN"
+}, {
+    "ticker": "BBP"
+}, {
+    "ticker": "DTH"
+}, {
+    "ticker": "BBSA"
+}, {
+    "ticker": "QJUN"
+}, {
+    "ticker": "BIZD"
+}, {
+    "ticker": "EMNT"
+}, {
+    "ticker": "DDIV"
+}, {
+    "ticker": "ZHDG"
+}, {
+    "ticker": "EEMS"
+}, {
+    "ticker": "BKCH"
+}, {
+    "ticker": "RWM"
+}, {
+    "ticker": "DDLS"
+}, {
+    "ticker": "DIVS"
+}, {
+    "ticker": "BSJO"
+}, {
+    "ticker": "RUFF"
+}, {
+    "ticker": "RWO"
+}, {
+    "ticker": "RTM"
+}, {
+    "ticker": "MBBB"
+}, {
+    "ticker": "UOCT"
+}, {
+    "ticker": "BKHY"
+}, {
+    "ticker": "RZG"
+}, {
+    "ticker": "SAA"
+}, {
+    "ticker": "BKLC"
+}, {
+    "ticker": "SBIO"
+}, {
+    "ticker": "SLX"
+}, {
+    "ticker": "DDM"
+}, {
+    "ticker": "RYF"
+}, {
+    "ticker": "EMBH"
+}, {
+    "ticker": "SDD"
+}, {
+    "ticker": "GSIE"
+}, {
+    "ticker": "SBUG"
+}, {
+    "ticker": "SCJ"
+}, {
+    "ticker": "SCHM"
+}, {
+    "ticker": "GSID"
+}, {
+    "ticker": "EQUL"
+}, {
+    "ticker": "FCEF"
+}, {
+    "ticker": "MFEM"
+}, {
+    "ticker": "EMLC"
+}, {
+    "ticker": "SCHR"
+}, {
+    "ticker": "MDIV"
+}, {
+    "ticker": "SEPZ"
+}, {
+    "ticker": "BDCX"
+}, {
+    "ticker": "IQIN"
+}, {
+    "ticker": "DFEB"
+}, {
+    "ticker": "MFUL"
+}, {
+    "ticker": "GTR"
+}, {
+    "ticker": "MFUS"
+}, {
+    "ticker": "GSJY"
+}, {
+    "ticker": "MOAT"
+}, {
+    "ticker": "HFGO"
+}, {
+    "ticker": "BJAN"
+}, {
+    "ticker": "DFAI"
+}, {
+    "ticker": "HERD"
+}, {
+    "ticker": "DFAE"
+}, {
+    "ticker": "FDMO"
+}, {
+    "ticker": "BSJN"
+}, {
+    "ticker": "HYBB"
+}, {
+    "ticker": "ROM"
+}, {
+    "ticker": "BLKC"
+}, {
+    "ticker": "BLHY"
+}, {
+    "ticker": "HKND"
+}, {
+    "ticker": "SKF"
+}, {
+    "ticker": "RPV"
+}, {
+    "ticker": "EQL"
+}, {
+    "ticker": "BLOK"
+}, {
+    "ticker": "SPMD"
+}, {
+    "ticker": "RWL"
+}, {
+    "ticker": "RWJ"
+}, {
+    "ticker": "DUSL"
+}, {
+    "ticker": "FYLD"
+}, {
+    "ticker": "FYC"
+}, {
+    "ticker": "IAT"
+}, {
+    "ticker": "RWK"
+}, {
+    "ticker": "BCIM"
+}, {
+    "ticker": "DJAN"
+}, {
+    "ticker": "DSI"
+}, {
+    "ticker": "DOZR"
+}, {
+    "ticker": "IAGG"
+}, {
+    "ticker": "IGRO"
+}, {
+    "ticker": "IGOV"
+}, {
+    "ticker": "DFAX"
+}, {
+    "ticker": "IBTK"
+}, {
+    "ticker": "DLN"
+}, {
+    "ticker": "EMB"
+}, {
+    "ticker": "SPTI"
+}, {
+    "ticker": "DDWM"
+}, {
+    "ticker": "BMAY"
+}, {
+    "ticker": "BLDG"
+}, {
+    "ticker": "FIDI"
+}, {
+    "ticker": "SSUS"
+}, {
+    "ticker": "ROKT"
+}, {
+    "ticker": "AWAY"
+}, {
+    "ticker": "CID"
+}, {
+    "ticker": "RODE"
+}, {
+    "ticker": "SSPY"
+}, {
+    "ticker": "PLRG"
+}, {
+    "ticker": "AVUV"
+}, {
+    "ticker": "SFY"
+}, {
+    "ticker": "IMTM"
+}, {
+    "ticker": "CLNR"
+}, {
+    "ticker": "FMAR"
+}, {
+    "ticker": "ROBO"
+}, {
+    "ticker": "BBMC"
+}, {
+    "ticker": "CLSA"
+}, {
+    "ticker": "EUO"
+}, {
+    "ticker": "BOCT"
+}, {
+    "ticker": "ONEV"
+}, {
+    "ticker": "BOND"
+}, {
+    "ticker": "BKMC"
+}, {
+    "ticker": "ROAM"
+}, {
+    "ticker": "BSEP"
+}, {
+    "ticker": "FNGD"
+}, {
+    "ticker": "JUSA"
+}, {
+    "ticker": "JUST"
+}, {
+    "ticker": "RIET"
+}, {
+    "ticker": "BUL"
+}, {
+    "ticker": "EQRR"
+}, {
+    "ticker": "CLSM"
+}, {
+    "ticker": "BUFR"
+}, {
+    "ticker": "FNCL"
+}, {
+    "ticker": "EUCG"
+}, {
+    "ticker": "BBUS"
+}, {
+    "ticker": "QRMI"
+}, {
+    "ticker": "RAAX"
+}, {
+    "ticker": "MTUM"
+}, {
+    "ticker": "ESGY"
+}, {
+    "ticker": "GREK"
+}, {
+    "ticker": "EWD"
+}, {
+    "ticker": "EFU"
+}, {
+    "ticker": "BSJM"
+}, {
+    "ticker": "EGPT"
+}, {
+    "ticker": "MTUL"
+}, {
+    "ticker": "DBS"
+}, {
+    "ticker": "MDY"
+}, {
+    "ticker": "KFYP"
+}, {
+    "ticker": "BSV"
+}, {
+    "ticker": "TILT"
+}, {
+    "ticker": "KJUL"
+}, {
+    "ticker": "KNG"
+}, {
+    "ticker": "QTOC"
+}, {
+    "ticker": "RNMC"
+}, {
+    "ticker": "PFFR"
+}, {
+    "ticker": "KMLM"
+}, {
+    "ticker": "NAIL"
+}, {
+    "ticker": "FXO"
+}, {
+    "ticker": "QTAP"
+}, {
+    "ticker": "BSMS"
+}, {
+    "ticker": "RNLC"
+}, {
+    "ticker": "BSMR"
+}, {
+    "ticker": "COMT"
+}, {
+    "ticker": "IPKW"
+}, {
+    "ticker": "DBC"
+}, {
+    "ticker": "DBEH"
+}, {
+    "ticker": "KOMP"
+}, {
+    "ticker": "KOKU"
+}, {
+    "ticker": "REK"
+}, {
+    "ticker": "BSMT"
+}, {
+    "ticker": "VEA"
+}, {
+    "ticker": "BSMU"
+}, {
+    "ticker": "RJZ"
+}, {
+    "ticker": "IEFN"
+}, {
+    "ticker": "KCE"
+}, {
+    "ticker": "DFEN"
+}, {
+    "ticker": "RJN"
+}, {
+    "ticker": "BTEK"
+}, {
+    "ticker": "KRMA"
+}, {
+    "ticker": "SSPX"
+}, {
+    "ticker": "CFCV"
+}, {
+    "ticker": "DEM"
+}, {
+    "ticker": "DEF"
+}, {
+    "ticker": "BTAL"
+}, {
+    "ticker": "BTF"
+}, {
+    "ticker": "PFFL"
+}, {
+    "ticker": "BUYZ"
+}, {
+    "ticker": "SMIG"
+}, {
+    "ticker": "FDRR"
+}, {
+    "ticker": "DMAR"
+}, {
+    "ticker": "BUFD"
+}, {
+    "ticker": "BULZ"
+}, {
+    "ticker": "FJP"
+}, {
+    "ticker": "CATH"
+}, {
+    "ticker": "BUFG"
+}, {
+    "ticker": "SMHB"
+}, {
+    "ticker": "BUFF"
+}, {
+    "ticker": "GWX"
+}, {
+    "ticker": "LDUR"
+}, {
+    "ticker": "LEAD"
+}, {
+    "ticker": "LKOR"
+}, {
+    "ticker": "BUZZ"
+}, {
+    "ticker": "TMDV"
+}, {
+    "ticker": "PQDI"
+}, {
+    "ticker": "SIL"
+}, {
+    "ticker": "FLGR"
+}, {
+    "ticker": "DSJA"
+}, {
+    "ticker": "PCEF"
+}, {
+    "ticker": "NDVG"
+}, {
+    "ticker": "JHMF"
+}, {
+    "ticker": "SCHA"
+}, {
+    "ticker": "TRYP"
+}, {
+    "ticker": "SPGM"
+}, {
+    "ticker": "FLV"
+}, {
+    "ticker": "YPS"
+}, {
+    "ticker": "HAUZ"
+}, {
+    "ticker": "HAP"
+}, {
+    "ticker": "CALF"
+}, {
+    "ticker": "HAWX"
+}, {
+    "ticker": "TLTD"
+}, {
+    "ticker": "EZJ"
+}, {
+    "ticker": "SILJ"
+}, {
+    "ticker": "CARZ"
+}, {
+    "ticker": "BOUT"
+}, {
+    "ticker": "ASGI"
+}, {
+    "ticker": "IEFA"
+}, {
+    "ticker": "QTJL"
+}, {
+    "ticker": "NFLT"
+}, {
+    "ticker": "BNOV"
+}, {
+    "ticker": "EDOG"
+}, {
+    "ticker": "MMSC"
+}, {
+    "ticker": "EUDG"
+}, {
+    "ticker": "SCDL"
+}, {
+    "ticker": "SCHH"
+}, {
+    "ticker": "IWX"
+}, {
+    "ticker": "DTD"
+}, {
+    "ticker": "TSOC"
+}, {
+    "ticker": "FFIU"
+}, {
+    "ticker": "TSPA"
+}, {
+    "ticker": "EMTL"
+}, {
+    "ticker": "IWV"
+}, {
+    "ticker": "PCY"
+}, {
+    "ticker": "DSTX"
+}, {
+    "ticker": "APRZ"
+}, {
+    "ticker": "FLFR"
+}, {
+    "ticker": "FAN"
+}, {
+    "ticker": "EFIX"
+}, {
+    "ticker": "FNDE"
+}, {
+    "ticker": "IWR"
+}, {
+    "ticker": "WNDY"
+}, {
+    "ticker": "EIRL"
+}, {
+    "ticker": "EQAL"
+}, {
+    "ticker": "DBEU"
+}, {
+    "ticker": "FEP"
+}, {
+    "ticker": "FPEI"
+}, {
+    "ticker": "IWD"
+}, {
+    "ticker": "FNOV"
+}, {
+    "ticker": "DIVB"
+}, {
+    "ticker": "DFE"
+}, {
+    "ticker": "MUSI"
+}, {
+    "ticker": "ESGD"
+}, {
+    "ticker": "FTXR"
+}, {
+    "ticker": "ARGT"
+}, {
+    "ticker": "IWC"
+}, {
+    "ticker": "EWCO"
+}, {
+    "ticker": "EWGS"
+}, {
+    "ticker": "BBJP"
+}, {
+    "ticker": "RFV"
+}, {
+    "ticker": "CEFA"
+}, {
+    "ticker": "BBEU"
+}, {
+    "ticker": "ESGG"
+}, {
+    "ticker": "PLTM"
+}, {
+    "ticker": "IJS"
+}, {
+    "ticker": "PLTL"
+}, {
+    "ticker": "RYLD"
+}, {
+    "ticker": "QQD"
+}, {
+    "ticker": "EWRE"
+}, {
+    "ticker": "PNOV"
+}, {
+    "ticker": "CEFD"
+}, {
+    "ticker": "RYT"
+}, {
+    "ticker": "LQDB"
+}, {
+    "ticker": "EWN"
+}, {
+    "ticker": "CEFS"
+}, {
+    "ticker": "EWQ"
+}, {
+    "ticker": "EMMF"
+}, {
+    "ticker": "BF.B"
+}, {
+    "ticker": "BNKD"
+}, {
+    "ticker": "OPPX"
+}, {
+    "ticker": "ESML"
+}, {
+    "ticker": "ACWF"
+}, {
+    "ticker": "EPP"
+}, {
+    "ticker": "DFAC"
+}, {
+    "ticker": "FSMB"
+}, {
+    "ticker": "RFG"
+}, {
+    "ticker": "FIDU"
+}, {
+    "ticker": "DBO"
+}, {
+    "ticker": "DFAT"
+}, {
+    "ticker": "CHIR"
+}, {
+    "ticker": "OVS"
+}, {
+    "ticker": "RFEU"
+}, {
+    "ticker": "RFFC"
+}, {
+    "ticker": "FEMS"
+}, {
+    "ticker": "PPLT"
+}, {
+    "ticker": "DFIP"
+}, {
+    "ticker": "QLD"
+}, {
+    "ticker": "FICS"
+}, {
+    "ticker": "EUFN"
+}, {
+    "ticker": "NGE"
+}, {
+    "ticker": "EUDV"
+}, {
+    "ticker": "GK"
+}, {
+    "ticker": "XLSR"
+}, {
+    "ticker": "SCHX"
+}, {
+    "ticker": "QQC"
+}, {
+    "ticker": "FLIA"
+}, {
+    "ticker": "FLCO"
+}, {
+    "ticker": "DWAS"
+}, {
+    "ticker": "HYLD"
+}, {
+    "ticker": "QLC"
+}, {
+    "ticker": "EVNT"
+}, {
+    "ticker": "DLS"
+}, {
+    "ticker": "PRF"
+}, {
+    "ticker": "CUT"
+}, {
+    "ticker": "EWA"
+}, {
+    "ticker": "ILCB"
+}, {
+    "ticker": "EVX"
+}, {
+    "ticker": "FLLA"
+}, {
+    "ticker": "GOAU"
+}, {
+    "ticker": "RPAR"
+}, {
+    "ticker": "FLJP"
+}, {
+    "ticker": "PPTY"
+}, {
+    "ticker": "AZBA"
+}, {
+    "ticker": "FMIL"
+}, {
+    "ticker": "FLTR"
+}, {
+    "ticker": "XME"
+}, {
+    "ticker": "BBRE"
+}, {
+    "ticker": "PWB"
+}, {
+    "ticker": "FQAL"
+}, {
+    "ticker": "PYZ"
+}, {
+    "ticker": "XMHQ"
+}, {
+    "ticker": "BNDX"
+}, {
+    "ticker": "GRID"
+}, {
+    "ticker": "QGRO"
+}, {
+    "ticker": "EWS"
+}, {
+    "ticker": "HDG"
+}, {
+    "ticker": "FAD"
+}, {
+    "ticker": "FLRG"
+}, {
+    "ticker": "XMLV"
+}, {
+    "ticker": "PSFM"
+}, {
+    "ticker": "BFOR"
+}, {
+    "ticker": "FAS"
+}, {
+    "ticker": "BUFT"
+}, {
+    "ticker": "FCTR"
+}, {
+    "ticker": "KAPR"
+}, {
+    "ticker": "XMMO"
+}, {
+    "ticker": "FAPR"
+}, {
+    "ticker": "GURU"
+}, {
+    "ticker": "HYLV"
+}, {
+    "ticker": "IHYF"
+}, {
+    "ticker": "FDEC"
+}, {
+    "ticker": "WOOD"
+}, {
+    "ticker": "FEDM"
+}, {
+    "ticker": "FDD"
+}, {
+    "ticker": "RETL"
+}, {
+    "ticker": "GSEU"
+}, {
+    "ticker": "RESD"
+}, {
+    "ticker": "PSFO"
+}, {
+    "ticker": "FEHY"
+}, {
+    "ticker": "FLKR"
+}, {
+    "ticker": "WLDR"
+}, {
+    "ticker": "XRMI"
+}, {
+    "ticker": "HYXF"
+}, {
+    "ticker": "XRLV"
+}, {
+    "ticker": "JHMD"
+}, {
+    "ticker": "FEVR"
+}, {
+    "ticker": "RING"
+}, {
+    "ticker": "RESP"
+}, {
+    "ticker": "IMCB"
+}, {
+    "ticker": "IMCV"
+}, {
+    "ticker": "JHMS"
+}, {
+    "ticker": "JHMC"
+}, {
+    "ticker": "CPER"
+}, {
+    "ticker": "IMFL"
+}, {
+    "ticker": "SIZE"
+}, {
+    "ticker": "CNBS"
+}, {
+    "ticker": "SOXQ"
+}, {
+    "ticker": "XSD"
+}, {
+    "ticker": "EAOA"
+}, {
+    "ticker": "TWIO"
+}, {
+    "ticker": "RZV"
+}, {
+    "ticker": "CTEX"
+}, {
+    "ticker": "XSHD"
+}, {
+    "ticker": "SOXL"
+}, {
+    "ticker": "SJB"
+}, {
+    "ticker": "CNRG"
+}, {
+    "ticker": "ECOZ"
+}, {
+    "ticker": "XSVM"
+}, {
+    "ticker": "DSCF"
+}, {
+    "ticker": "FLIY"
+}, {
+    "ticker": "EAOK"
+}, {
+    "ticker": "FJAN"
+}, {
+    "ticker": "TWM"
+}, {
+    "ticker": "EAPR"
+}, {
+    "ticker": "KLCD"
+}, {
+    "ticker": "EAOM"
+}, {
+    "ticker": "FGD"
+}, {
+    "ticker": "XSMO"
+}, {
+    "ticker": "XTL"
+}, {
+    "ticker": "XSHQ"
+}, {
+    "ticker": "FLQG"
+}, {
+    "ticker": "CPI"
+}, {
+    "ticker": "XTJL"
+}, {
+    "ticker": "XTAP"
+}, {
+    "ticker": "GLRY"
+}, {
+    "ticker": "EWU"
+}, {
+    "ticker": "FLQL"
+}, {
+    "ticker": "RTAI"
+}, {
+    "ticker": "FFHG"
+}, {
+    "ticker": "EMFM"
+}, {
+    "ticker": "XT"
+}, {
+    "ticker": "FMAY"
+}, {
+    "ticker": "KBE"
+}, {
+    "ticker": "CEMB"
+}, {
+    "ticker": "DGRO"
+}, {
+    "ticker": "EOPS"
+}, {
+    "ticker": "EWI"
+}, {
+    "ticker": "SIVR"
+}, {
+    "ticker": "CSM"
+}, {
+    "ticker": "FMAT"
+}, {
+    "ticker": "FLSP"
+}, {
+    "ticker": "REIT"
+}, {
+    "ticker": "HCRB"
+}, {
+    "ticker": "SIXA"
+}, {
+    "ticker": "EMHC"
+}, {
+    "ticker": "GOEX"
+}, {
+    "ticker": "ESGU"
+}, {
+    "ticker": "GBLD"
+}, {
+    "ticker": "DBGR"
+}, {
+    "ticker": "XVOL"
+}, {
+    "ticker": "DECZ"
+}, {
+    "ticker": "IHY"
+}, {
+    "ticker": "FCOM"
+}, {
+    "ticker": "HEDJ"
+}, {
+    "ticker": "INDY"
+}, {
+    "ticker": "REGL"
+}, {
+    "ticker": "FRI"
+}, {
+    "ticker": "SBB"
+}, {
+    "ticker": "ASEA"
+}, {
+    "ticker": "CRPT"
+}, {
+    "ticker": "HELX"
+}, {
+    "ticker": "RECS"
+}, {
+    "ticker": "FDVV"
+}, {
+    "ticker": "EDIV"
+}, {
+    "ticker": "HYTR"
+}, {
+    "ticker": "FPRO"
+}, {
+    "ticker": "FPXE"
+}, {
+    "ticker": "FEM"
+}, {
+    "ticker": "EMBD"
+}, {
+    "ticker": "FCPI"
+}, {
+    "ticker": "GCLN"
+}, {
+    "ticker": "GBGR"
+}, {
+    "ticker": "REZ"
+}, {
+    "ticker": "FXA"
+}, {
+    "ticker": "FTXO"
+}, {
+    "ticker": "JZRO"
+}, {
+    "ticker": "FTXL"
+}, {
+    "ticker": "XWEB"
+}, {
+    "ticker": "GAMR"
+}, {
+    "ticker": "XVV"
+}, {
+    "ticker": "GLIN"
+}, {
+    "ticker": "CRUZ"
+}, {
+    "ticker": "ESEB"
+}, {
+    "ticker": "GLDB"
+}, {
+    "ticker": "FTDS"
+}, {
+    "ticker": "GSG"
+}, {
+    "ticker": "XYLD"
+}, {
+    "ticker": "GCOW"
+}, {
+    "ticker": "RDOG"
+}, {
+    "ticker": "GVAL"
+}, {
+    "ticker": "CSA"
+}, {
+    "ticker": "HEWC"
+}, {
+    "ticker": "HAIL"
+}, {
+    "ticker": "TDIV"
+}, {
+    "ticker": "GSFP"
+}, {
+    "ticker": "GSEE"
+}, {
+    "ticker": "GVIP"
+}, {
+    "ticker": "HOMZ"
+}, {
+    "ticker": "CWS"
+}, {
+    "ticker": "TIP"
+}, {
+    "ticker": "UJUN"
+}, {
+    "ticker": "JCTR"
+}, {
+    "ticker": "CWI"
+}, {
+    "ticker": "HDIV"
+}, {
+    "ticker": "HDGE"
+}, {
+    "ticker": "SRET"
+}, {
+    "ticker": "YLDE"
+}, {
+    "ticker": "UDEC"
+}, {
+    "ticker": "CLRG"
+}, {
+    "ticker": "GLIF"
+}, {
+    "ticker": "HDEF"
+}, {
+    "ticker": "CSML"
+}, {
+    "ticker": "FLQE"
+}, {
+    "ticker": "FLQH"
+}, {
+    "ticker": "FOCT"
+}, {
+    "ticker": "FLLV"
+}, {
+    "ticker": "CTBB"
+}, {
+    "ticker": "SSO"
+}, {
+    "ticker": "FPX"
+}, {
+    "ticker": "HISF"
+}, {
+    "ticker": "FPE"
+}, {
+    "ticker": "GTIP"
+}, {
+    "ticker": "FLAU"
+}, {
+    "ticker": "DBP"
+}, {
+    "ticker": "FFTG"
+}, {
+    "ticker": "AVEM"
+}, {
+    "ticker": "KORU"
+}, {
+    "ticker": "KOIN"
+}, {
+    "ticker": "ONEO"
+}, {
+    "ticker": "OPER"
+}, {
+    "ticker": "GRN"
+}, {
+    "ticker": "HSUN"
+}, {
+    "ticker": "INDA"
+}, {
+    "ticker": "UMAY"
+}, {
+    "ticker": "EFA"
+}, {
+    "ticker": "AVDE"
+}, {
+    "ticker": "ZECP"
+}, {
+    "ticker": "MJXL"
+}, {
+    "ticker": "GHYG"
+}, {
+    "ticker": "THD"
+}, {
+    "ticker": "GHYB"
+}, {
+    "ticker": "TMV"
+}, {
+    "ticker": "TINT"
+}, {
+    "ticker": "HYDB"
+}, {
+    "ticker": "CUBS"
+}, {
+    "ticker": "HTUS"
+}, {
+    "ticker": "THCX"
+}, {
+    "ticker": "HYEM"
+}, {
+    "ticker": "IVV"
+}, {
+    "ticker": "TPSC"
+}, {
+    "ticker": "HYGH"
+}, {
+    "ticker": "EWC"
+}, {
+    "ticker": "HYG"
+}, {
+    "ticker": "HYDW"
+}, {
+    "ticker": "EWM"
+}, {
+    "ticker": "TOK"
+}, {
+    "ticker": "EWG"
+}, {
+    "ticker": "QDYN"
+}, {
+    "ticker": "TOTR"
+}, {
+    "ticker": "HYDR"
+}, {
+    "ticker": "HYGV"
+}, {
+    "ticker": "TOTL"
+}, {
+    "ticker": "TOKE"
+}, {
+    "ticker": "HYLB"
+}, {
+    "ticker": "HYIN"
+}, {
+    "ticker": "EZM"
+}, {
+    "ticker": "LQDI"
+}, {
+    "ticker": "DBJA"
+}, {
+    "ticker": "XDJL"
+}, {
+    "ticker": "TSJA"
+}, {
+    "ticker": "AFK"
+}, {
+    "ticker": "HYZD"
+}, {
+    "ticker": "UGCE"
+}, {
+    "ticker": "DEUS"
+}, {
+    "ticker": "IAPR"
+}, {
+    "ticker": "IBB"
+}, {
+    "ticker": "HEET"
+}, {
+    "ticker": "UEVM"
+}, {
+    "ticker": "IJJ"
+}, {
+    "ticker": "ILCV"
+}, {
+    "ticker": "UFEB"
+}, {
+    "ticker": "TTT"
+}, {
+    "ticker": "CZA"
+}, {
+    "ticker": "UXI"
+}, {
+    "ticker": "AQGX"
+}, {
+    "ticker": "ACWV"
+}, {
+    "ticker": "ACSI"
+}, {
+    "ticker": "IBTG"
+}, {
+    "ticker": "QDEF"
+}, {
+    "ticker": "DFIV"
+}, {
+    "ticker": "HEGD"
+}, {
+    "ticker": "IBTJ"
+}, {
+    "ticker": "OCEN"
+}, {
+    "ticker": "DFHY"
+}, {
+    "ticker": "USL"
+}, {
+    "ticker": "FBCG"
+}, {
+    "ticker": "USHY"
+}, {
+    "ticker": "HHH"
+}, {
+    "ticker": "IBTH"
+}, {
+    "ticker": "UYM"
+}, {
+    "ticker": "IBTE"
+}, {
+    "ticker": "FLM"
+}, {
+    "ticker": "IYK"
+}, {
+    "ticker": "FLN"
+}, {
+    "ticker": "FITE"
+}, {
+    "ticker": "IMCG"
+}, {
+    "ticker": "FFSG"
+}, {
+    "ticker": "CMF"
+}, {
+    "ticker": "PGX"
+}, {
+    "ticker": "ILCG"
+}, {
+    "ticker": "DUST"
+}, {
+    "ticker": "IGHG"
+}, {
+    "ticker": "IEI"
+}, {
+    "ticker": "IFED"
+}, {
+    "ticker": "INFL"
+}, {
+    "ticker": "ZIG"
+}, {
+    "ticker": "EDOW"
+}, {
+    "ticker": "INDL"
+}, {
+    "ticker": "DVYE"
+}, {
+    "ticker": "DWSH"
+}, {
+    "ticker": "OBND"
+}, {
+    "ticker": "REW"
+}, {
+    "ticker": "DVLU"
+}, {
+    "ticker": "EWJV"
+}, {
+    "ticker": "FLRN"
+}, {
+    "ticker": "FLQS"
+}, {
+    "ticker": "POCT"
+}, {
+    "ticker": "EFNL"
+}, {
+    "ticker": "EBLU"
+}, {
+    "ticker": "FREL"
+}, {
+    "ticker": "YLD"
+}, {
+    "ticker": "HYXU"
+}, {
+    "ticker": "ACWX"
+}, {
+    "ticker": "CMSC"
+}, {
+    "ticker": "GRNB"
+}, {
+    "ticker": "FLCA"
+}, {
+    "ticker": "HYUP"
+}, {
+    "ticker": "COPX"
+}, {
+    "ticker": "HMOP"
+}, {
+    "ticker": "PXH"
+}, {
+    "ticker": "IYJ"
+}, {
+    "ticker": "IOCT"
+}, {
+    "ticker": "IPAC"
+}, {
+    "ticker": "JIG"
+}, {
+    "ticker": "INTF"
+}, {
+    "ticker": "GTEK"
+}, {
+    "ticker": "OALC"
+}, {
+    "ticker": "WTV"
+}, {
+    "ticker": "ZSL"
+}, {
+    "ticker": "ISDX"
+}, {
+    "ticker": "AFSM"
+}, {
+    "ticker": "ISCV"
+}, {
+    "ticker": "MINN"
+}, {
+    "ticker": "EWP"
+}, {
+    "ticker": "IYG"
+}, {
+    "ticker": "HIBL"
+}, {
+    "ticker": "RCD"
+}, {
+    "ticker": "ISMD"
+}, {
+    "ticker": "HIPS"
+}, {
+    "ticker": "JRNY"
+}, {
+    "ticker": "LYFE"
+}, {
+    "ticker": "IYM"
+}, {
+    "ticker": "FM"
+}, {
+    "ticker": "DBB"
+}, {
+    "ticker": "IXG"
+}, {
+    "ticker": "PTBD"
+}, {
+    "ticker": "IYLD"
+}, {
+    "ticker": "TGIF"
+}, {
+    "ticker": "FLBL"
+}, {
+    "ticker": "DBAW"
+}, {
+    "ticker": "IYT"
+}, {
+    "ticker": "BJK"
+}, {
+    "ticker": "HVAL"
+}, {
+    "ticker": "IYW"
+}, {
+    "ticker": "HUSV"
+}, {
+    "ticker": "IYR"
+}, {
+    "ticker": "FLQD"
+}, {
+    "ticker": "JSML"
+}, {
+    "ticker": "FLTW"
+}, {
+    "ticker": "ADME"
+}, {
+    "ticker": "JHEM"
+}, {
+    "ticker": "KEMX"
+}, {
+    "ticker": "JEMA"
+}, {
+    "ticker": "FNY"
+}, {
+    "ticker": "XLI"
+}, {
+    "ticker": "FLHY"
+}, {
+    "ticker": "JHMI"
+}, {
+    "ticker": "FLEH"
+}, {
+    "ticker": "KLDW"
+}, {
+    "ticker": "DSEP"
+}, {
+    "ticker": "IBET"
+}, {
+    "ticker": "JPIB"
+}, {
+    "ticker": "DBEZ"
+}, {
+    "ticker": "JPEM"
+}, {
+    "ticker": "DEEP"
+}, {
+    "ticker": "HSCZ"
+}, {
+    "ticker": "FTQI"
+}, {
+    "ticker": "IBHF"
+}, {
+    "ticker": "JPIN"
+}, {
+    "ticker": "HSMV"
+}, {
+    "ticker": "XPND"
+}, {
+    "ticker": "JPIE"
+}, {
+    "ticker": "XNTK"
+}, {
+    "ticker": "JPHY"
+}, {
+    "ticker": "XPH"
+}, {
+    "ticker": "EPS"
+}, {
+    "ticker": "HSRT"
+}, {
+    "ticker": "DAPP"
+}, {
+    "ticker": "DBLV"
+}, {
+    "ticker": "FDTS"
+}, {
+    "ticker": "KBWD"
+}, {
+    "ticker": "FLQM"
+}, {
+    "ticker": "FNX"
+}, {
+    "ticker": "ITAN"
+}, {
+    "ticker": "NTSE"
+}, {
+    "ticker": "IDX"
+}, {
+    "ticker": "JPXN"
+}, {
+    "ticker": "KBWP"
+}, {
+    "ticker": "IYF"
+}, {
+    "ticker": "JPUS"
+}, {
+    "ticker": "TIPZ"
+}, {
+    "ticker": "LRGE"
+}, {
+    "ticker": "VO"
+}, {
+    "ticker": "AAA"
+}, {
+    "ticker": "TFLO"
+}, {
+    "ticker": "IBUY"
+}, {
+    "ticker": "FOVL"
+}, {
+    "ticker": "BEDZ"
+}, {
+    "ticker": "FSEP"
+}, {
+    "ticker": "FOMO"
+}, {
+    "ticker": "HTRB"
+}, {
+    "ticker": "FEUZ"
+}, {
+    "ticker": "CBLS"
+}, {
+    "ticker": "LSAT"
+}, {
+    "ticker": "AVDR"
+}, {
+    "ticker": "SIMS"
+}, {
+    "ticker": "MGC"
+}, {
+    "ticker": "FYT"
+}, {
+    "ticker": "EFAD"
+}, {
+    "ticker": "DEMZ"
+}, {
+    "ticker": "IJK"
+}, {
+    "ticker": "PALC"
+}, {
+    "ticker": "IJH"
+}, {
+    "ticker": "GSY"
+}, {
+    "ticker": "DWM"
+}, {
+    "ticker": "EFAS"
+}, {
+    "ticker": "IJR"
+}, {
+    "ticker": "FYX"
+}, {
+    "ticker": "IDHQ"
+}, {
+    "ticker": "ROOF"
+}, {
+    "ticker": "GMET"
+}, {
+    "ticker": "IDLV"
+}, {
+    "ticker": "BAPR"
+}, {
+    "ticker": "EFZ"
+}, {
+    "ticker": "IEV"
+}, {
+    "ticker": "AQWA"
+}, {
+    "ticker": "SDEF"
+}, {
+    "ticker": "IGM"
+}, {
+    "ticker": "JPSE"
+}, {
+    "ticker": "IHI"
+}, {
+    "ticker": "IGN"
+}, {
+    "ticker": "DWMC"
+}, {
+    "ticker": "JHMT"
+}, {
+    "ticker": "FXZ"
+}, {
+    "ticker": "FXB"
+}, {
+    "ticker": "PFLD"
+}, {
+    "ticker": "DWPP"
+}, {
+    "ticker": "FXC"
+}, {
+    "ticker": "JMUB"
+}, {
+    "ticker": "ISHG"
+}, {
+    "ticker": "PWV"
+}, {
+    "ticker": "ESHY"
+}, {
+    "ticker": "ELD"
+}, {
+    "ticker": "EATZ"
+}, {
+    "ticker": "DMXF"
+}, {
+    "ticker": "SIJ"
+}, {
+    "ticker": "DXGE"
+}, {
+    "ticker": "ESGS"
+}, {
+    "ticker": "IVSG"
+}, {
+    "ticker": "DOG"
+}, {
+    "ticker": "EDEN"
+}, {
+    "ticker": "INKM"
+}, {
+    "ticker": "IUSV"
+}, {
+    "ticker": "IVOV"
+}, {
+    "ticker": "EEMO"
+}, {
+    "ticker": "HEWG"
+}, {
+    "ticker": "IXN"
+}, {
+    "ticker": "DNOV"
+}, {
+    "ticker": "ADFI"
+}, {
+    "ticker": "QYLG"
+}, {
+    "ticker": "IXSE"
+}, {
+    "ticker": "ISZE"
+}, {
+    "ticker": "ITOT"
+}, {
+    "ticker": "IXUS"
+}, {
+    "ticker": "IXP"
+}, {
+    "ticker": "IYC"
+}, {
+    "ticker": "IUSS"
+}, {
+    "ticker": "NWLG"
+}, {
+    "ticker": "FFR"
+}, {
+    "ticker": "ETHO"
+}, {
+    "ticker": "QQQN"
+}, {
+    "ticker": "TDTF"
+}, {
+    "ticker": "MRSK"
+}, {
+    "ticker": "FLGB"
+}, {
+    "ticker": "GSST"
+}, {
+    "ticker": "QQQM"
+}, {
+    "ticker": "ENZL"
+}, {
+    "ticker": "FTEC"
+}, {
+    "ticker": "GSSC"
+}, {
+    "ticker": "FTC"
+}, {
+    "ticker": "JAVA"
+}, {
+    "ticker": "BOTZ"
+}, {
+    "ticker": "JMIN"
+}, {
+    "ticker": "JJU"
+}, {
+    "ticker": "DVYA"
+}, {
+    "ticker": "IVLU"
+}, {
+    "ticker": "SCHB"
+}, {
+    "ticker": "SCHF"
+}, {
+    "ticker": "DVY"
+}, {
+    "ticker": "SCHC"
+}, {
+    "ticker": "SCHP"
+}, {
+    "ticker": "SCHO"
+}, {
+    "ticker": "DVOL"
+}, {
+    "ticker": "SCHD"
+}, {
+    "ticker": "SHUS"
+}, {
+    "ticker": "MRAD"
+}, {
+    "ticker": "FXD"
+}, {
+    "ticker": "QQMG"
+}, {
+    "ticker": "BSJP"
+}, {
+    "ticker": "OVT"
+}, {
+    "ticker": "BSJQ"
+}, {
+    "ticker": "HYLS"
+}, {
+    "ticker": "AVDV"
+}, {
+    "ticker": "JOET"
+}, {
+    "ticker": "QQQJ"
+}, {
+    "ticker": "AADR"
+}, {
+    "ticker": "FEDX"
+}, {
+    "ticker": "BSJR"
+}, {
+    "ticker": "JPMB"
+}, {
+    "ticker": "GYLD"
+}, {
+    "ticker": "IAI"
+}, {
+    "ticker": "IBDR"
+}, {
+    "ticker": "HYS"
+}, {
+    "ticker": "QQH"
+}, {
+    "ticker": "IFRA"
+}, {
+    "ticker": "SQQQ"
+}, {
+    "ticker": "QMOM"
+}, {
+    "ticker": "PAPR"
+}, {
+    "ticker": "INMU"
+}, {
+    "ticker": "PAMC"
+}, {
+    "ticker": "IBND"
+}, {
+    "ticker": "IEDI"
+}, {
+    "ticker": "IBTD"
+}, {
+    "ticker": "JSTC"
+}, {
+    "ticker": "ICF"
+}, {
+    "ticker": "MORT"
+}, {
+    "ticker": "IQDY"
+}, {
+    "ticker": "IDAT"
+}, {
+    "ticker": "JSCP"
+}, {
+    "ticker": "SPYD"
+}, {
+    "ticker": "IQDE"
+}, {
+    "ticker": "IVOG"
+}, {
+    "ticker": "XHB"
+}, {
+    "ticker": "IPOS"
+}, {
+    "ticker": "IVE"
+}, {
+    "ticker": "BSDE"
+}, {
+    "ticker": "DGRS"
+}, {
+    "ticker": "PDN"
+}, {
+    "ticker": "FBCV"
+}, {
+    "ticker": "IWN"
+}, {
+    "ticker": "MSTB"
+}, {
+    "ticker": "QMN"
+}, {
+    "ticker": "IWFL"
+}, {
+    "ticker": "FBGX"
+}, {
+    "ticker": "DGRE"
+}, {
+    "ticker": "PDP"
+}, {
+    "ticker": "AIIQ"
+}, {
+    "ticker": "EWJE"
+}, {
+    "ticker": "SHFT"
+}, {
+    "ticker": "DGRW"
+}, {
+    "ticker": "JHCS"
+}, {
+    "ticker": "NUDM"
+}, {
+    "ticker": "QED"
+}, {
+    "ticker": "FTXG"
+}, {
+    "ticker": "MOO"
+}, {
+    "ticker": "XBI"
+}, {
+    "ticker": "ACTV"
+}, {
+    "ticker": "NEAR"
+}, {
+    "ticker": "JJT"
+}, {
+    "ticker": "AGT"
+}, {
+    "ticker": "VTV"
+}, {
+    "ticker": "BLES"
+}, {
+    "ticker": "TBX"
+}, {
+    "ticker": "KRE"
+}, {
+    "ticker": "CIL"
+}, {
+    "ticker": "IWDL"
+}, {
+    "ticker": "KRBN"
+}, {
+    "ticker": "FAZ"
+}, {
+    "ticker": "QABA"
+}, {
+    "ticker": "FVAL"
+}, {
+    "ticker": "JUNZ"
+}, {
+    "ticker": "FLBR"
+}, {
+    "ticker": "TBUX"
+}, {
+    "ticker": "DIVO"
+}, {
+    "ticker": "CRBN"
+}, {
+    "ticker": "AHHX"
+}, {
+    "ticker": "KROP"
+}, {
+    "ticker": "LCR"
+}, {
+    "ticker": "DGS"
+}, {
+    "ticker": "DOCT"
+}, {
+    "ticker": "BKLN"
+}, {
+    "ticker": "KHYB"
+}, {
+    "ticker": "FIVA"
+}, {
+    "ticker": "FLDR"
+}, {
+    "ticker": "EWJ"
+}, {
+    "ticker": "FLRT"
+}, {
+    "ticker": "DPST"
+}, {
+    "ticker": "DRIV"
+}, {
+    "ticker": "DWUS"
+}, {
+    "ticker": "FNDB"
+}, {
+    "ticker": "KOCG"
+}, {
+    "ticker": "FLSW"
+}, {
+    "ticker": "ISRA"
+}, {
+    "ticker": "PYS"
+}, {
+    "ticker": "FIVG"
+}, {
+    "ticker": "KJAN"
+}, {
+    "ticker": "EFAX"
+}, {
+    "ticker": "FNDA"
+}, {
+    "ticker": "FRNW"
+}, {
+    "ticker": "FNDC"
+}, {
+    "ticker": "NIB"
+}, {
+    "ticker": "SPYC"
+}, {
+    "ticker": "CNCR"
+}, {
+    "ticker": "EPV"
+}, {
+    "ticker": "OVL"
+}, {
+    "ticker": "EFV"
+}, {
+    "ticker": "AFIF"
+}, {
+    "ticker": "LIV"
+}, {
+    "ticker": "EFIV"
+}, {
+    "ticker": "ECOW"
+}, {
+    "ticker": "ALTY"
+}, {
+    "ticker": "MVRL"
+}, {
+    "ticker": "SHAG"
+}, {
+    "ticker": "FXL"
+}, {
+    "ticker": "PRN"
+}, {
+    "ticker": "PY"
+}, {
+    "ticker": "FXR"
+}, {
+    "ticker": "KXI"
+}, {
+    "ticker": "SH"
+}, {
+    "ticker": "SPY"
+}, {
+    "ticker": "ENOR"
+}, {
+    "ticker": "PXUS"
+}, {
+    "ticker": "FXP"
+}, {
+    "ticker": "PRNT"
+}, {
+    "ticker": "PRFZ"
+}, {
+    "ticker": "SPXZ"
+}, {
+    "ticker": "IBDN"
+}, {
+    "ticker": "MPRO"
+}, {
+    "ticker": "PVAL"
+}, {
+    "ticker": "TAXF"
+}, {
+    "ticker": "NUSI"
+}, {
+    "ticker": "FKU"
+}, {
+    "ticker": "GERM"
+}, {
+    "ticker": "PSC"
+}, {
+    "ticker": "AESR"
+}, {
+    "ticker": "PSCD"
+}, {
+    "ticker": "PSCI"
+}, {
+    "ticker": "NTSI"
+}, {
+    "ticker": "GEM"
+}, {
+    "ticker": "PSCF"
+}, {
+    "ticker": "GAL"
+}, {
+    "ticker": "NTSX"
+}, {
+    "ticker": "RULE"
+}, {
+    "ticker": "IBTI"
+}, {
+    "ticker": "ICVT"
+}, {
+    "ticker": "NYF"
+}, {
+    "ticker": "PSET"
+}, {
+    "ticker": "PSK"
+}, {
+    "ticker": "LRGF"
+}, {
+    "ticker": "PSCT"
+}, {
+    "ticker": "PSI"
+}, {
+    "ticker": "PSCM"
+}, {
+    "ticker": "PSCQ"
+}, {
+    "ticker": "PSL"
+}, {
+    "ticker": "ICOW"
+}, {
+    "ticker": "DWEQ"
+}, {
+    "ticker": "PTF"
+}, {
+    "ticker": "OIL"
+}, {
+    "ticker": "PSMB"
+}, {
+    "ticker": "MAKX"
+}, {
+    "ticker": "PSP"
+}, {
+    "ticker": "SPXU"
+}, {
+    "ticker": "PSQ"
+}, {
+    "ticker": "DWAW"
+}, {
+    "ticker": "FSST"
+}, {
+    "ticker": "LDSF"
+}, {
+    "ticker": "OVLH"
+}, {
+    "ticker": "SMLV"
+}, {
+    "ticker": "REM"
+}, {
+    "ticker": "PUTW"
+}, {
+    "ticker": "SPCX"
+}, {
+    "ticker": "FSZ"
+}, {
+    "ticker": "ALTL"
+}, {
+    "ticker": "PTEU"
+}, {
+    "ticker": "EBND"
+}, {
+    "ticker": "FTHI"
+}, {
+    "ticker": "SIXO"
+}, {
+    "ticker": "GTO"
+}, {
+    "ticker": "DRV"
+}, {
+    "ticker": "XJUN"
+}, {
+    "ticker": "KLNE"
+}, {
+    "ticker": "KIE"
+}, {
+    "ticker": "VBK"
+}, {
+    "ticker": "QQQ"
+}, {
+    "ticker": "TMFC"
+}, {
+    "ticker": "MMIT"
+}, {
+    "ticker": "TCHP"
+}, {
+    "ticker": "VOOG"
+}, {
+    "ticker": "TECB"
+}, {
+    "ticker": "TRPL"
+}, {
+    "ticker": "FDN"
+}, {
+    "ticker": "QQQA"
+}, {
+    "ticker": "VUG"
+}, {
+    "ticker": "FNGG"
+}, {
+    "ticker": "WGLD"
+}, {
+    "ticker": "IDLB"
+}, {
+    "ticker": "PSIL"
+}, {
+    "ticker": "LD"
+}, {
+    "ticker": "IWF"
+}, {
+    "ticker": "VONG"
+}, {
+    "ticker": "TBF"
+}, {
+    "ticker": "BIB"
+}, {
+    "ticker": "NUMG"
+}, {
+    "ticker": "ONEQ"
+}, {
+    "ticker": "IUSG"
+}, {
+    "ticker": "IWP"
+}, {
+    "ticker": "MGK"
+}, {
+    "ticker": "FIHD"
+}, {
+    "ticker": "IVW"
+}, {
+    "ticker": "OUSA"
+}, {
+    "ticker": "IEIH"
+}, {
+    "ticker": "SPYG"
+}, {
+    "ticker": "UTRN"
+}, {
+    "ticker": "PHO"
+}, {
+    "ticker": "KOCT"
+}, {
+    "ticker": "PTH"
+}, {
+    "ticker": "GBUG"
+}, {
+    "ticker": "BTEC"
+}, {
+    "ticker": "PSMR"
+}, {
+    "ticker": "FEUS"
+}, {
+    "ticker": "FIW"
+}, {
+    "ticker": "TAN"
+}, {
+    "ticker": "TUR"
+}, {
+    "ticker": "PWZ"
+}, {
+    "ticker": "SMN"
+}, {
+    "ticker": "PJUL"
+}, {
+    "ticker": "VXX"
+}, {
+    "ticker": "SVXY"
+}, {
+    "ticker": "VMBS"
+}, {
+    "ticker": "COW"
+}, {
+    "ticker": "XHS"
+}, {
+    "ticker": "EDOC"
+}, {
+    "ticker": "IIGD"
+}, {
+    "ticker": "EDUT"
+}, {
+    "ticker": "MMCA"
+}, {
+    "ticker": "NIFE"
+}, {
+    "ticker": "PPH"
+}, {
+    "ticker": "PZA"
+}, {
+    "ticker": "MBB"
+}, {
+    "ticker": "ACES"
+}, {
+    "ticker": "RDIV"
+}, {
+    "ticker": "FMB"
+}, {
+    "ticker": "FXG"
+}, {
+    "ticker": "GEF.B"
+}, {
+    "ticker": "GMOM"
+}, {
+    "ticker": "FLMI"
+}, {
+    "ticker": "MLN"
+}, {
+    "ticker": "LABU"
+}, {
+    "ticker": "AGGY"
+}, {
+    "ticker": "IQSI"
+}, {
+    "ticker": "VHT"
+}, {
+    "ticker": "OILD"
+}, {
+    "ticker": "ARKG"
+}, {
+    "ticker": "NRGD"
+}, {
+    "ticker": "ULST"
+}, {
+    "ticker": "ASPY"
+}, {
+    "ticker": "UAE"
+}, {
+    "ticker": "AVSF"
+}, {
+    "ticker": "CLDS"
+}, {
+    "ticker": "LVHI"
+}, {
+    "ticker": "FHLC"
+}, {
+    "ticker": "SHYD"
+}, {
+    "ticker": "RVNU"
+}, {
+    "ticker": "EPRF"
+}, {
+    "ticker": "FLMB"
+}, {
+    "ticker": "EPU"
+}, {
+    "ticker": "SPMB"
+}, {
+    "ticker": "AZBL"
+}, {
+    "ticker": "BIV"
+}, {
+    "ticker": "CLTL"
+}, {
+    "ticker": "TRTY"
+}, {
+    "ticker": "GRES"
+}, {
+    "ticker": "GXG"
+}, {
+    "ticker": "ICOL"
+}, {
+    "ticker": "FDHT"
+}, {
+    "ticker": "COWZ"
+}, {
+    "ticker": "GLL"
+}, {
+    "ticker": "CYA"
+}, {
+    "ticker": "CLSC"
+}, {
+    "ticker": "RZB"
+}, {
+    "ticker": "UTES"
+}, {
+    "ticker": "CBON"
+}, {
+    "ticker": "DXJS"
+}, {
+    "ticker": "XMPT"
+}, {
+    "ticker": "AGZD"
+}, {
+    "ticker": "YUMY"
+}, {
+    "ticker": "AGZ"
+}, {
+    "ticker": "XLV"
+}, {
+    "ticker": "GCOR"
+}, {
+    "ticker": "SPHD"
+}, {
+    "ticker": "SPXB"
+}, {
+    "ticker": "TPHD"
+}, {
+    "ticker": "SMOG"
+}, {
+    "ticker": "GDXD"
+}, {
+    "ticker": "USEQ"
+}, {
+    "ticker": "EWZS"
+}, {
+    "ticker": "UST"
+}, {
+    "ticker": "TPHE"
+}, {
+    "ticker": "VIXM"
+}, {
+    "ticker": "JDST"
+}, {
+    "ticker": "KBND"
+}, {
+    "ticker": "GVI"
+}, {
+    "ticker": "IDIV"
+}, {
+    "ticker": "IYH"
+}, {
+    "ticker": "NFTZ"
+}, {
+    "ticker": "SDEI"
+}, {
+    "ticker": "PALL"
+}, {
+    "ticker": "PFFD"
+}, {
+    "ticker": "MSGR"
+}, {
+    "ticker": "OVM"
+}, {
+    "ticker": "AJXA"
+}, {
+    "ticker": "RXL"
+}, {
+    "ticker": "APXH"
+}, {
+    "ticker": "MINO"
+}, {
+    "ticker": "NUBD"
+}, {
+    "ticker": "NLR"
+}, {
+    "ticker": "PBND"
+}, {
+    "ticker": "HYMU"
+}, {
+    "ticker": "XTR"
+}, {
+    "ticker": "AGG"
+}, {
+    "ticker": "TOLZ"
+}, {
+    "ticker": "QLTA"
+}, {
+    "ticker": "BSMV"
+}, {
+    "ticker": "WDNA"
+}, {
+    "ticker": "FLUD"
+}, {
+    "ticker": "FBZ"
+}, {
+    "ticker": "ZIONL"
+}, {
+    "ticker": "VSL"
+}, {
+    "ticker": "FLSA"
+}, {
+    "ticker": "JHMH"
+}, {
+    "ticker": "USBF"
+}, {
+    "ticker": "SBND"
+}, {
+    "ticker": "FLZA"
+}, {
+    "ticker": "PQIN"
+}, {
+    "ticker": "PLW"
+}, {
+    "ticker": "SIFI"
+}, {
+    "ticker": "FISR"
+}, {
+    "ticker": "USI"
+}, {
+    "ticker": "FTAG"
+}, {
+    "ticker": "STLV"
+}, {
+    "ticker": "SIHY"
+}, {
+    "ticker": "BND"
+}, {
+    "ticker": "PSYK"
+}, {
+    "ticker": "GIGB"
+}, {
+    "ticker": "HCXY"
+}, {
+    "ticker": "IBTL"
+}, {
+    "ticker": "MAAX"
+}, {
+    "ticker": "EAGG"
+}, {
+    "ticker": "VCEB"
+}, {
+    "ticker": "SPAB"
+}, {
+    "ticker": "GOVT"
+}, {
+    "ticker": "SCHZ"
+}, {
+    "ticker": "UCRD"
+}, {
+    "ticker": "RODI"
+}, {
+    "ticker": "DIVZ"
+}, {
+    "ticker": "IMTB"
+}, {
+    "ticker": "NSCS"
+}, {
+    "ticker": "AILG"
+}, {
+    "ticker": "GDOC"
+}, {
+    "ticker": "GBLO"
+}, {
+    "ticker": "PAB"
+}, {
+    "ticker": "GNMA"
+}, {
+    "ticker": "AGOV"
+}, {
+    "ticker": "PIFI"
+}, {
+    "ticker": "USML"
+}, {
+    "ticker": "FMNY"
+}, {
+    "ticker": "SMLE"
+}, {
+    "ticker": "FEDL"
+}, {
+    "ticker": "JIGB"
+}, {
+    "ticker": "GHTA"
+}, {
+    "ticker": "UBND"
+}, {
+    "ticker": "SPLB"
+}, {
+    "ticker": "WFIG"
+}, {
+    "ticker": "BAL"
+}, {
+    "ticker": "IBDV"
+}, {
+    "ticker": "RISR"
+}, {
+    "ticker": "FIEE"
+}, {
+    "ticker": "PGHY"
+}, {
+    "ticker": "KGRN"
+}, {
+    "ticker": "EWW"
+}, {
+    "ticker": "ISHP"
+}, {
+    "ticker": "ISEM"
+}, {
+    "ticker": "PNQI"
+}, {
+    "ticker": "PINK"
+}, {
+    "ticker": "XES"
+}, {
+    "ticker": "CHIQ"
+}, {
+    "ticker": "IXJ"
+}, {
+    "ticker": "NUEM"
+}, {
+    "ticker": "BATT"
+}, {
+    "ticker": "BAB"
+}, {
+    "ticker": "PID"
+}, {
+    "ticker": "NETL"
+}, {
+    "ticker": "PXQ"
+}, {
+    "ticker": "PTIN"
+}, {
+    "ticker": "SGOL"
+}, {
+    "ticker": "OUNZ"
+}, {
+    "ticker": "PSFJ"
+}, {
+    "ticker": "CTEC"
+}, {
+    "ticker": "QQXT"
+}, {
+    "ticker": "OVB"
+}, {
+    "ticker": "ILF"
+}, {
+    "ticker": "CURE"
+}, {
+    "ticker": "OND"
+}, {
+    "ticker": "QQEW"
+}, {
+    "ticker": "FMHI"
+}, {
+    "ticker": "FPXI"
+}, {
+    "ticker": "IHF"
+}, {
+    "ticker": "QQQE"
+}, {
+    "ticker": "VTC"
+}, {
+    "ticker": "JXI"
+}, {
+    "ticker": "PSEP"
+}, {
+    "ticker": "IGV"
+}, {
+    "ticker": "DHS"
+}, {
+    "ticker": "IGLB"
+}, {
+    "ticker": "PXJ"
+}, {
+    "ticker": "IZRL"
+}, {
+    "ticker": "DIV"
+}, {
+    "ticker": "DTOX"
+}, {
+    "ticker": "SCCC"
+}, {
+    "ticker": "CDX"
+}, {
+    "ticker": "SCHQ"
+}, {
+    "ticker": "SDG"
+}, {
+    "ticker": "GLD"
+}, {
+    "ticker": "HEEM"
+}, {
+    "ticker": "GII"
+}, {
+    "ticker": "USIG"
+}, {
+    "ticker": "HDV"
+}, {
+    "ticker": "CYB"
+}, {
+    "ticker": "CORP"
+}, {
+    "ticker": "SFIG"
+}, {
+    "ticker": "BRZU"
+}, {
+    "ticker": "AAAU"
+}, {
+    "ticker": "BNDD"
+}, {
+    "ticker": "EEM"
+}, {
+    "ticker": "DBA"
+}, {
+    "ticker": "DZZ"
+}, {
+    "ticker": "BZQ"
+}, {
+    "ticker": "FXF"
+}, {
+    "ticker": "DBEM"
+}, {
+    "ticker": "SMMV"
+}, {
+    "ticker": "LQD"
+}, {
+    "ticker": "FNGS"
+}, {
+    "ticker": "SRVR"
+}, {
+    "ticker": "SPDV"
+}, {
+    "ticker": "SPTL"
+}, {
+    "ticker": "ARB"
+}, {
+    "ticker": "SPSK"
+}, {
+    "ticker": "SPEM"
+}, {
+    "ticker": "SPFF"
+}, {
+    "ticker": "BUG"
+}, {
+    "ticker": "DWLD"
+}, {
+    "ticker": "AAXJ"
+}, {
+    "ticker": "SUSC"
+}, {
+    "ticker": "SCHE"
+}, {
+    "ticker": "GLDM"
+}, {
+    "ticker": "GDMA"
+}, {
+    "ticker": "FLJH"
+}, {
+    "ticker": "MSVX"
+}, {
+    "ticker": "HERO"
+}, {
+    "ticker": "SUBS"
+}, {
+    "ticker": "TBJL"
+}, {
+    "ticker": "CIBR"
+}, {
+    "ticker": "TMFX"
+}, {
+    "ticker": "ESPO"
+}, {
+    "ticker": "GLDI"
+}, {
+    "ticker": "AIQ"
+}, {
+    "ticker": "ILTB"
+}, {
+    "ticker": "TMFE"
+}, {
+    "ticker": "HACK"
+}, {
+    "ticker": "EZA"
+}, {
+    "ticker": "KNGS"
+}, {
+    "ticker": "TLT"
+}, {
+    "ticker": "VCLN"
+}, {
+    "ticker": "FRTY"
+}, {
+    "ticker": "FXE"
+}, {
+    "ticker": "EDV"
+}, {
+    "ticker": "FJUN"
+}, {
+    "ticker": "IBTB"
+}, {
+    "ticker": "IBDU"
+}, {
+    "ticker": "EEMA"
+}, {
+    "ticker": "IAUM"
+}, {
+    "ticker": "IBDW"
+}, {
+    "ticker": "EBIZ"
+}, {
+    "ticker": "DEW"
+}, {
+    "ticker": "ISCG"
+}, {
+    "ticker": "IHAK"
+}, {
+    "ticker": "ERTH"
+}, {
+    "ticker": "BICK"
+}, {
+    "ticker": "LRNZ"
+}, {
+    "ticker": "EMXF"
+}, {
+    "ticker": "XHE"
+}, {
+    "ticker": "UBR"
+}, {
+    "ticker": "FNGO"
+}, {
+    "ticker": "FLAX"
+}, {
+    "ticker": "IRBO"
+}, {
+    "ticker": "IAU"
+}, {
+    "ticker": "DYLD"
+}, {
+    "ticker": "GFGF"
+}, {
+    "ticker": "XSLV"
+}, {
+    "ticker": "EKAR"
+}, {
+    "ticker": "OGIG"
+}, {
+    "ticker": "UVXY"
+}, {
+    "ticker": "FJUL"
+}, {
+    "ticker": "BSCT"
+}, {
+    "ticker": "VCLT"
+}, {
+    "ticker": "EMTY"
+}, {
+    "ticker": "BSCU"
+}, {
+    "ticker": "VTWG"
+}, {
+    "ticker": "BLV"
+}, {
+    "ticker": "BSCV"
+}, {
+    "ticker": "IGBH"
+}, {
+    "ticker": "VNAM"
+}, {
+    "ticker": "ATFV"
+}, {
+    "ticker": "RAYS"
+}, {
+    "ticker": "RAVI"
+}, {
+    "ticker": "HYD"
+}, {
+    "ticker": "BERZ"
+}, {
+    "ticker": "FMAG"
+}, {
+    "ticker": "DGP"
+}, {
+    "ticker": "IGLD"
+}, {
+    "ticker": "IAUF"
+}, {
+    "ticker": "WEBS"
+}, {
+    "ticker": "FDRV"
+}, {
+    "ticker": "NJUL"
+}, {
+    "ticker": "RDFI"
+}, {
+    "ticker": "BAR"
+}, {
+    "ticker": "ADRE"
+}, {
+    "ticker": "RITA"
+}, {
+    "ticker": "ROMO"
+}, {
+    "ticker": "INDF"
+}, {
+    "ticker": "PAWZ"
+}, {
+    "ticker": "PBW"
+}, {
+    "ticker": "KWT"
+}, {
+    "ticker": "KEMQ"
+}, {
+    "ticker": "PUI"
+}, {
+    "ticker": "FDL"
+}, {
+    "ticker": "FXH"
+}, {
+    "ticker": "PSJ"
+}, {
+    "ticker": "AIA"
+}, {
+    "ticker": "MEXX"
+}, {
+    "ticker": "ZROZ"
+}, {
+    "ticker": "BKCI"
+}, {
+    "ticker": "RNRG"
+}, {
+    "ticker": "ARKK"
+}, {
+    "ticker": "GENY"
+}, {
+    "ticker": "GMF"
+}, {
+    "ticker": "ARKQ"
+}, {
+    "ticker": "IEHS"
+}, {
+    "ticker": "IGF"
+}, {
+    "ticker": "FDLO"
+}, {
+    "ticker": "BJUL"
+}, {
+    "ticker": "IPO"
+}, {
+    "ticker": "ILDR"
+}, {
+    "ticker": "ABEQ"
+}, {
+    "ticker": "HYMB"
+}, {
+    "ticker": "ITEQ"
+}, {
+    "ticker": "JDIV"
+}, {
+    "ticker": "VFMV"
+}, {
+    "ticker": "MID"
+}, {
+    "ticker": "KBWY"
+}, {
+    "ticker": "VFQY"
+}, {
+    "ticker": "UNMA"
+}, {
+    "ticker": "JEPI"
+}, {
+    "ticker": "VEGI"
+}, {
+    "ticker": "GOVZ"
+}, {
+    "ticker": "VGLT"
+}, {
+    "ticker": "AZBJ"
+}, {
+    "ticker": "NERD"
+}, {
+    "ticker": "IWO"
+}, {
+    "ticker": "WBAT"
+}, {
+    "ticker": "LDEM"
+}, {
+    "ticker": "GIGE"
+}, {
+    "ticker": "CTRU"
+}, {
+    "ticker": "DGL"
+}, {
+    "ticker": "DGZ"
+}, {
+    "ticker": "NOCT"
+}, {
+    "ticker": "FAUG"
+}, {
+    "ticker": "RORO"
+}, {
+    "ticker": "BFIT"
+}, {
+    "ticker": "SPUS"
+}, {
+    "ticker": "EJUL"
+}, {
+    "ticker": "NJAN"
+}, {
+    "ticker": "PBEE"
+}, {
+    "ticker": "DFNV"
+}, {
+    "ticker": "BTCR"
+}, {
+    "ticker": "DURA"
+}, {
+    "ticker": "GXTG"
+}, {
+    "ticker": "PAUG"
+}, {
+    "ticker": "FLMX"
+}, {
+    "ticker": "CNFRL"
+}, {
+    "ticker": "TMAT"
+}, {
+    "ticker": "BILS"
+}, {
+    "ticker": "BFTR"
+}, {
+    "ticker": "ITB"
+}, {
+    "ticker": "XITK"
+}, {
+    "ticker": "MBCC"
+}, {
+    "ticker": "GCIG"
+}, {
+    "ticker": "VCAR"
+}, {
+    "ticker": "PSY"
+}, {
+    "ticker": "QTR"
+}, {
+    "ticker": "CCOR"
+}, {
+    "ticker": "JHPI"
+}, {
+    "ticker": "PFUT"
+}, {
+    "ticker": "PTRB"
+}, {
+    "ticker": "IVRA"
+}, {
+    "ticker": "LTL"
+}, {
+    "ticker": "HDLB"
+}, {
+    "ticker": "MVPS"
+}, {
+    "ticker": "BAUG"
+}, {
+    "ticker": "CLIX"
+}, {
+    "ticker": "WCBR"
+}, {
+    "ticker": "MEME"
+}, {
+    "ticker": "SIXH"
+}, {
+    "ticker": "EMSG"
+}, {
+    "ticker": "BMED"
+}, {
+    "ticker": "PSCU"
+}, {
+    "ticker": "DBV"
+}, {
+    "ticker": "WBIF"
+}, {
+    "ticker": "VERS"
+}, {
+    "ticker": "WTAI"
+}, {
+    "ticker": "WLTG"
+}, {
+    "ticker": "XCLR"
+}, {
+    "ticker": "BSCM"
+}, {
+    "ticker": "AGNG"
+}, {
+    "ticker": "LGOV"
+}, {
+    "ticker": "JULZ"
+}, {
+    "ticker": "ADIV"
+}, {
+    "ticker": "IDU"
+}, {
+    "ticker": "HOLD"
+}, {
+    "ticker": "BSCE"
+}, {
+    "ticker": "UPW"
+}, {
+    "ticker": "JCPB"
+}, {
+    "ticker": "RWVG"
+}, {
+    "ticker": "GPJA"
+}, {
+    "ticker": "BNGE"
+}, {
+    "ticker": "BALT"
+}, {
+    "ticker": "EMFQ"
+}, {
+    "ticker": "BKUS"
+}, {
+    "ticker": "KONG"
+}, {
+    "ticker": "QCLR"
+}, {
+    "ticker": "FORH"
+}, {
+    "ticker": "KMED"
+}, {
+    "ticker": "IWML"
+}, {
+    "ticker": "HART"
+}, {
+    "ticker": "QSWN"
+}, {
+    "ticker": "CAPD"
+}, {
+    "ticker": "INNO"
+}, {
+    "ticker": "BNDC"
+}, {
+    "ticker": "BNE"
+}, {
+    "ticker": "PGM"
+}, {
+    "ticker": "PPA"
+}, {
+    "ticker": "JAGG"
+}, {
+    "ticker": "MNA"
+}, {
+    "ticker": "PLAT"
+}, {
+    "ticker": "BIO.B"
+}, {
+    "ticker": "EOCT"
+}, {
+    "ticker": "XHYD"
+}, {
+    "ticker": "ARKW"
+}, {
+    "ticker": "FDG"
+}, {
+    "ticker": "SKYY"
+}, {
+    "ticker": "XSW"
+}, {
+    "ticker": "RTH"
+}, {
+    "ticker": "THNQ"
+}, {
+    "ticker": "QSPT"
+}, {
+    "ticker": "IWFH"
+}, {
+    "ticker": "SCHG"
+}, {
+    "ticker": "QDEC"
+}, {
+    "ticker": "IVES"
+}, {
+    "ticker": "ZGEN"
+}, {
+    "ticker": "XBJL"
+}, {
+    "ticker": "METV"
+}, {
+    "ticker": "WWOW"
+}, {
+    "ticker": "EEH"
+}, {
+    "ticker": "MLPO"
+}, {
+    "ticker": "PFFV"
+}, {
+    "ticker": "XDAT"
+}, {
+    "ticker": "RAYE"
+}, {
+    "ticker": "VCIT"
+}, {
+    "ticker": "DAT"
+}, {
+    "ticker": "TGRW"
+}, {
+    "ticker": "NAPR"
+}, {
+    "ticker": "TMFG"
+}, {
+    "ticker": "INCO"
+}, {
+    "ticker": "HLGE"
+}, {
+    "ticker": "FFND"
+}, {
+    "ticker": "NUAG"
+}, {
+    "ticker": "FNGU"
+}, {
+    "ticker": "WCLD"
+}, {
+    "ticker": "RYH"
+}, {
+    "ticker": "MRND"
+}, {
+    "ticker": "CLDL"
+}, {
+    "ticker": "UBT"
+}, {
+    "ticker": "BOSS"
+}, {
+    "ticker": "SKYU"
+}, {
+    "ticker": "IGIB"
+}, {
+    "ticker": "BSCR"
+}, {
+    "ticker": "SCHI"
+}, {
+    "ticker": "IUSA"
+}, {
+    "ticker": "SKOR"
+}, {
+    "ticker": "BKAG"
+}, {
+    "ticker": "PFIG"
+}, {
+    "ticker": "GBF"
+}, {
+    "ticker": "SPC"
+}, {
+    "ticker": "LEN.B"
+}, {
+    "ticker": "XDEC"
+}, {
+    "ticker": "EUSB"
+}, {
+    "ticker": "AVIG"
+}, {
+    "ticker": "BSCQ"
+}, {
+    "ticker": "IBDS"
+}, {
+    "ticker": "UCYB"
+}, {
+    "ticker": "VBND"
+}, {
+    "ticker": "RFCI"
+}, {
+    "ticker": "IIGV"
+}, {
+    "ticker": "SPRX"
+}, {
+    "ticker": "TFJL"
+}, {
+    "ticker": "BSCS"
+}, {
+    "ticker": "FLCB"
+}, {
+    "ticker": "BGRN"
+}, {
+    "ticker": "SPIB"
+}, {
+    "ticker": "XHYT"
+}, {
+    "ticker": "ESIX"
+}, {
+    "ticker": "TMF"
+}, {
+    "ticker": "UMMA"
+}, {
+    "ticker": "SLQD"
+}, {
+    "ticker": "IUSB"
+}, {
+    "ticker": "NZRO"
+}, {
+    "ticker": "FFTI"
+}, {
+    "ticker": "IBD"
+}, {
+    "ticker": "DFAR"
+}, {
+    "ticker": "FSEC"
+}, {
+    "ticker": "VCSH"
+}, {
+    "ticker": "MTGP"
+}, {
+    "ticker": "IBDT"
+}, {
+    "ticker": "CMBS"
+}, {
+    "ticker": "MAMB"
+}, {
+    "ticker": "VPU"
+}, {
+    "ticker": "TAGG"
+}, {
+    "ticker": "FLGV"
+}, {
+    "ticker": "BSCP"
+}, {
+    "ticker": "UITB"
+}, {
+    "ticker": "RJA"
+}, {
+    "ticker": "RLY"
+}, {
+    "ticker": "LVHD"
+}, {
+    "ticker": "GRU"
+}, {
+    "ticker": "VDC"
+}, {
+    "ticker": "QLV"
+}, {
+    "ticker": "PGJ"
+}, {
+    "ticker": "JJG"
+}, {
+    "ticker": "XLP"
+}, {
+    "ticker": "XOUT"
+}, {
+    "ticker": "MNM"
+}, {
+    "ticker": "FUMB"
+}, {
+    "ticker": "NANR"
+}, {
+    "ticker": "PBJ"
+}, {
+    "ticker": "XLU"
+}, {
+    "ticker": "SUSB"
+}, {
+    "ticker": "MRGR"
+}, {
+    "ticker": "SPSB"
+}, {
+    "ticker": "AMZA"
+}, {
+    "ticker": "JJA"
+}, {
+    "ticker": "CTDD"
+}, {
+    "ticker": "KOLD"
+}, {
+    "ticker": "JO"
+}, {
+    "ticker": "EMDV"
+}, {
+    "ticker": "HEWJ"
+}, {
+    "ticker": "GRZZ"
+}, {
+    "ticker": "EATV"
+}, {
+    "ticker": "ACIO"
+}, {
+    "ticker": "DALI"
+}, {
+    "ticker": "FUTY"
+}, {
+    "ticker": "DBJP"
+}, {
+    "ticker": "OIH"
+}, {
+    "ticker": "ITA"
+}, {
+    "ticker": "FSTA"
+}, {
+    "ticker": "ENO"
+}, {
+    "ticker": "IBCE"
+}, {
+    "ticker": "CGGO"
+}, {
+    "ticker": "DUHP"
+}, {
+    "ticker": "SAGP"
+}, {
+    "ticker": "GDMN"
+}, {
+    "ticker": "FSYD"
+}, {
+    "ticker": "DJIA"
+}, {
+    "ticker": "FSIG"
+}, {
+    "ticker": "IEZ"
+}, {
+    "ticker": "SZNE"
+}, {
+    "ticker": "SSFI"
+}, {
+    "ticker": "WINN"
+}, {
+    "ticker": "IPPP"
+}, {
+    "ticker": "BSMM"
+}, {
+    "ticker": "FCLD"
+}, {
+    "ticker": "SZK"
+}, {
+    "ticker": "NDJI"
+}, {
+    "ticker": "GBDV"
+}, {
+    "ticker": "GLDX"
+}, {
+    "ticker": "AVSC"
+}, {
+    "ticker": "QTJA"
+}, {
+    "ticker": "VBB"
+}, {
+    "ticker": "BKSB"
+}, {
+    "ticker": "BOAT"
+}, {
+    "ticker": "HEQT"
+}, {
+    "ticker": "PRAY"
+}, {
+    "ticker": "CDL"
+}, {
+    "ticker": "PBUG"
+}, {
+    "ticker": "BUFB"
+}, {
+    "ticker": "DWAT"
+}, {
+    "ticker": "HYRM"
+}, {
+    "ticker": "BSTP"
+}, {
+    "ticker": "ROCI"
+}, {
+    "ticker": "PUNK"
+}, {
+    "ticker": "DFRA"
+}, {
+    "ticker": "XBJA"
+}, {
+    "ticker": "IBHI"
+}, {
+    "ticker": "SIXL"
+}, {
+    "ticker": "PYPE"
+}, {
+    "ticker": "ESMV"
+}, {
+    "ticker": "DUKB"
+}, {
+    "ticker": "GAST"
+}, {
+    "ticker": "BNDW"
+}, {
+    "ticker": "FIVR"
+}, {
+    "ticker": "FUE"
+}, {
+    "ticker": "FIXD"
+}, {
+    "ticker": "VDNI"
+}, {
+    "ticker": "RBND"
+}, {
+    "ticker": "JJP"
+}, {
+    "ticker": "FLTB"
+}, {
+    "ticker": "PSTP"
+}, {
+    "ticker": "WRND"
+}, {
+    "ticker": "ISTB"
+}, {
+    "ticker": "BKIS"
+}, {
+    "ticker": "FPAG"
+}, {
+    "ticker": "XHYH"
+}, {
+    "ticker": "IBHH"
+}, {
+    "ticker": "GLOV"
+}, {
+    "ticker": "HAPY"
+}, {
+    "ticker": "JMST"
+}, {
+    "ticker": "NUSA"
+}, {
+    "ticker": "KVLE"
+}, {
+    "ticker": "BSCO"
+}, {
+    "ticker": "HJPX"
+}, {
+    "ticker": "XHYC"
+}, {
+    "ticker": "XHYF"
+}, {
+    "ticker": "XHYE"
+}, {
+    "ticker": "XDJA"
+}, {
+    "ticker": "TIME"
+}, {
+    "ticker": "DFSD"
+}, {
+    "ticker": "BDCZ"
+}, {
+    "ticker": "RESI"
+}, {
+    "ticker": "UBCB"
+}, {
+    "ticker": "XTJA"
+}, {
+    "ticker": "FHYS"
+}, {
+    "ticker": "RSEE"
+}, {
+    "ticker": "IBDP"
+}, {
+    "ticker": "HAUS"
+}, {
+    "ticker": "IBHB"
+}, {
+    "ticker": "TAIL"
+}, {
+    "ticker": "NETZ"
+}, {
+    "ticker": "CGUS"
+}, {
+    "ticker": "IAK"
+}, {
+    "ticker": "TAGS"
+}, {
+    "ticker": "CGGR"
+}, {
+    "ticker": "EVEN"
+}, {
+    "ticker": "RTYD"
+}, {
+    "ticker": "WTMF"
+}, {
+    "ticker": "RRH"
+}, {
+    "ticker": "PRS"
+}, {
+    "ticker": "JHMU"
+}, {
+    "ticker": "SCCB"
+}, {
+    "ticker": "VIXY"
+}, {
+    "ticker": "DXJ"
+}, {
+    "ticker": "CORN"
+}, {
+    "ticker": "SUB"
+}, {
+    "ticker": "FTGC"
+}, {
+    "ticker": "LIT"
+}, {
+    "ticker": "MLPX"
+}, {
+    "ticker": "WEAT"
+}, {
+    "ticker": "EAI"
+}, {
+    "ticker": "BSMN"
+}, {
+    "ticker": "SGG"
+}, {
+    "ticker": "GCC"
+}, {
+    "ticker": "AMLP"
+}, {
+    "ticker": "AMJ"
+}, {
+    "ticker": "DFSV"
+}, {
+    "ticker": "MLPA"
+}, {
+    "ticker": "ELC"
+}, {
+    "ticker": "UMI"
+}, {
+    "ticker": "IBML"
+}, {
+    "ticker": "MEAR"
+}, {
+    "ticker": "CANE"
+}, {
+    "ticker": "FLTN"
+}, {
+    "ticker": "IGE"
+}, {
+    "ticker": "CMSA"
+}, {
+    "ticker": "EINC"
+}, {
+    "ticker": "ENFR"
+}, {
+    "ticker": "JJS"
+}, {
+    "ticker": "SEMI"
+}, {
+    "ticker": "PWS"
+}, {
+    "ticker": "DIEM"
+}, {
+    "ticker": "OCTZ"
+}, {
+    "ticker": "PSCC"
+}, {
+    "ticker": "GPAL"
+}, {
+    "ticker": "FCSH"
+}, {
+    "ticker": "SCCD"
+}, {
+    "ticker": "ECH"
+}, {
+    "ticker": "DGIN"
+}, {
+    "ticker": "CLOU"
+}, {
+    "ticker": "MSTQ"
+}, {
+    "ticker": "UCIB"
+}, {
+    "ticker": "BTHM"
+}, {
+    "ticker": "AMND"
+}, {
+    "ticker": "SOYB"
+}, {
+    "ticker": "BHFAL"
+}, {
+    "ticker": "DTW"
+}, {
+    "ticker": "SFB"
+}, {
+    "ticker": "AMUB"
+}, {
+    "ticker": "KWEB"
+}, {
+    "ticker": "GDE"
+}, {
+    "ticker": "GFOF"
+}, {
+    "ticker": "JBBB"
+}, {
+    "ticker": "CHIS"
+}, {
+    "ticker": "MLPR"
+}, {
+    "ticker": "ATMP"
+}, {
+    "ticker": "EMLP"
+}, {
+    "ticker": "RYE"
+}, {
+    "ticker": "CMDY"
+}, {
+    "ticker": "KTEC"
+}, {
+    "ticker": "LBAY"
+}, {
+    "ticker": "FTXN"
+}, {
+    "ticker": "COM"
+}, {
+    "ticker": "USAI"
+}, {
+    "ticker": "RXD"
+}, {
+    "ticker": "OILU"
+}, {
+    "ticker": "COMB"
+}, {
+    "ticker": "PSCE"
+}, {
+    "ticker": "CNXT"
+}, {
+    "ticker": "SACC"
+}, {
+    "ticker": "RYU"
+}, {
+    "ticker": "IBMM"
+}, {
+    "ticker": "DJP"
+}, {
+    "ticker": "FXU"
+}, {
+    "ticker": "DIG"
+}, {
+    "ticker": "RJI"
+}, {
+    "ticker": "BCD"
+}, {
+    "ticker": "NRGU"
+}, {
+    "ticker": "CHAD"
+}, {
+    "ticker": "BCI"
+}, {
+    "ticker": "ECLN"
+}, {
+    "ticker": "KCCA"
+}, {
+    "ticker": "IXC"
+}, {
+    "ticker": "CHIX"
+}, {
+    "ticker": "RPHS"
+}, {
+    "ticker": "RISN"
+}, {
+    "ticker": "DJCB"
+}, {
+    "ticker": "KGRO"
+}, {
+    "ticker": "TCHI"
+}, {
+    "ticker": "HCOM"
+}, {
+    "ticker": "HEWU"
+}, {
+    "ticker": "AMNA"
+}, {
+    "ticker": "IBMK"
+}, {
+    "ticker": "FCA"
+}, {
+    "ticker": "KEJI"
+}, {
+    "ticker": "BKES"
+}, {
+    "ticker": "KURE"
+}, {
+    "ticker": "KBA"
+}, {
+    "ticker": "GBIL"
+}, {
+    "ticker": "FNTC"
+}, {
+    "ticker": "IEO"
+}, {
+    "ticker": "JHME"
+}, {
+    "ticker": "SHV"
+}, {
+    "ticker": "SUPL"
+}, {
+    "ticker": "SHM"
+}, {
+    "ticker": "PXE"
+}, {
+    "ticker": "ENBA"
+}, {
+    "ticker": "WGMI"
+}, {
+    "ticker": "YINN"
+}, {
+    "ticker": "XPP"
+}, {
+    "ticker": "VDE"
+}, {
+    "ticker": "ENRG"
+}, {
+    "ticker": "RINF"
+}, {
+    "ticker": "FENY"
+}, {
+    "ticker": "EWH"
+}, {
+    "ticker": "SDP"
+}, {
+    "ticker": "CRAK"
+}, {
+    "ticker": "USCI"
+}, {
+    "ticker": "BSMO"
+}, {
+    "ticker": "ASHR"
+}, {
+    "ticker": "CHIC"
+}, {
+    "ticker": "ECNS"
+}, {
+    "ticker": "CHAU"
+}, {
+    "ticker": "EMQQ"
+}, {
+    "ticker": "CGCP"
+}, {
+    "ticker": "IYE"
+}, {
+    "ticker": "FAAR"
+}, {
+    "ticker": "PXI"
+}, {
+    "ticker": "FXI"
+}, {
+    "ticker": "FTSD"
+}, {
+    "ticker": "DIVI"
+}, {
+    "ticker": "FCG"
+}, {
+    "ticker": "HOTL"
+}, {
+    "ticker": "IBDD"
+}, {
+    "ticker": "BAD"
+}, {
+    "ticker": "IRBA"
+}, {
+    "ticker": "CGDV"
+}, {
+    "ticker": "UDIV"
+}, {
+    "ticker": "IBMN"
+}, {
+    "ticker": "SDCI"
+}, {
+    "ticker": "GEMD"
+}, {
+    "ticker": "WBIG"
+}, {
+    "ticker": "CHIK"
+}, {
+    "ticker": "AFTY"
+}, {
+    "ticker": "FNI"
+}, {
+    "ticker": "DAM"
+}, {
+    "ticker": "LRND"
+}, {
+    "ticker": "CVAR"
+}, {
+    "ticker": "FLHK"
+}, {
+    "ticker": "KFVG"
+}, {
+    "ticker": "DEIF"
+}, {
+    "ticker": "GDVD"
+}, {
+    "ticker": "CDC"
+}, {
+    "ticker": "RBLD"
+}, {
+    "ticker": "BFIX"
+}, {
+    "ticker": "WEIX"
+}, {
+    "ticker": "SMB"
+}, {
+    "ticker": "NTKI"
+}, {
+    "ticker": "FLCH"
+}, {
+    "ticker": "FMET"
+}, {
+    "ticker": "RDMX"
+}, {
+    "ticker": "CNYA"
+}, {
+    "ticker": "INQQ"
+}, {
+    "ticker": "PPI"
+}, {
+    "ticker": "IMLP"
+}, {
+    "ticker": "DIHP"
+}, {
+    "ticker": "IBMO"
+}, {
+    "ticker": "TACK"
+}, {
+    "ticker": "ICAP"
+}, {
+    "ticker": "VGSH"
+}, {
+    "ticker": "CN"
+}, {
+    "ticker": "CGXU"
+}, {
+    "ticker": "FXN"
+}, {
+    "ticker": "CWEB"
+}, {
+    "ticker": "KALL"
+}, {
+    "ticker": "BOIL"
+}, {
+    "ticker": "IVOL"
+}, {
+    "ticker": "CQQQ"
+}, {
+    "ticker": "GXC"
+}, {
+    "ticker": "SHY"
+}, {
+    "ticker": "KBUY"
+}, {
+    "ticker": "SVOL"
+}, {
+    "ticker": "DFNM"
+}, {
+    "ticker": "MCHI"
+}, {
+    "ticker": "MARB"
+}, {
+    "ticker": "UPAR"
+}, {
+    "ticker": "DFIC"
+}, {
+    "ticker": "NSPI"
+}, {
+    "ticker": "CXSE"
+}, {
+    "ticker": "DFIS"
+}, {
+    "ticker": "TIPL"
+}, {
+    "ticker": "SEA"
+}, {
+    "ticker": "SAMT"
+}, {
+    "ticker": "USPX"
+}, {
+    "ticker": "EWEB"
+}, {
+    "ticker": "CLSE"
+}, {
+    "ticker": "IBMP"
+}, {
+    "ticker": "AVSD"
+}, {
+    "ticker": "GLCN"
+}, {
+    "ticker": "SMDY"
+}, {
+    "ticker": "KESG"
+}, {
+    "ticker": "KGHG"
+}, {
+    "ticker": "CHB"
+}, {
+    "ticker": "CHIU"
+}, {
+    "ticker": "KSTR"
+}, {
+    "ticker": "AMTR"
+}, {
+    "ticker": "CRIT"
+}, {
+    "ticker": "ASHX"
+}, {
+    "ticker": "IWIN"
+}, {
+    "ticker": "FEEM"
+}, {
+    "ticker": "RSX"
+}, {
+    "ticker": "KARS"
+}, {
+    "ticker": "UNG"
+}, {
+    "ticker": "ASHS"
+}, {
+    "ticker": "REMG"
+}, {
+    "ticker": "IBMQ"
+}, {
+    "ticker": "FSBD"
+}, {
+    "ticker": "SMMU"
+}, {
+    "ticker": "RAYC"
+}, {
+    "ticker": "BSMP"
+}, {
+    "ticker": "WEED"
+}, {
+    "ticker": "ONG"
+}, {
+    "ticker": "KSET"
+}, {
+    "ticker": "CHNA"
+}, {
+    "ticker": "ERY"
+}, {
+    "ticker": "DUG"
+}, {
+    "ticker": "PGAL"
+}, {
+    "ticker": "UNL"
+}, {
+    "ticker": "GAZ"
+}, {
+    "ticker": "FAIL"
+}, {
+    "ticker": "DRIP"
+}, {
+    "ticker": "IBDO"
+}, {
+    "ticker": "DMAT"
+}, {
+    "ticker": "DFEM"
+}, {
+    "ticker": "FDNI"
+}, {
+    "ticker": "EAFD"
+}, {
+    "ticker": "FTXH"
+}, {
+    "ticker": "ECON"
+}, {
+    "ticker": "OVF"
+}, {
+    "ticker": "CHII"
+}, {
+    "ticker": "AVSE"
+}, {
+    "ticker": "MBNE"
+}, {
+    "ticker": "EMGD"
+}, {
+    "ticker": "JEPQ"
+}, {
+    "ticker": "GSIG"
+}, {
+    "ticker": "MHLA"
+}, {
+    "ticker": "FIGB"
+}, {
+    "ticker": "EVMT"
+}, {
+    "ticker": "UAV"
+}, {
+    "ticker": "IBTF"
+}, {
+    "ticker": "SEIQ"
+}, {
+    "ticker": "JIB"
+}, {
+    "ticker": "MIG"
+}, {
+    "ticker": "LETB"
+}, {
+    "ticker": "SCHJ"
+}, {
+    "ticker": "JMEE"
+}, {
+    "ticker": "RAYD"
+}, {
+    "ticker": "PABU"
+}, {
+    "ticker": "EKG"
+}, {
+    "ticker": "NBDS"
+}, {
+    "ticker": "SVIX"
+}, {
+    "ticker": "FMCX"
+}, {
+    "ticker": "CAPE"
+}, {
+    "ticker": "FLRU"
+}, {
+    "ticker": "UVIX"
+}, {
+    "ticker": "FLDZ"
+}, {
+    "ticker": "TEMP"
+}, {
+    "ticker": "FDIG"
+}, {
+    "ticker": "IBLC"
+}, {
+    "ticker": "GUSA"
+}, {
+    "ticker": "AGGH"
+}, {
+    "ticker": "BKF"
+}, {
+    "ticker": "HGER"
+}, {
+    "ticker": "NBCT"
+}, {
+    "ticker": "SURE"
+}, {
+    "ticker": "AILV"
+}, {
+    "ticker": "BYOB"
+}, {
+    "ticker": "AMER"
+}, {
+    "ticker": "UMDD"
+}, {
+    "ticker": "PIO"
+}, {
+    "ticker": "JRE"
+}, {
+    "ticker": "GBUY"
+}, {
+    "ticker": "LVOL"
+}, {
+    "ticker": "NORW"
+}, {
+    "ticker": "XLB"
+}, {
+    "ticker": "SGDJ"
+}, {
+    "ticker": "XLG"
+}, {
+    "ticker": "UWM"
+}, {
+    "ticker": "MBND"
+}, {
+    "ticker": "VALQ"
+}, {
+    "ticker": "TINY"
+}, {
+    "ticker": "YDEC"
+}, {
+    "ticker": "XTN"
+}, {
+    "ticker": "IWL"
+}, {
+    "ticker": "QDF"
+}, {
+    "ticker": "VEU"
+}, {
+    "ticker": "PZT"
+}, {
+    "ticker": "TRND"
+}, {
+    "ticker": "RWR"
+}, {
+    "ticker": "PSFF"
+}, {
+    "ticker": "UVDV"
+}, {
+    "ticker": "XYLG"
+}, {
+    "ticker": "EDC"
+}, {
+    "ticker": "BBCA"
+}, {
+    "ticker": "SPXT"
+}, {
+    "ticker": "SWAN"
+}, {
+    "ticker": "DMDV"
+}, {
+    "ticker": "QINT"
+}, {
+    "ticker": "VOE"
+}, {
+    "ticker": "VGIT"
+}, {
+    "ticker": "BIL"
+}, {
+    "ticker": "QLVD"
+}, {
+    "ticker": "BKSE"
+}, {
+    "ticker": "EQWL"
+}, {
+    "ticker": "REVS"
+}, {
+    "ticker": "SPHY"
+}, {
+    "ticker": "EFAV"
+}, {
+    "ticker": "EET"
+}, {
+    "ticker": "FALN"
+}, {
+    "ticker": "HEZU"
+}, {
+    "ticker": "IBHG"
+}, {
+    "ticker": "FVD"
+}, {
+    "ticker": "STPZ"
+}, {
+    "ticker": "SLY"
+}, {
+    "ticker": "EUSC"
+}, {
+    "ticker": "BWZ"
+}, {
+    "ticker": "BSMQ"
+}, {
+    "ticker": "IJT"
+}, {
+    "ticker": "DOL"
+}, {
+    "ticker": "VV"
+}, {
+    "ticker": "BYTE"
+}, {
+    "ticker": "VIGI"
+}, {
+    "ticker": "CHIE"
+}, {
+    "ticker": "MXI"
+}, {
+    "ticker": "LQDH"
+}, {
+    "ticker": "IDEV"
+}, {
+    "ticker": "DJUL"
+}, {
+    "ticker": "SPDN"
+}, {
+    "ticker": "BKEM"
+}, {
+    "ticker": "AMAX"
+}, {
+    "ticker": "QULL"
+}, {
+    "ticker": "ESG"
+}, {
+    "ticker": "DSTL"
+}, {
+    "ticker": "HTAB"
+}, {
+    "ticker": "FDT"
+}, {
+    "ticker": "PSMC"
+}, {
+    "ticker": "FXY"
+}, {
+    "ticker": "FFEB"
+}, {
+    "ticker": "SDEM"
+}, {
+    "ticker": "RWX"
+}, {
+    "ticker": "FCOR"
+}, {
+    "ticker": "IJUL"
+}, {
+    "ticker": "FINX"
+}, {
+    "ticker": "PBDM"
+}, {
+    "ticker": "FTLS"
+}, {
+    "ticker": "WFHY"
+}, {
+    "ticker": "CACG"
+}, {
+    "ticker": "SDVY"
+}, {
+    "ticker": "CEY"
+}, {
+    "ticker": "BOB"
+}, {
+    "ticker": "IOO"
+}, {
+    "ticker": "DBMF"
+}, {
+    "ticker": "DXD"
+}, {
+    "ticker": "ULE"
+}, {
+    "ticker": "GSUS"
+}, {
+    "ticker": "FPA"
+}, {
+    "ticker": "JIDA"
+}, {
+    "ticker": "HEFA"
+}, {
+    "ticker": "SHE"
+}, {
+    "ticker": "ISCB"
+}, {
+    "ticker": "EMIF"
+}, {
+    "ticker": "FEZ"
+}, {
+    "ticker": "HDMV"
+}, {
+    "ticker": "IUS"
+}, {
+    "ticker": "PXF"
+}, {
+    "ticker": "TFI"
+}, {
+    "ticker": "GREI"
+}, {
+    "ticker": "GAA"
+}, {
+    "ticker": "FLEE"
+}, {
+    "ticker": "EFG"
+}, {
+    "ticker": "DWX"
+}, {
+    "ticker": "IQSU"
+}, {
+    "ticker": "IDME"
+}, {
+    "ticker": "ISVL"
+}, {
+    "ticker": "QCON"
+}, {
+    "ticker": "JHSC"
+}, {
+    "ticker": "AOK"
+}, {
+    "ticker": "EASG"
+}, {
+    "ticker": "TBT"
+}, {
+    "ticker": "IBDQ"
+}, {
+    "ticker": "SAEF"
+}, {
+    "ticker": "HDAW"
+}, {
+    "ticker": "DWMF"
+}, {
+    "ticker": "JNUG"
+}, {
+    "ticker": "EEMD"
+}, {
+    "ticker": "QMAR"
+}, {
+    "ticker": "MMIN"
+}, {
+    "ticker": "TPLE"
+}, {
+    "ticker": "JMBS"
+}, {
+    "ticker": "SPXV"
+}, {
+    "ticker": "LSAF"
+}, {
+    "ticker": "JSMD"
+}, {
+    "ticker": "QCLN"
+}, {
+    "ticker": "TYD"
+}, {
+    "ticker": "MDYG"
+}, {
+    "ticker": "GUNR"
+}, {
+    "ticker": "RXI"
+}, {
+    "ticker": "DWCR"
+}, {
+    "ticker": "VNSE"
+}, {
+    "ticker": "ESGB"
+}, {
+    "ticker": "FCAL"
+}, {
+    "ticker": "HTEC"
+}, {
+    "ticker": "PSCH"
+}, {
+    "ticker": "PVI"
+}, {
+    "ticker": "SDOG"
+}, {
+    "ticker": "SCO"
+}, {
+    "ticker": "SPBO"
+}, {
+    "ticker": "ONLN"
+}, {
+    "ticker": "CTA"
+}, {
+    "ticker": "SYUS"
+}, {
+    "ticker": "IPDP"
+}, {
+    "ticker": "ESGE"
+}, {
+    "ticker": "TLH"
+}, {
+    "ticker": "VCLO"
+}, {
+    "ticker": "VWO"
+}, {
+    "ticker": "MOON"
+}, {
+    "ticker": "EUM"
+}, {
+    "ticker": "EEMX"
+}, {
+    "ticker": "DFND"
+}, {
+    "ticker": "VPN"
+}, {
+    "ticker": "EJAN"
+}, {
+    "ticker": "FEIG"
+}, {
+    "ticker": "ESCR"
+}, {
+    "ticker": "KDRN"
+}, {
+    "ticker": "THY"
+}, {
+    "ticker": "FBND"
+}, {
+    "ticker": "TMFM"
+}, {
+    "ticker": "LCG"
+}, {
+    "ticker": "DFCF"
+}, {
+    "ticker": "SWAR"
+}, {
+    "ticker": "PFRL"
+}, {
+    "ticker": "AZAL"
+}, {
+    "ticker": "USMV"
+}, {
+    "ticker": "XHYI"
+}, {
+    "ticker": "SPAX"
+}, {
+    "ticker": "AVSU"
+}, {
+    "ticker": "SOXS"
+}, {
+    "ticker": "LOPP"
+}, {
+    "ticker": "KORP"
+}, {
+    "ticker": "DEED"
+}, {
+    "ticker": "RSXJ"
+}, {
+    "ticker": "RHCB"
+}, {
+    "ticker": "CSH"
+}, {
+    "ticker": "MLPB"
+}, {
+    "ticker": "ARCM"
+}, {
+    "ticker": "FGLD"
+}, {
+    "ticker": "BCM"
+}, {
+    "ticker": "GUSH"
+}, {
+    "ticker": "OACP"
+}, {
+    "ticker": "SCCE"
+}, {
+    "ticker": "FILL"
+}, {
+    "ticker": "ERX"
+}, {
+    "ticker": "JANW"
+}, {
+    "ticker": "CHIH"
+}, {
+    "ticker": "DBND"
+}, {
+    "ticker": "XB"
+}, {
+    "ticker": "PSMJ"
+}, {
+    "ticker": "XLE"
+}, {
+    "ticker": "JULT"
+}, {
+    "ticker": "VMAT"
+}, {
+    "ticker": "NKEQ"
+}, {
+    "ticker": "JANT"
+}, {
+    "ticker": "GRNR"
+}, {
+    "ticker": "NSPY"
+}, {
+    "ticker": "VNLA"
+}, {
+    "ticker": "NIWM"
+}, {
+    "ticker": "SSXU"
+}, {
+    "ticker": "MOOD"
+}, {
+    "ticker": "FIG"
+}, {
+    "ticker": "SHPP"
+}, {
+    "ticker": "FTSM"
+}, {
+    "ticker": "APRT"
+}, {
+    "ticker": "USNZ"
+}, {
+    "ticker": "ODDS"
+}, {
+    "ticker": "ICSH"
+}, {
+    "ticker": "TIPD"
+}, {
+    "ticker": "IWFG"
+}, {
+    "ticker": "SIXJ"
+}, {
+    "ticker": "DEHP"
+}, {
+    "ticker": "OAIE"
+}, {
+    "ticker": "NTZG"
+}, {
+    "ticker": "IWLG"
+}, {
+    "ticker": "TILL"
+}, {
+    "ticker": "TRFK"
+}, {
+    "ticker": "TPYP"
+}, {
+    "ticker": "AGRH"
+}, {
+    "ticker": "OCTT"
+}, {
+    "ticker": "SEIM"
+}, {
+    "ticker": "OCTW"
+}, {
+    "ticker": "XBB"
+}, {
+    "ticker": "SWEB"
+}, {
+    "ticker": "BRKY"
+}, {
+    "ticker": "APRW"
+}, {
+    "ticker": "IRVH"
+}, {
+    "ticker": "FLYU"
+}, {
+    "ticker": "XCCC"
+}, {
+    "ticker": "BUFQ"
+}, {
+    "ticker": "XEMD"
+}, {
+    "ticker": "MNBD"
+}, {
+    "ticker": "FSLD"
+}, {
+    "ticker": "HYGI"
+}, {
+    "ticker": "NKEL"
+}, {
+    "ticker": "IBDX"
+}, {
+    "ticker": "ARVR"
+}, {
+    "ticker": "MCH"
+}, {
+    "ticker": "DFEV"
+}, {
+    "ticker": "CBSE"
+}, {
+    "ticker": "AHOY"
+}, {
+    "ticker": "NZUS"
+}, {
+    "ticker": "RATE"
+}, {
+    "ticker": "AOTG"
+}, {
+    "ticker": "SIO"
+}, {
+    "ticker": "IBTM"
+}, {
+    "ticker": "STGF"
+}, {
+    "ticker": "VR"
+}, {
+    "ticker": "LQIG"
+}, {
+    "ticker": "JPRE"
+}, {
+    "ticker": "CRYP"
+}, {
+    "ticker": "TARK"
+}, {
+    "ticker": "MINV"
+}, {
+    "ticker": "TRFM"
+}, {
+    "ticker": "JCPI"
+}, {
+    "ticker": "MPAY"
+}, {
+    "ticker": "AAPB"
+}, {
+    "ticker": "BYRE"
+}, {
+    "ticker": "AAPU"
+}, {
+    "ticker": "AGIH"
+}, {
+    "ticker": "JULW"
+}, {
+    "ticker": "TUGN"
+}, {
+    "ticker": "TUG"
+}, {
+    "ticker": "DINT"
+}, {
+    "ticker": "FLYD"
+}, {
+    "ticker": "PDBA"
+}, {
+    "ticker": "USDU"
+}, {
+    "ticker": "BSJT"
+}, {
+    "ticker": "VIOG"
+}, {
+    "ticker": "XDSQ"
+}, {
+    "ticker": "DRLL"
+}, {
+    "ticker": "EMGF"
+}, {
+    "ticker": "FEMB"
+}, {
+    "ticker": "GDXU"
+}, {
+    "ticker": "ORFN"
+}, {
+    "ticker": "HNDL"
+}, {
+    "ticker": "DAPR"
+}, {
+    "ticker": "HYHG"
+}, {
+    "ticker": "JPST"
+}, {
+    "ticker": "IDV"
+}, {
+    "ticker": "FRDM"
+}, {
+    "ticker": "XLRE"
+}, {
+    "ticker": "EMCR"
+}, {
+    "ticker": "PFEL"
+}, {
+    "ticker": "BCDF"
+}, {
+    "ticker": "OOTO"
+}, {
+    "ticker": "TWEB"
+}, {
+    "ticker": "DJD"
+}, {
+    "ticker": "SRLN"
+}, {
+    "ticker": "FEMA"
+}, {
+    "ticker": "XLY"
+}, {
+    "ticker": "HYBL"
+}, {
+    "ticker": "IBIT"
+}, {
+    "ticker": "DEFI"
+}, {
+    "ticker": "LONZ"
+}, {
+    "ticker": "AMZU"
+}, {
+    "ticker": "UDI"
+}, {
+    "ticker": "PFES"
+}, {
+    "ticker": "TSLH"
+}, {
+    "ticker": "STCE"
+}, {
+    "ticker": "AMZD"
+}, {
+    "ticker": "IGSB"
+}, {
+    "ticker": "EMCH"
+}, {
+    "ticker": "GGLL"
+}, {
+    "ticker": "XUSP"
+}, {
+    "ticker": "XSOE"
+}, {
+    "ticker": "GVLU"
+}, {
+    "ticker": "CONL"
+}, {
+    "ticker": "DSMC"
+}, {
+    "ticker": "IDVO"
+}, {
+    "ticker": "THLV"
+}, {
+    "ticker": "SEIV"
+}, {
+    "ticker": "CGV"
+}, {
+    "ticker": "LCF"
+}, {
+    "ticker": "GDIV"
+}, {
+    "ticker": "NBCC"
+}, {
+    "ticker": "HYGW"
+}, {
+    "ticker": "JIRE"
+}, {
+    "ticker": "BULD"
+}, {
+    "ticker": "DFUV"
+}, {
+    "ticker": "BRLN"
+}, {
+    "ticker": "LQDW"
+}, {
+    "ticker": "XTWO"
+}, {
+    "ticker": "BNDI"
+}, {
+    "ticker": "TBIL"
+}, {
+    "ticker": "MEM"
+}, {
+    "ticker": "XC"
+}, {
+    "ticker": "CLOI"
+}, {
+    "ticker": "OAIM"
+}, {
+    "ticker": "UTWO"
+}, {
+    "ticker": "LCLG"
+}, {
+    "ticker": "OSEA"
+}, {
+    "ticker": "OAEM"
+}, {
+    "ticker": "MAXI"
+}, {
+    "ticker": "KPOP"
+}, {
+    "ticker": "HFND"
+}, {
+    "ticker": "SESG"
+}, {
+    "ticker": "AVGE"
+}, {
+    "ticker": "XSEP"
+}, {
+    "ticker": "SMOT"
+}, {
+    "ticker": "TSME"
+}, {
+    "ticker": "QQQS"
+}, {
+    "ticker": "BSCW"
+}, {
+    "ticker": "SCMB"
+}, {
+    "ticker": "UTEN"
+}, {
+    "ticker": "BSJU"
+}, {
+    "ticker": "TSLI"
+}, {
+    "ticker": "TSLQ"
+}, {
+    "ticker": "TSLS"
+}, {
+    "ticker": "DAUG"
+}, {
+    "ticker": "KMET"
+}, {
+    "ticker": "SELV"
+}, {
+    "ticker": "GABF"
+}, {
+    "ticker": "PBDC"
+}, {
+    "ticker": "TSL"
+}, {
+    "ticker": "NDIV"
+}, {
+    "ticker": "AZTD"
+}, {
+    "ticker": "RDVI"
+}, {
+    "ticker": "PYPT"
+}, {
+    "ticker": "DIVD"
+}, {
+    "ticker": "ELQD"
+}, {
+    "ticker": "EVAV"
+}, {
+    "ticker": "HAPI"
+}, {
+    "ticker": "BRNY"
+}, {
+    "ticker": "SPYI"
+}, {
+    "ticker": "UYLD"
+}, {
+    "ticker": "BWEB"
+}, {
+    "ticker": "SRHQ"
+}, {
+    "ticker": "XCOR"
+}, {
+    "ticker": "NSPL"
+}, {
+    "ticker": "RYLG"
+}, {
+    "ticker": "SHOC"
+}, {
+    "ticker": "YALL"
+}, {
+    "ticker": "SHDG"
+}, {
+    "ticker": "FDLS"
+}, {
+    "ticker": "EMZA"
+}, {
+    "ticker": "MSFU"
+}, {
+    "ticker": "JGRO"
+}, {
+    "ticker": "BBLU"
+}, {
+    "ticker": "MODL"
+}, {
+    "ticker": "IQHI"
+}, {
+    "ticker": "PTMC"
+}, {
+    "ticker": "NXTE"
+}, {
+    "ticker": "AIRR"
+}, {
+    "ticker": "SYII"
+}, {
+    "ticker": "IBRN"
+}, {
+    "ticker": "FTGS"
+}, {
+    "ticker": "NVBW"
+}, {
+    "ticker": "XOP"
+}, {
+    "ticker": "CPII"
+}, {
+    "ticker": "IVEG"
+}, {
+    "ticker": "CSHI"
+}, {
+    "ticker": "XTEN"
+}, {
+    "ticker": "XFIV"
+}, {
+    "ticker": "XTWY"
+}, {
+    "ticker": "NVDS"
+}, {
+    "ticker": "TAFI"
+}, {
+    "ticker": "XTRE"
+}, {
+    "ticker": "RNEW"
+}, {
+    "ticker": "DFSU"
+}, {
+    "ticker": "MISL"
+}, {
+    "ticker": "RENW"
+}, {
+    "ticker": "CGSD"
+}, {
+    "ticker": "SPKX"
+}, {
+    "ticker": "INC"
+}, {
+    "ticker": "EMCA"
+}, {
+    "ticker": "ADPV"
+}, {
+    "ticker": "DFSE"
+}, {
+    "ticker": "KDIV"
+}, {
+    "ticker": "BKGI"
+}, {
+    "ticker": "DFSI"
+}, {
+    "ticker": "BLLD"
+}, {
+    "ticker": "DVND"
+}, {
+    "ticker": "FIAX"
+}, {
+    "ticker": "SYNB"
+}, {
+    "ticker": "JHDV"
+}, {
+    "ticker": "STXK"
+}, {
+    "ticker": "EMPW"
+}, {
+    "ticker": "TUSI"
+}, {
+    "ticker": "SPKY"
+}, {
+    "ticker": "INFR"
+}, {
+    "ticker": "OBIL"
+}, {
+    "ticker": "CIRC"
+}, {
+    "ticker": "MMSB"
+}, {
+    "ticker": "SNPV"
+}, {
+    "ticker": "UPWD"
+}, {
+    "ticker": "AMID"
+}, {
+    "ticker": "PYPS"
+}, {
+    "ticker": "QGRW"
+}, {
+    "ticker": "TUA"
+}, {
+    "ticker": "SDSI"
+}, {
+    "ticker": "FBL"
+}, {
+    "ticker": "MSOX"
+}, {
+    "ticker": "HIDE"
+}, {
+    "ticker": "IHE"
+}, {
+    "ticker": "NVDL"
+}, {
+    "ticker": "PJFG"
+}, {
+    "ticker": "CARY"
+}, {
+    "ticker": "CGMU"
+}, {
+    "ticker": "DFSB"
+}, {
+    "ticker": "AAPD"
+}, {
+    "ticker": "MSFD"
+}, {
+    "ticker": "BPAY"
+}, {
+    "ticker": "HYLG"
+}, {
+    "ticker": "DIVY"
+}, {
+    "ticker": "HDUS"
+}, {
+    "ticker": "CGMS"
+}, {
+    "ticker": "LSST"
+}, {
+    "ticker": "RNWZ"
+}, {
+    "ticker": "TGN"
+}, {
+    "ticker": "GGLS"
+}, {
+    "ticker": "PP"
+}, {
+    "ticker": "XSVN"
+}, {
+    "ticker": "SFLR"
+}, {
+    "ticker": "DECT"
+}, {
+    "ticker": "ARP"
+}, {
+    "ticker": "DECW"
+}, {
+    "ticker": "ICLO"
+}, {
+    "ticker": "KARB"
+}, {
+    "ticker": "BOXX"
+}, {
+    "ticker": "STXD"
+}, {
+    "ticker": "TYLG"
+}, {
+    "ticker": "PULT"
+}, {
+    "ticker": "TLTW"
+}, {
+    "ticker": "SNPD"
+}, {
+    "ticker": "SJNK"
+}, {
+    "ticker": "CCRV"
+}, {
+    "ticker": "IQDF"
+}, {
+    "ticker": "BUYW"
+}, {
+    "ticker": "AVIE"
+}, {
+    "ticker": "SECD"
+}, {
+    "ticker": "TSLL"
+}, {
+    "ticker": "NOPE"
+}, {
+    "ticker": "HIGH"
+}, {
+    "ticker": "CLOZ"
+}, {
+    "ticker": "STRV"
+}, {
+    "ticker": "CVSB"
+}, {
+    "ticker": "QEMM"
+}, {
+    "ticker": "OARK"
+}, {
+    "ticker": "MEMX"
+}, {
+    "ticker": "ION"
+}, {
+    "ticker": "DFLV"
+}, {
+    "ticker": "DFGR"
+}, {
+    "ticker": "STXV"
+}, {
+    "ticker": "DKRB"
+}, {
+    "ticker": "SPCZ"
+}, {
+    "ticker": "FDV"
+}, {
+    "ticker": "CDEI"
+}, {
+    "ticker": "FXED"
+}, {
+    "ticker": "FYLG"
+}, {
+    "ticker": "UHAL.B"
+}, {
+    "ticker": "GCAD"
+}, {
+    "ticker": "CCSO"
+}, {
+    "ticker": "VEMY"
+}, {
+    "ticker": "IGTR"
+}, {
+    "ticker": "DVAL"
+}, {
+    "ticker": "LITP"
+}, {
+    "ticker": "PRFD"
+}, {
+    "ticker": "ERET"
+}, {
+    "ticker": "YEAR"
+}, {
+    "ticker": "TPMN"
+}, {
+    "ticker": "SNAV"
+}, {
+    "ticker": "NANC"
+}, {
+    "ticker": "CVLC"
+}, {
+    "ticker": "GFEB"
+}, {
+    "ticker": "TSLY"
+}, {
+    "ticker": "DULL"
+}, {
+    "ticker": "GLOF"
+}, {
+    "ticker": "IVRS"
+}, {
+    "ticker": "LJIM"
+}, {
+    "ticker": "EMGC"
+}, {
+    "ticker": "NVBT"
+}, {
+    "ticker": "ISDB"
+}, {
+    "ticker": "RSPH"
+}, {
+    "ticker": "MARW"
+}, {
+    "ticker": "SANE"
+}, {
+    "ticker": "EQTY"
+}, {
+    "ticker": "WCEO"
+}, {
+    "ticker": "GJAN"
+}, {
+    "ticker": "FEBW"
+}, {
+    "ticker": "QVOY"
+}, {
+    "ticker": "DIP"
+}, {
+    "ticker": "RVRB"
+}, {
+    "ticker": "FEBT"
+}, {
+    "ticker": "COWG"
+}, {
+    "ticker": "BUCK"
+}, {
+    "ticker": "CAOS"
+}, {
+    "ticker": "FCUS"
+}, {
+    "ticker": "COPJ"
+}, {
+    "ticker": "XNAV"
+}, {
+    "ticker": "THYF"
+}, {
+    "ticker": "SNPG"
+}, {
+    "ticker": "PHYD"
+}, {
+    "ticker": "KRUZ"
+}, {
+    "ticker": "MEDI"
+}, {
+    "ticker": "BSVO"
+}, {
+    "ticker": "TFLR"
+}, {
+    "ticker": "IWTR"
+}, {
+    "ticker": "EFRA"
+}, {
+    "ticker": "OAIA"
+}, {
+    "ticker": "XMAR"
+}, {
+    "ticker": "HIYS"
+}, {
+    "ticker": "RYSE"
+}, {
+    "ticker": "RSPD"
+}, {
+    "ticker": "QVCD"
+}, {
+    "ticker": "RSPC"
+}, {
+    "ticker": "CAMX"
+}, {
+    "ticker": "MEDX"
+}, {
+    "ticker": "RSBT"
+}, {
+    "ticker": "CVIE"
+}, {
+    "ticker": "JHID"
+}, {
+    "ticker": "SROI"
+}, {
+    "ticker": "SUPP"
+}, {
+    "ticker": "ZSPY"
+}, {
+    "ticker": "GMAR"
+}, {
+    "ticker": "XBIL"
+}, {
+    "ticker": "RSPU"
+}, {
+    "ticker": "RSPG"
+}, {
+    "ticker": "INTL"
+}, {
+    "ticker": "RSPR"
+}, {
+    "ticker": "BITC"
+}, {
+    "ticker": "FUSI"
+}, {
+    "ticker": "IQSM"
+}, {
+    "ticker": "NIKL"
+}, {
+    "ticker": "CVMC"
+}, {
+    "ticker": "STXG"
+}, {
+    "ticker": "SGLC"
+}, {
+    "ticker": "APRD"
+}, {
+    "ticker": "LOWV"
+}, {
+    "ticker": "PIT"
+}, {
+    "ticker": "ZSB"
+}, {
+    "ticker": "LZRD"
+}, {
+    "ticker": "KCAL"
+}, {
+    "ticker": "WTIU"
+}, {
+    "ticker": "SURI"
+}, {
+    "ticker": "GMUN"
+}, {
+    "ticker": "UNIY"
+}, {
+    "ticker": "IMSI"
+}, {
+    "ticker": "QEFA"
+}, {
+    "ticker": "RSPF"
+}, {
+    "ticker": "PPEM"
+}, {
+    "ticker": "PBL"
+}, {
+    "ticker": "DCMB"
+}, {
+    "ticker": "BITI"
+}, {
+    "ticker": "APRJ"
+}, {
+    "ticker": "APRQ"
+}, {
+    "ticker": "DYTA"
+}, {
+    "ticker": "JPSV"
+}, {
+    "ticker": "USEP"
+}, {
+    "ticker": "PJFV"
+}, {
+    "ticker": "NVIR"
+}, {
+    "ticker": "EIPX"
+}, {
+    "ticker": "CHRG"
+}, {
+    "ticker": "MCSE"
+}, {
+    "ticker": "CLOA"
+}, {
+    "ticker": "EVUS"
+}, {
+    "ticker": "KLIP"
+}, {
+    "ticker": "SETM"
+}, {
+    "ticker": "APLY"
+}, {
+    "ticker": "APRH"
+}, {
+    "ticker": "BIGB"
+}, {
+    "ticker": "IBOT"
+}, {
+    "ticker": "FWD"
+}, {
+    "ticker": "MART"
+}, {
+    "ticker": "LALT"
+}, {
+    "ticker": "FDAT"
+}, {
+    "ticker": "MORE"
+}, {
+    "ticker": "EMDM"
+}, {
+    "ticker": "IDUB"
+}, {
+    "ticker": "FLEU"
+}, {
+    "ticker": "BEMB"
+}, {
+    "ticker": "CVSE"
+}, {
+    "ticker": "DRUP"
+}, {
+    "ticker": "DOGG"
+}, {
+    "ticker": "AWEG"
+}, {
+    "ticker": "BSR"
+}, {
+    "ticker": "WUCT"
+}, {
+    "ticker": "SJIM"
+}, {
+    "ticker": "BABX"
+}, {
+    "ticker": "GDEF"
+}, {
+    "ticker": "POWA"
+}, {
+    "ticker": "UTRE"
+}, {
+    "ticker": "URNJ"
+}, {
+    "ticker": "ZIVB"
+}, {
+    "ticker": "CMDT"
+}, {
+    "ticker": "RSHO"
+}, {
+    "ticker": "BMVP"
+}, {
+    "ticker": "HYFI"
+}, {
+    "ticker": "NVDY"
+}, {
+    "ticker": "NBCM"
+}, {
+    "ticker": "BBIB"
+}, {
+    "ticker": "BIGT"
+}, {
+    "ticker": "QYLE"
+}, {
+    "ticker": "JUCY"
+}, {
+    "ticker": "APUE"
+}, {
+    "ticker": "MAYT"
+}, {
+    "ticker": "BDGS"
+}, {
+    "ticker": "GAPR"
+}, {
+    "ticker": "USCA"
+}, {
+    "ticker": "TOLL"
+}, {
+    "ticker": "EGUS"
+}, {
+    "ticker": "IGPT"
+}, {
+    "ticker": "BINC"
+}, {
+    "ticker": "MAYW"
+}, {
+    "ticker": "HIDV"
+}, {
+    "ticker": "WTID"
+}, {
+    "ticker": "MKAM"
+}, {
+    "ticker": "XYLE"
+}, {
+    "ticker": "PTEC"
+}, {
+    "ticker": "CETF"
+}, {
+    "ticker": "JETD"
+}, {
+    "ticker": "BILZ"
+}, {
+    "ticker": "EQLS"
+}, {
+    "ticker": "LUX"
+}, {
+    "ticker": "KEM"
+}, {
+    "ticker": "BSMW"
+}, {
+    "ticker": "SHNY"
+}, {
+    "ticker": "JIVE"
+}, {
+    "ticker": "EMC"
+}, {
+    "ticker": "BRAZ"
+}, {
+    "ticker": "SHLD"
+}, {
+    "ticker": "HF"
+}, {
+    "ticker": "GGME"
+}, {
+    "ticker": "CARD"
+}, {
+    "ticker": "FLOW"
+}, {
+    "ticker": "NTRL"
+}, {
+    "ticker": "JCHI"
+}, {
+    "ticker": "HYSA"
+}, {
+    "ticker": "STXE"
+}, {
+    "ticker": "PPIE"
+}, {
+    "ticker": "OAIB"
+}, {
+    "ticker": "CLIP"
+}, {
+    "ticker": "FDEV"
+}, {
+    "ticker": "VTES"
+}, {
+    "ticker": "KNGZ"
+}, {
+    "ticker": "CRDT"
+}, {
+    "ticker": "PCRB"
+}, {
+    "ticker": "KNCT"
+}, {
+    "ticker": "BWET"
+}, {
+    "ticker": "XHLF"
+}, {
+    "ticker": "BITX"
+}, {
+    "ticker": "PAAA"
+}, {
+    "ticker": "UTHY"
+}, {
+    "ticker": "UTWY"
+}, {
+    "ticker": "ETEC"
+}, {
+    "ticker": "AMPD"
+}, {
+    "ticker": "FDCF"
+}, {
+    "ticker": "JPLD"
+}, {
+    "ticker": "IBMR"
+}, {
+    "ticker": "HARD"
+}, {
+    "ticker": "CHAT"
+}, {
+    "ticker": "USE"
+}, {
+    "ticker": "GJUN"
+}, {
+    "ticker": "JUNT"
+}, {
+    "ticker": "BLCV"
+}, {
+    "ticker": "LSGR"
+}, {
+    "ticker": "JULH"
+}, {
+    "ticker": "JULJ"
+}, {
+    "ticker": "CLOX"
+}, {
+    "ticker": "CALY"
+}, {
+    "ticker": "JULQ"
+}, {
+    "ticker": "AMZY"
+}, {
+    "ticker": "PEMX"
+}, {
+    "ticker": "PYLD"
+}, {
+    "ticker": "BCHP"
+}, {
+    "ticker": "JULD"
+}, {
+    "ticker": "DFCA"
+}, {
+    "ticker": "JUNW"
+}, {
+    "ticker": "BBEM"
+}, {
+    "ticker": "BUXX"
+}, {
+    "ticker": "MAGS"
+}, {
+    "ticker": "IBDY"
+}, {
+    "ticker": "TCAF"
+}, {
+    "ticker": "AVGV"
+}, {
+    "ticker": "GMAY"
+}, {
+    "ticker": "JMSI"
+}, {
+    "ticker": "FBOT"
+}, {
+    "ticker": "TGRT"
+}, {
+    "ticker": "FDIF"
+}, {
+    "ticker": "XJUL"
+}, {
+    "ticker": "APCB"
+}, {
+    "ticker": "VFLO"
+}, {
+    "ticker": "DUBS"
+}, {
+    "ticker": "TJUL"
+}, {
+    "ticker": "APIE"
+}, {
+    "ticker": "APMU"
+}, {
+    "ticker": "CAFG"
+}, {
+    "ticker": "TOUS"
+}, {
+    "ticker": "GPOW"
+}, {
+    "ticker": "RUNN"
+}, {
+    "ticker": "TMSL"
+}, {
+    "ticker": "AVNM"
+}, {
+    "ticker": "FDFF"
+}, {
+    "ticker": "INCM"
+}, {
+    "ticker": "TVAL"
+}, {
+    "ticker": "EMM"
+}, {
+    "ticker": "GXUS"
+}, {
+    "ticker": "AVNV"
+}, {
+    "ticker": "IVVB"
+}, {
+    "ticker": "TDVI"
+}, {
+    "ticker": "AVMA"
+}, {
+    "ticker": "USCL"
+}, {
+    "ticker": "USVN"
+}, {
+    "ticker": "IBHJ"
+}, {
+    "ticker": "RMIF"
+}, {
+    "ticker": "SCYB"
+}, {
+    "ticker": "CONY"
+}, {
+    "ticker": "JMHI"
+}, {
+    "ticker": "AIDB"
+}, {
+    "ticker": "FIIG"
+}, {
+    "ticker": "AUGW"
+}, {
+    "ticker": "IBTO"
+}, {
+    "ticker": "AUGT"
+}, {
+    "ticker": "BBSB"
+}, {
+    "ticker": "TXS"
+}, {
+    "ticker": "MUSQ"
+}, {
+    "ticker": "AVDS"
+}, {
+    "ticker": "SMAY"
+}, {
+    "ticker": "USFI"
+}, {
+    "ticker": "TSEC"
+}, {
+    "ticker": "BTR"
+}, {
+    "ticker": "IQRA"
+}, {
+    "ticker": "BDVG"
+}, {
+    "ticker": "MKOR"
+}, {
+    "ticker": "DMBS"
+}, {
+    "ticker": "HAPS"
+}, {
+    "ticker": "XAUG"
+}, {
+    "ticker": "BBLB"
+}, {
+    "ticker": "GJUL"
+}, {
+    "ticker": "JPEF"
+}, {
+    "ticker": "BKIV"
+}, {
+    "ticker": "DBEF"
+}, {
+    "ticker": "STXT"
+}, {
+    "ticker": "LGRO"
+}, {
+    "ticker": "ROE"
+}, {
+    "ticker": "MDLV"
+}, {
+    "ticker": "MGOV"
+}, {
+    "ticker": "VETZ"
+}, {
+    "ticker": "JETU"
+}, {
+    "ticker": "ICOP"
+}, {
+    "ticker": "HCMT"
+}, {
+    "ticker": "CAML"
+}, {
+    "ticker": "GAUG"
+}, {
+    "ticker": "HEAT"
+}, {
+    "ticker": "PRVT"
+}, {
+    "ticker": "IVVM"
+}, {
+    "ticker": "FTBD"
+}, {
+    "ticker": "SDVD"
+}, {
+    "ticker": "SAUG"
+}, {
+    "ticker": "TGLR"
+}, {
+    "ticker": "AGQI"
+}, {
+    "ticker": "RINC"
+}, {
+    "ticker": "CSMD"
+}, {
+    "ticker": "LUXX"
+}, {
+    "ticker": "CANC"
+}, {
+    "ticker": "PSWD"
+}, {
+    "ticker": "FMED"
+}, {
+    "ticker": "CLIA"
+}, {
+    "ticker": "ISEP"
+}, {
+    "ticker": "SEPW"
+}, {
+    "ticker": "PCGG"
+}, {
+    "ticker": "SEPT"
+}, {
+    "ticker": "DIVL"
+}, {
+    "ticker": "PSDM"
+}, {
+    "ticker": "USSE"
+}, {
+    "ticker": "CHPS"
+}, {
+    "ticker": "UFIV"
+}, {
+    "ticker": "UPGR"
+}, {
+    "ticker": "CARU"
+}, {
+    "ticker": "EVXX"
+}, {
+    "ticker": "BBIP"
+}, {
+    "ticker": "JPMO"
+}, {
+    "ticker": "SPDG"
+}, {
+    "ticker": "DCOR"
+}, {
+    "ticker": "QQQY"
+}, {
+    "ticker": "NDIA"
+}, {
+    "ticker": "COWS"
+}, {
+    "ticker": "SMRI"
+}, {
+    "ticker": "TSLR"
+}, {
+    "ticker": "JGLO"
+}, {
+    "ticker": "BGIG"
+}, {
+    "ticker": "ECML"
+}, {
+    "ticker": "ILIT"
+}, {
+    "ticker": "ZTAX"
+}, {
+    "ticker": "IBIB"
+}, {
+    "ticker": "DISV"
+}, {
+    "ticker": "IBIC"
+}, {
+    "ticker": "IBID"
+}, {
+    "ticker": "AMDY"
+}, {
+    "ticker": "XISE"
+}, {
+    "ticker": "ZSC"
+}, {
+    "ticker": "JEPY"
+}, {
+    "ticker": "FDIV"
+}, {
+    "ticker": "LABD"
+}, {
+    "ticker": "FGDL"
+}, {
+    "ticker": "BKWO"
+}, {
+    "ticker": "FTIF"
+}, {
+    "ticker": "IBIH"
+}, {
+    "ticker": "DESK"
+}, {
+    "ticker": "IBIJ"
+}, {
+    "ticker": "BSJV"
+}, {
+    "ticker": "FTWO"
+}, {
+    "ticker": "IBIF"
+}, {
+    "ticker": "IBIE"
+}, {
+    "ticker": "BSSX"
+}, {
+    "ticker": "DUSB"
+}, {
+    "ticker": "GGM"
+}, {
+    "ticker": "GOOY"
+}, {
+    "ticker": "CRED"
+}, {
+    "ticker": "CGDG"
+}, {
+    "ticker": "CGBL"
+}, {
+    "ticker": "FBY"
+}, {
+    "ticker": "AVLC"
+}, {
+    "ticker": "OCTH"
+}, {
+    "ticker": "HOCT"
+}, {
+    "ticker": "BAMA"
+}, {
+    "ticker": "LOCT"
+}, {
+    "ticker": "LGLZ"
+}, {
+    "ticker": "OCTJ"
+}]
