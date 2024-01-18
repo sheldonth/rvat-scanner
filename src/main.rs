@@ -22,12 +22,14 @@ use tui::{
 };
 use chrono::Timelike;
 use chrono::{DateTime, Local, NaiveTime, TimeZone, FixedOffset};
-//use chrono_tz::America::New_York;
-//use chrono::{Utc, Offset};
+use chrono_tz::America::New_York;
+use chrono::{Utc, Offset};
 use rvat_scanner::alpaca::Bar;
 use rvat_scanner::alpaca;
+use std::collections::HashSet;
 
 static LIST_ITEM_HEIGHT:u16 = 50;
+static THREADS:usize = 5;
 
 use serde::Deserialize;
 #[derive(Deserialize, Debug, Clone)]
@@ -41,7 +43,6 @@ lazy_static! {
     pub static ref EXCLUDED_SYMBOLS:Vec<Ticker> = serde_json::from_str(
         fs::read_to_string("excluded_tickers.json").unwrap().as_str()
     ).unwrap();
-        
 }
 
 fn read_cache_folders(folder_path:&Path) -> io::Result<Vec<String>> {
@@ -206,38 +207,36 @@ fn main() -> Result<(), Box<dyn Error>> {
 
 // hour_minute is like "04:00"
 // reurn DateTime<FixedOffset> in New York
-fn time_in_new_york (hour_minute:&str) -> DateTime<FixedOffset> {
-    let naive_time = NaiveTime::parse_from_str(hour_minute, "%H:%M").unwrap();
-    //let local_date = Local::today().naive_local();
-    let local_date = Local::now().naive_local().date();
-    let local_datetime = local_date.and_time(naive_time);
-    // TODO: need a more robust solution for handling DST.
-    //let ny_offset = FixedOffset::west(5 * 3600); // UTC-5 hours for Eastern Standard Time
-    let ny_offset = FixedOffset::west_opt(5 * 3600).unwrap(); // UTC-5 hours for Eastern Daylight Time
-    let ny_datetime = ny_offset.from_local_datetime(&local_datetime).unwrap();
-    ny_datetime
-}
-
-//fn time_in_new_york(hour_minute: &str) -> DateTime<FixedOffset> {
+//fn time_in_new_york (hour_minute:&str) -> DateTime<FixedOffset> {
     //let naive_time = NaiveTime::parse_from_str(hour_minute, "%H:%M").unwrap();
+    ////let local_date = Local::today().naive_local();
     //let local_date = Local::now().naive_local().date();
     //let local_datetime = local_date.and_time(naive_time);
-
-    //// Find the equivalent UTC datetime
-    //let utc_datetime = Utc.from_local_datetime(&local_datetime).unwrap();
-    //let naive_utc_datetime = utc_datetime.naive_utc();
-    //// Convert the UTC datetime to New York time, considering DST
-    //let ny_datetime_with_tz = New_York.from_utc_datetime(&naive_utc_datetime);
-
-    //// Extract the fixed offset
-    //let fixed_offset = ny_datetime_with_tz.offset().fix();
-
-    //// Apply the fixed offset to the original naive datetime
-    //fixed_offset.from_local_datetime(&local_datetime).unwrap()
+    //// TODO: need a more robust solution for handling DST.
+    ////let ny_offset = FixedOffset::west(5 * 3600); // UTC-5 hours for Eastern Standard Time
+    //let ny_offset = FixedOffset::west_opt(5 * 3600).unwrap(); // UTC-5 hours for Eastern Daylight Time
+    //let ny_datetime = ny_offset.from_local_datetime(&local_datetime).unwrap();
+    //ny_datetime
 //}
 
-static THREADS:usize = 5;
-use std::collections::HashSet;
+fn time_in_new_york(hour_minute: &str) -> DateTime<FixedOffset> {
+    let naive_time = NaiveTime::parse_from_str(hour_minute, "%H:%M").unwrap();
+    let local_date = Local::now().naive_local().date();
+    let local_datetime = local_date.and_time(naive_time);
+
+    // Find the equivalent UTC datetime
+    let utc_datetime = Utc.from_local_datetime(&local_datetime).unwrap();
+    let naive_utc_datetime = utc_datetime.naive_utc();
+    // Convert the UTC datetime to New York time, considering DST
+    let ny_datetime_with_tz = New_York.from_utc_datetime(&naive_utc_datetime);
+
+    // Extract the fixed offset
+    let fixed_offset = ny_datetime_with_tz.offset().fix();
+
+    // Apply the fixed offset to the original naive datetime
+    fixed_offset.from_local_datetime(&local_datetime).unwrap()
+}
+
 
 fn run_app<B: Backend>(
     terminal: &mut Terminal<B>,
@@ -266,7 +265,6 @@ fn run_app<B: Backend>(
         let loops_ptr = loops_ptr.clone();
         let excluded_symbols_ptr = excluded_symbols_ptr.clone();
         thread::spawn(move || {
-            //let symbols:Vec<&str> = SYMBOL_DAYS.keys().map(|s| s.as_str()).collect();
             let now = chrono::DateTime::from(chrono::Utc::now());
             let start = now - chrono::Duration::days(60);
             let trading_days = alpaca::get_calendar(
@@ -275,16 +273,15 @@ fn run_app<B: Backend>(
             let reference_days = trading_days[1..18].to_vec();
             loop {
                 let (symbol_index, symbol) = next_symbol(symbol_index_ptr.clone(), loops_ptr.clone());
+                if excluded_symbols_ptr.lock().unwrap().contains(symbol.as_str()) {
+                    continue;
+                }
                 let progress = (symbol_index as f64 / SYMBOLS.len() as f64) * 100.0;
                 let progress = (progress * 10.0).round() / 10.0;
                 let progress_string = format!("{}%", progress);
                 let title = format!("RVAT Scanner {} {} ({})", &analysis_day.date.as_str(), 
                                     progress_string, loops_ptr.lock().unwrap());
                 app_clone.lock().unwrap().set_title(title.as_str());
-                if excluded_symbols_ptr.lock().unwrap().contains(symbol.as_str()) {
-                    continue;
-                }
-                //let symbol:&str = SYMBOLS[symbol_index].as_str();
                 let mut volumes:Vec<u64> = Vec::new();
                 for reference_day in &reference_days {
                     let key = format!("{}.json", reference_day.date);
@@ -356,7 +353,6 @@ fn run_app<B: Backend>(
                 // find the % change from the 0th bar to the last bar
                 let mut pnl_change_percent:f64 = 0.0;
                 if analysis_day_bars.get_bars().len() == 0 {
-                    //symbol_index += 1;
                     continue;
                 }
                 let first_bar = &analysis_day_bars.get_bars()[0].c;
@@ -433,26 +429,36 @@ fn run_app<B: Backend>(
 }
 
 fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
-    // Create two chunks with equal horizontal screen space
+    // Create a chunk with 100% horizontal screen space
     let chunks = Layout::default()
         .direction(Direction::Horizontal)
         .constraints([Constraint::Percentage(100)].as_ref())
         .split(f.size());
 
-    // Iterate through all elements in the `items` app and append some debug text to it.
     let items: Vec<ListItem> = app
         .items
         .items
         .iter()
         .map(|i| {
-            let line_text = format!("{}: {} / {} = {:.2} ({:.2}%)",
-                i.symbol, i.analysis_dvat, i.average_dvat, i.score, i.pnl_change_percent * 100.0);
-            let lines = vec![Spans::from(Span::raw(line_text))];
-            ListItem::new(lines).style(Style::default().fg(Color::White))
+            let pnl_style = if i.pnl_change_percent >= 0.0 {
+                Style::default().fg(Color::Green)
+            } else {
+                Style::default().fg(Color::Red)
+            };
+
+            let pnl_change_percent = Span::styled(
+                format!("{:>10.2}%", i.pnl_change_percent * 100.0),
+                pnl_style,
+            );
+
+            let line_text = Spans::from(vec![
+                Span::raw(format!("{:<10} {:>8} {:>10} {:>8.2} ", i.symbol, i.analysis_dvat, i.average_dvat, i.score)),
+                pnl_change_percent,
+            ]);
+            ListItem::new(line_text).style(Style::default().fg(Color::White))
         })
         .collect();
 
-    // Create a List from all list items and highlight the currently selected one
     let items = List::new(items)
         .block(Block::default().borders(Borders::ALL).title(app.title.as_str()))
         .highlight_style(
@@ -462,7 +468,6 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         )
         .highlight_symbol("> ");
 
-    // We can now render the item list
     f.render_stateful_widget(items, chunks[0], &mut app.items.state);
 }
 
