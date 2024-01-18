@@ -10,7 +10,11 @@ const TRADING_PERIODS = 21
 const trading_days = async () => {
     const days_past = new Date()
     days_past.setDate(days_past.getDate() - LOOKBACK_DAYS)
-    const calendar = (await get_calendar(days_past, new Date())).reverse();
+    let calendar = (await get_calendar(days_past, new Date())).reverse();
+    const today = new Date()
+    calendar = calendar.filter(d => {
+        return new Date(d.date) < today
+    })
     if (calendar[0].date === new Date().toISOString().slice(0, 10)) {
         return calendar.splice(1, TRADING_PERIODS + 1)
     }

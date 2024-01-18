@@ -278,14 +278,12 @@ fn run_app<B: Backend>(
                     let bar_data = match fs::read_to_string(bar_data_path.clone()) {
                         Ok(bar_data) => bar_data,
                         Err(e) => {
-                            println!("error reading file: {} {} {}", e, key, bar_data_path);
                             continue;
                         }
                     };
                     let bars:Vec<Bar> = match serde_json::from_str(&bar_data) {
                         Ok(bars) => bars,
                         Err(e) => {
-                            println!("error deserializing file: {} {} {}", e, key, bar_data_path);
                             continue;
                         }
                     };

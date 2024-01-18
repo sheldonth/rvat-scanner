@@ -145,7 +145,6 @@ pub fn get_bars(ticker:&str, timeframe:&str, start:DateTime<FixedOffset>, end:Da
                 }
             },
             Err(e) => {
-                println!("Error getting bars: {}", e);
                 BarResponse {
                     //symbol: String::from(ticker),
                     bars: Vec::new()
