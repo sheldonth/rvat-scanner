@@ -1,7 +1,31 @@
 [{
     "ticker": "FSMD"
 }, {
+    "ticker": "BBCB"
+}, {
+    "ticker": "AQU"
+}, {
+    "ticker": "YMAX"
+}, {
+    "ticker": "MARX"
+}, {
+    "ticker":"YMAX"
+}, {
+    "ticker": "AQU"
+}, {
+    "ticker": "BBCB"
+}, {
+    "ticker": "FEXD"
+}, {
+    "ticker": "FEXD"
+}, {
     "ticker": "RGI"
+}, {
+    "ticker": "RGI"
+}, {
+    "ticker": "IDHD"
+}, {
+    "ticker": "GORV"
 }, {
     "ticker": "IDHD"
 }, {
