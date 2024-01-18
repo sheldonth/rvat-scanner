@@ -1,5 +1,6 @@
 #!/opt/homebrew/bin/bash
-
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+ORIGIN_DIR=$(pwd)
 check_bin() {
   local binary_name=$1
   if ! command -v "$binary_name" >/dev/null 2>&1; then
@@ -9,7 +10,9 @@ check_bin() {
 }
 
 check_bin "node"
+check_bin "cargo"
 
-node build_cache.js
+node "$SCRIPT_DIR/build_cache.js"
+cd "$SCRIPT_DIR"
 cargo run --release
-
+cd "$ORIGIN_DIR"
