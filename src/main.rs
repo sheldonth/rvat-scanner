@@ -28,7 +28,7 @@ use rvat_scanner::alpaca::Bar;
 use rvat_scanner::alpaca;
 use std::collections::HashSet;
 
-static LIST_ITEM_HEIGHT:u16 = 100;
+static LIST_ITEM_HEIGHT:u16 = 50;
 static THREADS:usize = 5;
 
 use serde::Deserialize;
@@ -442,18 +442,7 @@ fn duration_to_human_readable(dur:chrono::Duration) -> String {
     }
 }
 
-fn count_to_human_readable(arg:u64) -> String {
-    if arg > 1000000000 {
-        return format!("{:.2}B", arg as f64 / 1000000000.0);
-    }
-    if arg > 1000000 {
-        return format!("{:.2}M", arg as f64 / 1000000.0);
-    }
-    if arg > 1000 {
-        return format!("{:.2}K", arg as f64 / 1000.0);
-    }
-    return format!("{}", arg);
-}
+fn count_to_human_readable(arg:u64)
 
 fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
     // Create a chunk with 100% horizontal screen space
@@ -488,10 +477,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
 
             let line_text = Spans::from(vec![
                 Span::raw(format!("{:<10} {:>8} {:>10} {:>8.2} {:>4}", 
-                                  i.symbol, 
-                                  count_to_human_readable(i.analysis_dvat), 
-                                  count_to_human_readable(i.average_dvat), 
-                                  i.score, age_string)),
+                                  i.symbol, i.analysis_dvat, i.average_dvat, i.score, age_string)),
                 pnl_change_percent,
             ]);
             ListItem::new(line_text).style(Style::default().fg(Color::White))
