@@ -282,8 +282,8 @@ fn run_app<B: Backend>(
                 let progress = (symbol_index as f64 / SYMBOLS.len() as f64) * 100.0;
                 let progress = (progress * 10.0).round() / 10.0;
                 let progress_string = format!("{}%", progress);
-                let title = format!("RVAT Scanner {} {} ({})", &analysis_day.date.as_str(), 
-                                    progress_string, loops_ptr.lock().unwrap());
+                let title = format!("RVAT Scanner {} ({}) {}", &analysis_day.date.as_str(), 
+                                    loops_ptr.lock().unwrap(), progress_string);
                 app_clone.lock().unwrap().set_title(title.as_str());
                 let mut volumes:Vec<u64> = Vec::new();
                 for reference_day in &reference_days {
