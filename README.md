@@ -51,3 +51,10 @@ the market with. Current default is 5, this can make a pass of the entire US
 market in ~3 minutes, depending on your latency. You can push the program faster
 but I find 5 has satisfactory performance.
 
+Excluding Exchange Traded Funds:
+
+The repo contains a json list of tickers to ignore. This is prepopulated with
+tickers for most ETFs and unmerged SPACs. Remove or add to the list at your
+conveniance.
+
+
