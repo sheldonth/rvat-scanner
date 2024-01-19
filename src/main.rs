@@ -29,6 +29,7 @@ use rvat_scanner::alpaca;
 use std::collections::HashSet;
 
 static LIST_ITEM_HEIGHT:u16 = 100;
+static LIST_PAGE_SIZE:usize = 50;
 static THREADS:usize = 5;
 
 use serde::Deserialize;
@@ -497,13 +498,13 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .collect();
 
     let len = items.len();
-    let (first_fifty_items, second_fifty_items) = if len > 50 && len <= 100 {
-        items.split_at(50)
+    let (left_block, right_block) = if len > LIST_PAGE_SIZE && len <= LIST_PAGE_SIZE * 2 {
+        items.split_at(LIST_PAGE_SIZE as usize)
     } else {
         (&items[..], &[] as &[ListItem])
     };
 
-    let first_fifty_items_list = List::new(first_fifty_items)
+    let first_list = List::new(left_block)
         .block(Block::default().borders(Borders::ALL).title(app.title.as_str()))
         .highlight_style(
             Style::default()
@@ -511,7 +512,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
                 .add_modifier(Modifier::BOLD),
         )
         .highlight_symbol("> ");
-    let second_fifty_items_list = List::new(second_fifty_items)
+    let second_list = List::new(right_block)
         .block(Block::default().borders(Borders::ALL).title(""))
         .highlight_style(
             Style::default()
@@ -521,11 +522,11 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .highlight_symbol("> ");
 
 
-    f.render_stateful_widget(first_fifty_items_list, chunks[0], &mut app.items.state);
-    if second_fifty_items.len() == 0 {
+    f.render_stateful_widget(first_list, chunks[0], &mut app.items.state);
+    if right_block.len() == 0 {
         return;
     }
-    f.render_stateful_widget(second_fifty_items_list, chunks[1], &mut app.items.state);
+    f.render_stateful_widget(second_list, chunks[1], &mut app.items.state);
 }
 
 
