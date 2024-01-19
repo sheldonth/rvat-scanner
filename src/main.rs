@@ -462,11 +462,6 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .constraints([Constraint::Percentage(100)].as_ref())
         .split(f.size());
 
-    //let chunks = Layout::default()
-        //.direction(Direction::Horizontal)
-        //.constraints([Constraint::Percentage(50), Constraint::Percentage(50)].as_ref())
-        //.split(f.size());
-
     let items: Vec<ListItem> = app
         .items
         .items
@@ -508,7 +503,6 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .highlight_symbol("> ");
 
     f.render_stateful_widget(items, chunks[0], &mut app.items.state);
-    //f.render_stateful_widget(items, chunks[1], &mut app.items.state);
 }
 
 
