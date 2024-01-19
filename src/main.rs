@@ -28,7 +28,7 @@ use rvat_scanner::alpaca::Bar;
 use rvat_scanner::alpaca;
 use std::collections::HashSet;
 
-static LIST_ITEM_HEIGHT:u16 = 50;
+static LIST_ITEM_HEIGHT:u16 = 100;
 static THREADS:usize = 5;
 
 use serde::Deserialize;
@@ -457,11 +457,14 @@ fn count_to_human_readable(arg:u64) -> String {
 
 fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
     // Create a chunk with 100% horizontal screen space
+    //let chunks = Layout::default()
+        //.direction(Direction::Horizontal)
+        //.constraints([Constraint::Percentage(100)].as_ref())
+        //.split(f.size());
     let chunks = Layout::default()
         .direction(Direction::Horizontal)
-        .constraints([Constraint::Percentage(100)].as_ref())
+        .constraints([Constraint::Percentage(50), Constraint::Percentage(50)].as_ref())
         .split(f.size());
-
     let items: Vec<ListItem> = app
         .items
         .items
@@ -493,7 +496,14 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         })
         .collect();
 
-    let items = List::new(items)
+    let len = items.len();
+    let (first_fifty_items, second_fifty_items) = if len > 50 && len <= 100 {
+        items.split_at(50)
+    } else {
+        (&items[..], &[] as &[ListItem])
+    };
+
+    let first_fifty_items_list = List::new(first_fifty_items)
         .block(Block::default().borders(Borders::ALL).title(app.title.as_str()))
         .highlight_style(
             Style::default()
@@ -501,8 +511,21 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
                 .add_modifier(Modifier::BOLD),
         )
         .highlight_symbol("> ");
+    let second_fifty_items_list = List::new(second_fifty_items)
+        .block(Block::default().borders(Borders::ALL).title(""))
+        .highlight_style(
+            Style::default()
+                .bg(Color::LightGreen)
+                .add_modifier(Modifier::BOLD),
+        )
+        .highlight_symbol("> ");
 
-    f.render_stateful_widget(items, chunks[0], &mut app.items.state);
+
+    f.render_stateful_widget(first_fifty_items_list, chunks[0], &mut app.items.state);
+    if second_fifty_items.len() == 0 {
+        return;
+    }
+    f.render_stateful_widget(second_fifty_items_list, chunks[1], &mut app.items.state);
 }
 
 
