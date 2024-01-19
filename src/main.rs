@@ -28,7 +28,7 @@ use rvat_scanner::alpaca::Bar;
 use rvat_scanner::alpaca;
 use std::collections::HashSet;
 
-static LIST_ITEM_HEIGHT:u16 = 55;
+static LIST_ITEM_HEIGHT:u16 = 100;
 static THREADS:usize = 5;
 
 use serde::Deserialize;
@@ -111,7 +111,8 @@ struct Analysis {
     average_dvat:u64,
     analysis_dvat:u64,
     score:f64,
-    pnl_change_percent:f64
+    pnl_change_percent:f64,
+    created_at:DateTime<FixedOffset>
 }
 
 struct App { 
@@ -128,7 +129,7 @@ impl App {
         }
     }
 
-    fn add_analysis(&mut self, item:Analysis) {
+    fn add_analysis(&mut self, mut item:Analysis) {
         // find the entry in items for the ticker
         let mut index:usize = 0;
         let mut found:bool = false;
@@ -140,8 +141,10 @@ impl App {
             index += 1;
         }
         if found {
-            // update the entry
+            // update the entry, but preserve the created_at time
+            item.created_at = self.items.items[index].created_at;
             self.items.items[index] = item;
+
         } else {
             // check if item is bigger than at least 1 item in the list
             let mut index:usize = 0;
@@ -393,7 +396,8 @@ fn run_app<B: Backend>(
                     average_dvat:average_dvat as u64,
                     analysis_dvat:analysis_dvat as u64,
                     score:analysis_dvat as f64 / average_dvat as f64,
-                    pnl_change_percent
+                    pnl_change_percent,
+                    created_at:chrono::Utc::now().into()
                 });
             }
         });
@@ -428,12 +432,40 @@ fn run_app<B: Backend>(
     }
 }
 
+fn duration_to_human_readable(dur:chrono::Duration) -> String {
+    let hours = dur.num_hours();
+    if hours >= 1 {
+        return format!("{}h", hours);
+    }
+    else {
+        return format!("{}m", dur.num_minutes());
+    }
+}
+
+fn count_to_human_readable(arg:u64) -> String {
+    if arg > 1000000000 {
+        return format!("{:.2}B", arg as f64 / 1000000000.0);
+    }
+    if arg > 1000000 {
+        return format!("{:.2}M", arg as f64 / 1000000.0);
+    }
+    if arg > 1000 {
+        return format!("{:.2}K", arg as f64 / 1000.0);
+    }
+    return format!("{}", arg);
+}
+
 fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
     // Create a chunk with 100% horizontal screen space
     let chunks = Layout::default()
         .direction(Direction::Horizontal)
         .constraints([Constraint::Percentage(100)].as_ref())
         .split(f.size());
+
+    //let chunks = Layout::default()
+        //.direction(Direction::Horizontal)
+        //.constraints([Constraint::Percentage(50), Constraint::Percentage(50)].as_ref())
+        //.split(f.size());
 
     let items: Vec<ListItem> = app
         .items
@@ -446,13 +478,20 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
                 Style::default().fg(Color::Red)
             };
 
+            let age = chrono::Utc::now().signed_duration_since(i.created_at);
+            let age_string = duration_to_human_readable(age);
+
             let pnl_change_percent = Span::styled(
                 format!("{:>10.2}%", i.pnl_change_percent * 100.0),
                 pnl_style,
             );
 
             let line_text = Spans::from(vec![
-                Span::raw(format!("{:<10} {:>8} {:>10} {:>8.2} ", i.symbol, i.analysis_dvat, i.average_dvat, i.score)),
+                Span::raw(format!("{:<10} {:>8} {:>10} {:>8.2} {:>4}", 
+                                  i.symbol, 
+                                  count_to_human_readable(i.analysis_dvat), 
+                                  count_to_human_readable(i.average_dvat), 
+                                  i.score, age_string)),
                 pnl_change_percent,
             ]);
             ListItem::new(line_text).style(Style::default().fg(Color::White))
@@ -469,6 +508,7 @@ fn ui<B: Backend>(f: &mut Frame<B>, app: &mut App) {
         .highlight_symbol("> ");
 
     f.render_stateful_widget(items, chunks[0], &mut app.items.state);
+    //f.render_stateful_widget(items, chunks[1], &mut app.items.state);
 }
 
 
